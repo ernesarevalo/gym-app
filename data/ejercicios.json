@@ -1,0 +1,86 @@
+[
+  {
+    "id": "pecho_1",
+    "nombre": "Press de Banca con Barra",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Acuéstate en el banco con los pies firmes en el suelo. Agarra la barra un poco más ancho que los hombros, bájala controlada hasta tocar el pecho y empuja hacia arriba sin bloquear bruscamente los codos.",
+    "video_url": "https://www.youtube.com/results?search_query=press+de+banca+con+barra+tecnica"
+  },
+  {
+    "id": "pecho_2",
+    "nombre": "Aperturas con Mancuernas",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Acostado en banco plano, sostén las mancuernas con los brazos extendidos y ligera flexión en el codo. Baja en arco hasta sentir el estiramiento en el pecho y vuelve a juntar las mancuernas arriba.",
+    "video_url": "https://www.youtube.com/results?search_query=aperturas+con+mancuernas+tecnica"
+  },
+  {
+    "id": "espalda_1",
+    "nombre": "Dominadas (Pull-up)",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Cuelga de la barra con agarre prono un poco más ancho que los hombros. Sube hasta que la barbilla pase la barra, controlando la bajada sin balancear el cuerpo.",
+    "video_url": "https://www.youtube.com/results?search_query=dominadas+tecnica"
+  },
+  {
+    "id": "espalda_2",
+    "nombre": "Remo con Barra",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Inclina el torso hacia adelante manteniendo la espalda recta, agarra la barra y tira hacia el abdomen apretando los omóplatos, luego baja controlado.",
+    "video_url": "https://www.youtube.com/results?search_query=remo+con+barra+tecnica"
+  },
+  {
+    "id": "piernas_1",
+    "nombre": "Sentadilla con Barra",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Coloca la barra sobre los trapecios, pies al ancho de hombros. Baja flexionando rodillas y cadera manteniendo la espalda neutra hasta que los muslos queden paralelos al suelo, luego sube.",
+    "video_url": "https://www.youtube.com/results?search_query=sentadilla+con+barra+tecnica"
+  },
+  {
+    "id": "piernas_2",
+    "nombre": "Zancadas (Lunges)",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Da un paso largo hacia adelante, baja la rodilla trasera hacia el suelo sin tocarlo, manteniendo el torso erguido, y regresa a la posición inicial alternando piernas.",
+    "video_url": "https://www.youtube.com/results?search_query=zancadas+tecnica"
+  },
+  {
+    "id": "hombros_1",
+    "nombre": "Press Militar con Mancuernas",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Sentado o de pie, sostén las mancuernas a la altura de los hombros y empuja hacia arriba hasta extender los brazos, sin arquear excesivamente la espalda.",
+    "video_url": "https://www.youtube.com/results?search_query=press+militar+mancuernas+tecnica"
+  },
+  {
+    "id": "hombros_2",
+    "nombre": "Elevaciones Laterales",
+    "grupo_muscular": "Hombros",
+    "descripcion": "De pie con mancuernas a los lados, eleva los brazos lateralmente hasta la altura de los hombros con ligera flexión de codo, y baja controlado.",
+    "video_url": "https://www.youtube.com/results?search_query=elevaciones+laterales+tecnica"
+  },
+  {
+    "id": "brazos_1",
+    "nombre": "Curl de Bíceps con Barra",
+    "grupo_muscular": "Brazos",
+    "descripcion": "De pie, agarra la barra con las palmas hacia arriba. Flexiona los codos llevando la barra hacia los hombros sin mover los codos del torso, luego baja controlado.",
+    "video_url": "https://www.youtube.com/results?search_query=curl+biceps+barra+tecnica"
+  },
+  {
+    "id": "brazos_2",
+    "nombre": "Press Francés (Extensión de Tríceps)",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Acostado en banco, sostén la barra o mancuerna sobre el pecho con brazos extendidos. Flexiona solo los codos bajando el peso hacia la frente, luego extiende de nuevo.",
+    "video_url": "https://www.youtube.com/results?search_query=press+frances+tecnica"
+  },
+  {
+    "id": "core_1",
+    "nombre": "Plancha Abdominal (Plank)",
+    "grupo_muscular": "Core",
+    "descripcion": "Apóyate en antebrazos y puntas de los pies, manteniendo el cuerpo en línea recta desde la cabeza hasta los talones, contrayendo el abdomen.",
+    "video_url": "https://www.youtube.com/results?search_query=plancha+abdominal+tecnica"
+  },
+  {
+    "id": "core_2",
+    "nombre": "Crunch Abdominal",
+    "grupo_muscular": "Core",
+    "descripcion": "Acostado boca arriba con rodillas flexionadas, eleva el torso contrayendo el abdomen sin tirar del cuello, y baja controlado.",
+    "video_url": "https://www.youtube.com/results?search_query=crunch+abdominal+tecnica"
+  }
+]
