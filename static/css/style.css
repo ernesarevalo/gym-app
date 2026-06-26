@@ -25,6 +25,22 @@ body {
   color: #0f1115;
 }
 
+h2, h3, h4, h5 {
+  color: #ffffff;
+}
+
+.form-label {
+  color: #cfd2d8;
+}
+
+.text-secondary {
+  color: #9aa0aa !important;
+}
+
+a {
+  color: #ff8a6b;
+}
+
 .ejercicio-card {
   background-color: #1a1d24;
   border-radius: 10px;
