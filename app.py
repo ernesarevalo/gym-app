@@ -82,4 +82,6 @@ def get_ejercicios_por_grupo(grupo_muscular):
 
 if __name__ == "__main__":
     # debug=True solo para desarrollo local
-    app.run(debug=True, port=5000)
+    # En producción (Render) se usa gunicorn, no este bloque
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)

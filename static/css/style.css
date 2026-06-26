@@ -1,7 +1,10 @@
 /* static/css/style.css
-   Sistema de temas con variables CSS: claro (default), oscuro, bestia.
+   Sistema de temas con variables CSS: claro (default), oscuro, bestia (claro/oscuro).
    El atributo data-theme en <html> determina qué set de variables se usa.
    theme.js es quien pone/quita ese atributo. */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&display=swap');
+
 
 /* ---------- MODO CLARO (default) ---------- */
 :root,
@@ -48,26 +51,55 @@
   --glow: none;
 }
 
-/* ---------- MODO BESTIA (easter egg) ---------- */
-[data-theme="beast"] {
-  --bg: #000000;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #240000 0%, #000000 60%);
-  --card-bg: #120404;
-  --card-shadow: 0 0 25px rgba(255, 0, 60, 0.25);
-  --text: #ffffff;
-  --text-secondary: #ff8a8a;
-  --primary: #ff003c;
-  --primary-hover: #d6002f;
+/* ---------- MODO BESTIA (easter egg) — réplica del estilo "daBeast" ----------
+   Tiene su propia variante clara y oscura (sub-toggle interno).
+   Paleta y tipografía tomadas 1:1 de https://github.com/ernesarevalo/gymroutine */
+[data-theme="beast-light"] {
+  --bg: #FEF6F9;
+  --bg-gradient: radial-gradient(circle at 15% 15%, #FFB3C6 0%, transparent 55%),
+                 radial-gradient(circle at 85% 80%, #D4C5F0 0%, transparent 55%);
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 4px 20px rgba(200, 100, 150, 0.10);
+  --text: #2D1B3D;
+  --text-secondary: #6B4F72;
+  --primary: #FF6B8A;
+  --primary-hover: #e85578;
+  --primary-gradient-end: #9B7FD4;
   --primary-text: #ffffff;
-  --input-bg: #1a0606;
-  --input-border: #ff003c;
-  --input-text: #ffffff;
-  --accent-link: #ffae00;
-  --navbar-bg: #0d0202;
-  --outline-btn: #ff003c;
-  --font-family: "Impact", "Arial Black", "Segoe UI", sans-serif;
-  --card-border-radius: 6px;
-  --glow: 0 0 8px rgba(255, 0, 60, 0.8);
+  --input-bg: #FFF0F5;
+  --input-border: #EDCFDC;
+  --input-text: #2D1B3D;
+  --accent-link: #9B7FD4;
+  --navbar-bg: rgba(255, 255, 255, 0.93);
+  --outline-btn: #9B7FD4;
+  --font-family: "Nunito", "Segoe UI", sans-serif;
+  --font-display: "Press Start 2P", monospace;
+  --card-border-radius: 18px;
+  --glow: none;
+}
+
+[data-theme="beast-dark"] {
+  --bg: #150822;
+  --bg-gradient: radial-gradient(circle at 15% 15%, #6B2840 0%, transparent 55%),
+                 radial-gradient(circle at 85% 80%, #3A2460 0%, transparent 55%);
+  --card-bg: #251040;
+  --card-shadow: 0 4px 20px rgba(130, 50, 190, 0.22);
+  --text: #F0D8FF;
+  --text-secondary: #C0A0D8;
+  --primary: #FF6B8A;
+  --primary-hover: #e85578;
+  --primary-gradient-end: #C4B5FD;
+  --primary-text: #ffffff;
+  --input-bg: #2E1555;
+  --input-border: #3D2260;
+  --input-text: #F0D8FF;
+  --accent-link: #C4B5FD;
+  --navbar-bg: rgba(21, 8, 34, 0.96);
+  --outline-btn: #C4B5FD;
+  --font-family: "Nunito", "Segoe UI", sans-serif;
+  --font-display: "Press Start 2P", monospace;
+  --card-border-radius: 18px;
+  --glow: none;
 }
 
 /* ---------- ESTILOS GENERALES (usan las variables) ---------- */
@@ -106,6 +138,14 @@ body {
   box-shadow: var(--glow);
 }
 
+[data-theme="beast-light"] .btn-primary,
+[data-theme="beast-dark"] .btn-primary {
+  background-image: linear-gradient(135deg, var(--primary), var(--primary-gradient-end));
+  border-radius: 11px;
+  font-weight: 900;
+  box-shadow: 0 5px 18px rgba(155,127,212,0.25);
+}
+
 .btn-primary:hover {
   background-color: var(--primary-hover);
 }
@@ -124,12 +164,14 @@ h1, h2, h3, h4, h5 {
   color: var(--text);
 }
 
-[data-theme="beast"] h1,
-[data-theme="beast"] h2,
-[data-theme="beast"] h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(255, 0, 60, 0.6);
+[data-theme="beast-light"] h1, [data-theme="beast-light"] h2, [data-theme="beast-light"] h3,
+[data-theme="beast-dark"] h1, [data-theme="beast-dark"] h2, [data-theme="beast-dark"] h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--primary);
+  text-shadow: 3px 3px 0 var(--primary-gradient-end);
+  letter-spacing: -0.5px;
 }
 
 .form-label {
@@ -151,10 +193,23 @@ a {
   margin-bottom: 14px;
   box-shadow: var(--card-shadow);
   border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
-[data-theme="beast"] .ejercicio-card {
-  border: 1px solid var(--primary);
+[data-theme="beast-light"] .ejercicio-card,
+[data-theme="beast-dark"] .ejercicio-card {
+  border: 2px solid var(--input-border);
+  padding-left: 24px;
+}
+
+[data-theme="beast-light"] .ejercicio-card::before,
+[data-theme="beast-dark"] .ejercicio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background: linear-gradient(180deg, var(--primary), var(--primary-gradient-end));
 }
 
 .ejercicio-card h5 {
