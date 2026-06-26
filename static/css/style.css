@@ -1,64 +1,222 @@
-/* static/css/style.css */
+/* static/css/style.css
+   Sistema de temas con variables CSS: claro (default), oscuro, bestia.
+   El atributo data-theme en <html> determina qué set de variables se usa.
+   theme.js es quien pone/quita ese atributo. */
+
+/* ---------- MODO CLARO (default) ---------- */
+:root,
+[data-theme="light"] {
+  --bg: #faf6f3;
+  --bg-gradient: none;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  --text: #2b2420;
+  --text-secondary: #8a7c74;
+  --primary: #c9184a;
+  --primary-hover: #a8123c;
+  --primary-text: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #e7ddd6;
+  --input-text: #2b2420;
+  --accent-link: #c9184a;
+  --navbar-bg: #ffffff;
+  --outline-btn: #c9a98f;
+  --font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  --card-border-radius: 16px;
+  --glow: none;
+}
+
+/* ---------- MODO OSCURO ---------- */
+[data-theme="dark"] {
+  --bg: #0f1115;
+  --bg-gradient: none;
+  --card-bg: #1a1d24;
+  --card-shadow: none;
+  --text: #f1f1f1;
+  --text-secondary: #9aa0aa;
+  --primary: #ff5c39;
+  --primary-hover: #e64a29;
+  --primary-text: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #2a2e38;
+  --input-text: #0f1115;
+  --accent-link: #ff8a6b;
+  --navbar-bg: #1a1d24;
+  --outline-btn: #f1f1f1;
+  --font-family: "Segoe UI", Roboto, sans-serif;
+  --card-border-radius: 12px;
+  --glow: none;
+}
+
+/* ---------- MODO BESTIA (easter egg) ---------- */
+[data-theme="beast"] {
+  --bg: #000000;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #240000 0%, #000000 60%);
+  --card-bg: #120404;
+  --card-shadow: 0 0 25px rgba(255, 0, 60, 0.25);
+  --text: #ffffff;
+  --text-secondary: #ff8a8a;
+  --primary: #ff003c;
+  --primary-hover: #d6002f;
+  --primary-text: #ffffff;
+  --input-bg: #1a0606;
+  --input-border: #ff003c;
+  --input-text: #ffffff;
+  --accent-link: #ffae00;
+  --navbar-bg: #0d0202;
+  --outline-btn: #ff003c;
+  --font-family: "Impact", "Arial Black", "Segoe UI", sans-serif;
+  --card-border-radius: 6px;
+  --glow: 0 0 8px rgba(255, 0, 60, 0.8);
+}
+
+/* ---------- ESTILOS GENERALES (usan las variables) ---------- */
 
 body {
-  background-color: #0f1115;
-  color: #f1f1f1;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-gradient) , var(--bg);
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .card {
-  background-color: #1a1d24;
+  background-color: var(--card-bg);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.form-control {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.05);
 }
 
 .btn-primary {
-  background-color: #ff5c39;
+  background-color: var(--primary);
   border: none;
+  color: var(--primary-text);
+  box-shadow: var(--glow);
 }
 
 .btn-primary:hover {
-  background-color: #e64a29;
+  background-color: var(--primary-hover);
+}
+
+.btn-outline-light {
+  border-color: var(--outline-btn);
+  color: var(--text);
 }
 
 .btn-outline-light:hover {
-  color: #0f1115;
+  background-color: var(--outline-btn);
+  color: var(--card-bg);
 }
 
-h2, h3, h4, h5 {
-  color: #ffffff;
+h1, h2, h3, h4, h5 {
+  color: var(--text);
+}
+
+[data-theme="beast"] h1,
+[data-theme="beast"] h2,
+[data-theme="beast"] h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.6);
 }
 
 .form-label {
-  color: #cfd2d8;
+  color: var(--text-secondary);
 }
 
 .text-secondary {
-  color: #9aa0aa !important;
+  color: var(--text-secondary) !important;
 }
 
 a {
-  color: #ff8a6b;
+  color: var(--accent-link);
 }
 
 .ejercicio-card {
-  background-color: #1a1d24;
-  border-radius: 10px;
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
   padding: 16px;
   margin-bottom: 14px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid transparent;
+}
+
+[data-theme="beast"] .ejercicio-card {
+  border: 1px solid var(--primary);
 }
 
 .ejercicio-card h5 {
-  color: #ff5c39;
+  color: var(--primary);
 }
 
 .dia-tab.active {
-  background-color: #ff5c39 !important;
-  color: #fff !important;
+  background-color: var(--primary) !important;
+  color: var(--primary-text) !important;
+  box-shadow: var(--glow);
 }
 
 #progresoChart {
-  background-color: #1a1d24;
-  border-radius: 10px;
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
   padding: 10px;
+}
+
+/* ---------- LOGO / TÍTULO (zona clickeable para el easter egg) ---------- */
+.app-logo {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ---------- BOTÓN DE CAMBIO DE TEMA ---------- */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--outline-btn);
+  color: var(--text);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--primary);
+  color: var(--primary-text);
+  border-color: var(--primary);
+}
+
+/* ---------- TOAST DEL EASTER EGG ---------- */
+#beastToast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #120404;
+  color: #ff003c;
+  border: 1px solid #ff003c;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(255,0,60,0.6);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+#beastToast.show {
+  opacity: 1;
+  transform: translateY(0);
 }

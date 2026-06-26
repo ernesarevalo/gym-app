@@ -9,9 +9,12 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark px-3" style="background-color:#1a1d24;">
-  <span class="navbar-brand mb-0 h1">💪 GymApp</span>
-  <button id="btnLogout" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
+<nav class="navbar px-3" style="background-color: var(--navbar-bg);">
+  <span id="appLogo" class="navbar-brand app-logo mb-0 h1">💪 GymApp</span>
+  <div class="d-flex gap-2">
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+    <button id="btnLogout" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
+  </div>
 </nav>
 
 <div class="container py-4">
@@ -48,6 +51,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>

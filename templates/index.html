@@ -10,7 +10,10 @@
 <body class="d-flex align-items-center justify-content-center" style="min-height:100vh;">
 
 <div class="card p-4 shadow" style="width: 100%; max-width: 420px;">
-  <h2 class="text-center mb-4">💪 GymApp</h2>
+  <div class="d-flex justify-content-end mb-2">
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+  </div>
+  <h2 id="appLogo" class="app-logo text-center mb-4">💪 GymApp</h2>
 
   <div id="authError" class="alert alert-danger d-none"></div>
 
@@ -44,6 +47,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
 </body>
