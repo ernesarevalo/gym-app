@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>GymApp - Completar perfil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body class="d-flex align-items-center justify-content-center" style="min-height:100vh;">
+
+<div class="card p-4 shadow" style="width: 100%; max-width: 460px;">
+  <div class="d-flex justify-content-end mb-2">
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+  </div>
+  <h3 id="appLogo" class="app-logo text-center mb-2">¡Bienvenido/a! 👋</h3>
+  <p class="text-secondary text-center mb-4">
+    Entraste con Google por primera vez. Nos faltan un par de datos para crear tu cuenta.
+  </p>
+
+  <div id="cpError" class="alert alert-danger d-none"></div>
+
+  <form id="formCompletar">
+    <div class="mb-3">
+      <label class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" id="cpNombre" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" id="cpUsername" required minlength="3"
+             pattern="[a-zA-Z0-9_\.]+" title="Solo letras, números, punto y guión bajo">
+      <div class="form-text">Lo vas a poder usar para iniciar sesión en vez del correo. Podés cambiarlo una vez más adelante.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control" id="cpFechaNacimiento" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Continuar</button>
+  </form>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
+<script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/completar_perfil.js') }}"></script>
+</body>
+</html>

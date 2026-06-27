@@ -47,30 +47,33 @@ async function obtenerEjercicios() {
   return res.json();
 }
 
-function elegirEjercicioPorGrupo(ejercicios, grupo) {
+function elegirEjercicioPorGrupo(ejercicios, grupo, offset = 0) {
   const filtrados = ejercicios.filter(e => e.grupo_muscular === grupo);
   if (filtrados.length === 0) return null;
-  // Por simplicidad, elige el primero disponible (el usuario puede cambiarlo luego)
-  return filtrados[0];
+  // Rota entre las opciones disponibles para dar variedad (útil también
+  // para "Mejorar mi rutina" más adelante, que pide otro offset).
+  return filtrados[offset % filtrados.length];
 }
 
-async function generarRutina(dias, enfoque) {
+async function generarRutina(dias, enfoque, offset = 0) {
   const ejercicios = await obtenerEjercicios();
   const split = SPLITS[dias];
   const reps = REPS_POR_ENFOQUE[enfoque];
 
   const rutina = split.map((grupos, index) => {
     const ejerciciosDelDia = grupos
-      .map(grupo => elegirEjercicioPorGrupo(ejercicios, grupo))
+      .map((grupo, i) => elegirEjercicioPorGrupo(ejercicios, grupo, offset + i + index))
       .filter(Boolean)
       .map(ej => ({
         ejercicio_id: ej.id,
         nombre: ej.nombre,
         grupo_muscular: ej.grupo_muscular,
         descripcion: ej.descripcion,
+        tecnica: ej.tecnica || null,
         video_url: ej.video_url,
         series: 4,
         repeticiones: reps,
+        tipo_entrenamiento: enfoque,
         peso_actual: null
       }));
 
@@ -97,12 +100,14 @@ formOnboarding.addEventListener("submit", async (e) => {
   const nivel = document.getElementById("nivel").value;
   const dias = parseInt(document.getElementById("dias").value, 10);
   const enfoque = document.getElementById("enfoque").value;
+  const fechaNacimiento = document.getElementById("fechaNacimiento").value;
 
   const rutina = await generarRutina(dias, enfoque);
 
   await db.collection("usuarios").doc(user.uid).set(
     {
       perfil: { nivel, dias, enfoque },
+      fecha_nacimiento: fechaNacimiento,
       rutina: rutina
     },
     { merge: true }
@@ -122,5 +127,9 @@ auth.onAuthStateChanged(async (user) => {
   const data = snap.data();
   if (!data || !data.disclaimers_aceptados) {
     window.location.href = "/disclaimers";
+    return;
+  }
+  if (data.fecha_nacimiento) {
+    document.getElementById("fechaNacimiento").value = data.fecha_nacimiento;
   }
 });

@@ -1,11 +1,15 @@
 // static/js/dashboard.js
 
+const ADMIN_EMAIL = "ernestoarevalo@gmail.com";
+
 let usuarioActual = null;
+let datosUsuario = null;
 let rutinaActual = [];
 let diaSeleccionado = 0;
 let grupoParaReemplazo = null;
 let indexEjercicioParaReemplazo = null;
 let chartProgreso = null;
+let catalogoCompleto = [];
 
 const tabsDias = document.getElementById("tabsDias");
 const contenidoDia = document.getElementById("contenidoDia");
@@ -21,6 +25,14 @@ auth.onAuthStateChanged(async (user) => {
     return;
   }
   usuarioActual = user;
+
+  const res = await fetch("/api/ejercicios");
+  catalogoCompleto = await res.json();
+
+  if (user.email === ADMIN_EMAIL) {
+    document.getElementById("navAdminLink").classList.remove("d-none");
+  }
+
   await cargarRutina();
 });
 
@@ -40,6 +52,8 @@ async function cargarRutina() {
     return;
   }
 
+  datosUsuario = data;
+
   const navNombre = document.getElementById("navNombreUsuario");
   if (navNombre) navNombre.textContent = data.username || data.nombre || "Mi perfil";
 
@@ -49,10 +63,58 @@ async function cargarRutina() {
   }
 
   rutinaActual = data.rutina;
+  renderCalentamientoYMovilidad();
   renderTabsDias();
   renderDia(0);
   poblarSelectorProgreso();
+  verificarCumpleanos(data);
+
+  document.getElementById("btnVolverAnterior").classList.toggle("d-none", !data.rutina_anterior);
 }
+
+// ---------- CALENTAMIENTO Y MOVILIDAD (formato inspirado en daBeast) ----------
+
+function renderCalentamientoYMovilidad() {
+  document.getElementById("seccionCalentamiento").innerHTML = `
+    <h5>🔥 Calentamiento general (5-7 min, antes de cada entrenamiento)</h5>
+    <ul class="mb-0">
+      <li><strong>0:00–3:00</strong> — Cardio suave (caminata rápida, bicicleta o cuerda): sube la temperatura corporal general.</li>
+      <li><strong>3:00–5:00</strong> — Activación dinámica: sentadillas con peso corporal, zancadas caminando, círculos de brazos.</li>
+      <li><strong>5:00–7:00</strong> — 1-2 series livianas del primer ejercicio de tu rutina, con poco peso, para preparar el patrón de movimiento específico.</li>
+    </ul>
+  `;
+
+  document.getElementById("seccionMovilidad").innerHTML = `
+    <h5>🧘 Movilidad articular (2-3 min, después del calentamiento)</h5>
+    <ul class="mb-0">
+      <li><strong>Hombros</strong> — círculos amplios ×10 hacia adelante y ×10 hacia atrás.</li>
+      <li><strong>Cadera</strong> — círculos de cadera ×10 por lado, abre la articulación antes de cargar peso.</li>
+      <li><strong>Tobillos</strong> — rotaciones y flexiones ×10 por pie, importante antes de sentadillas o zancadas.</li>
+      <li><strong>Columna</strong> — gato-camello (flexión/extensión de espalda) ×8 repeticiones lentas.</li>
+    </ul>
+    <p class="small text-secondary mt-2 mb-0">
+      Esta rutina de movilidad es orientativa y general. Si tenés alguna lesión o
+      limitación, consultá con tu profesional antes de realizarla (ver disclaimers).
+    </p>
+  `;
+}
+
+// ---------- CUMPLEAÑOS ----------
+
+function verificarCumpleanos(data) {
+  if (!data.fecha_nacimiento) return;
+  const hoy = new Date();
+  const nacimiento = new Date(data.fecha_nacimiento);
+  if (hoy.getDate() === nacimiento.getDate() && hoy.getMonth() === nacimiento.getMonth()) {
+    const yaMostrado = sessionStorage.getItem("cumple_mostrado_" + hoy.toDateString());
+    if (!yaMostrado) {
+      new bootstrap.Modal(document.getElementById("modalCumple")).show();
+      sessionStorage.setItem("cumple_mostrado_" + hoy.toDateString(), "1");
+    }
+  }
+}
+
+// ---------- TABS Y RENDER DE EJERCICIOS ----------
 
 function renderTabsDias() {
   tabsDias.innerHTML = "";
@@ -65,6 +127,22 @@ function renderTabsDias() {
   });
 }
 
+function renderTecnica(ej, idGen) {
+  if (!ej.tecnica) return "";
+  return `
+    <button class="btn btn-sm btn-outline-light mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#${idGen}">
+      📖 Ver técnica completa
+    </button>
+    <div class="collapse mt-2" id="${idGen}">
+      <div class="small">
+        <p class="mb-1"><strong>🧍 Postura:</strong> ${ej.tecnica.postura}</p>
+        <p class="mb-1"><strong>⚠️ Errores comunes:</strong> ${ej.tecnica.errores_comunes}</p>
+        <p class="mb-0"><strong>🛡️ Seguridad:</strong> ${ej.tecnica.seguridad}</p>
+      </div>
+    </div>
+  `;
+}
+
 function renderDia(idx) {
   diaSeleccionado = idx;
   renderTabsDias();
@@ -73,15 +151,17 @@ function renderDia(idx) {
   contenidoDia.innerHTML = `<h5 class="mb-3">${dia.titulo}</h5>`;
 
   dia.ejercicios.forEach((ej, ejIdx) => {
+    const idGen = `tecnica_${idx}_${ejIdx}`;
     const card = document.createElement("div");
     card.className = "ejercicio-card";
     card.innerHTML = `
       <div class="d-flex justify-content-between align-items-start flex-wrap">
         <div>
           <h5>${ej.nombre}</h5>
-          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps</p>
-          <p class="mb-2">${ej.descripcion}</p>
+          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps ${ej.tipo_entrenamiento ? "(" + ej.tipo_entrenamiento + ")" : ""}</p>
+          <p class="mb-1">${ej.descripcion || ""}</p>
           <a href="${ej.video_url}" target="_blank" class="small">▶ Ver demostración</a>
+          ${renderTecnica(ej, idGen)}
         </div>
         <button class="btn btn-sm btn-outline-light btnCambiar" data-idx="${ejIdx}">Cambiar ejercicio</button>
       </div>
@@ -117,7 +197,7 @@ async function abrirModalCambio(diaIdx, ejIdx) {
     const item = document.createElement("button");
     item.className = "list-group-item list-group-item-action bg-dark text-white mb-2";
     item.style.borderRadius = "8px";
-    item.innerHTML = `<strong>${op.nombre}</strong><br><span class="small text-secondary">${op.descripcion.slice(0, 90)}...</span>`;
+    item.innerHTML = `<strong>${op.nombre}</strong><br><span class="small text-secondary">${(op.descripcion || "").slice(0, 90)}</span>`;
     item.addEventListener("click", () => reemplazarEjercicio(op));
     listaReemplazos.appendChild(item);
   });
@@ -134,6 +214,7 @@ async function reemplazarEjercicio(nuevoEjercicio) {
     ejercicio_id: nuevoEjercicio.id,
     nombre: nuevoEjercicio.nombre,
     descripcion: nuevoEjercicio.descripcion,
+    tecnica: nuevoEjercicio.tecnica || null,
     video_url: nuevoEjercicio.video_url,
     grupo_muscular: nuevoEjercicio.grupo_muscular,
     peso_actual: null
@@ -157,12 +238,10 @@ async function guardarPeso(diaIdx, ejIdx, peso) {
   rutinaActual[diaIdx].ejercicios[ejIdx].peso_actual = pesoNum;
   const ejercicioId = rutinaActual[diaIdx].ejercicios[ejIdx].ejercicio_id;
 
-  // Actualiza el peso "actual" dentro de la rutina
   await db.collection("usuarios").doc(usuarioActual.uid).update({
     rutina: rutinaActual
   });
 
-  // Guarda un registro histórico en la subcolección "progreso"
   await db.collection("usuarios").doc(usuarioActual.uid)
     .collection("progreso").add({
       ejercicio_id: ejercicioId,
@@ -247,3 +326,68 @@ async function cargarGraficoProgreso(ejercicioId) {
     }
   });
 }
+
+// ---------- MEJORAR RUTINA / VOLVER A LA ANTERIOR ----------
+// Reglas simples (no IA real): por cada ejercicio, rota al siguiente
+// disponible del mismo grupo muscular (variedad), y sube 1 serie extra
+// como progresión, hasta un máximo de 5 series.
+
+document.getElementById("btnMejorarRutina").addEventListener("click", async () => {
+  if (!confirm("Vamos a generar una versión mejorada de tu rutina (más variedad de ejercicios y progresión de series). Vas a poder volver a la actual si no te convence. ¿Continuar?")) {
+    return;
+  }
+
+  const rutinaMejorada = rutinaActual.map(dia => ({
+    ...dia,
+    ejercicios: dia.ejercicios.map(ej => {
+      const opciones = catalogoCompleto.filter(e => e.grupo_muscular === ej.grupo_muscular);
+      let nuevoEjercicio = ej;
+      if (opciones.length > 1) {
+        const idxActual = opciones.findIndex(o => o.id === ej.ejercicio_id);
+        const siguiente = opciones[(idxActual + 1 + opciones.length) % opciones.length];
+        nuevoEjercicio = siguiente;
+      }
+      return {
+        ...ej,
+        ejercicio_id: nuevoEjercicio.id,
+        nombre: nuevoEjercicio.nombre,
+        descripcion: nuevoEjercicio.descripcion,
+        tecnica: nuevoEjercicio.tecnica || null,
+        video_url: nuevoEjercicio.video_url,
+        series: Math.min((ej.series || 3) + 1, 5),
+        peso_actual: null
+      };
+    })
+  }));
+
+  await db.collection("usuarios").doc(usuarioActual.uid).update({
+    rutina: rutinaMejorada,
+    rutina_anterior: rutinaActual
+  });
+
+  rutinaActual = rutinaMejorada;
+  document.getElementById("btnVolverAnterior").classList.remove("d-none");
+  renderTabsDias();
+  renderDia(0);
+  poblarSelectorProgreso();
+  alert("¡Tu rutina fue actualizada con más variedad y progresión! 💪");
+});
+
+document.getElementById("btnVolverAnterior").addEventListener("click", async () => {
+  if (!datosUsuario || !datosUsuario.rutina_anterior) return;
+  if (!confirm("¿Volver a tu rutina anterior? Vas a perder la mejora que se generó.")) return;
+
+  const anterior = datosUsuario.rutina_anterior;
+
+  await db.collection("usuarios").doc(usuarioActual.uid).update({
+    rutina: anterior,
+    rutina_anterior: firebase.firestore.FieldValue.delete()
+  });
+
+  rutinaActual = anterior;
+  datosUsuario.rutina_anterior = null;
+  document.getElementById("btnVolverAnterior").classList.add("d-none");
+  renderTabsDias();
+  renderDia(0);
+  poblarSelectorProgreso();
+});

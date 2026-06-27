@@ -146,18 +146,10 @@ btnGoogle.addEventListener("click", async () => {
     const snap = await docRef.get();
 
     if (!snap.exists) {
-      const username = await generarUsernameDesdeEmail(cred.user.email);
-      await docRef.set({
-        nombre: cred.user.displayName || "",
-        username,
-        email: cred.user.email,
-        disclaimers_aceptados: false,
-        creado: firebase.firestore.FieldValue.serverTimestamp()
-      });
-      await db.collection("usernames").doc(username).set({
-        uid: cred.user.uid,
-        email: cred.user.email
-      });
+      // Cuenta nueva: no la creamos todavía, primero pedimos los datos
+      // faltantes (nombre de usuario, fecha de nacimiento).
+      window.location.href = "/completar-perfil";
+      return;
     }
 
     await redirigirSegunEstado(cred.user.uid);

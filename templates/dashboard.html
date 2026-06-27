@@ -13,6 +13,7 @@
   <span id="appLogo" class="navbar-brand app-logo mb-0 h1">💪 GymApp</span>
   <div class="d-flex gap-2 align-items-center">
     <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+    <a id="navAdminLink" href="/admin" class="btn btn-outline-light btn-sm d-none" style="text-decoration:none;">👑 Admin</a>
     <a id="navPerfil" href="/perfil" class="btn btn-outline-light btn-sm" style="text-decoration:none;">
       👤 <span id="navNombreUsuario">Mi perfil</span>
     </a>
@@ -22,9 +23,16 @@
 
 <div class="container py-4">
 
+  <div id="seccionCalentamiento" class="card p-4 mb-4"></div>
+  <div id="seccionMovilidad" class="card p-4 mb-4"></div>
+
   <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
     <h4 class="mb-0">Mi rutina semanal</h4>
-    <a href="/armar-rutina" class="btn btn-outline-light btn-sm">🛠️ Armar mi propia rutina</a>
+    <div class="d-flex gap-2 flex-wrap">
+      <a href="/armar-rutina" class="btn btn-outline-light btn-sm">🛠️ Armar mi propia rutina</a>
+      <button id="btnMejorarRutina" class="btn btn-outline-light btn-sm">📈 Mejorar mi rutina</button>
+      <button id="btnVolverAnterior" class="btn btn-outline-light btn-sm d-none">⬅ Volver a la rutina anterior</button>
+    </div>
   </div>
   <div id="tabsDias" class="d-flex gap-2 mb-4 flex-wrap"></div>
 
@@ -34,6 +42,17 @@
   <h4 class="mb-3">📈 Progreso de pesos</h4>
   <select id="selectEjercicioProgreso" class="form-select mb-3" style="max-width:400px;"></select>
   <canvas id="progresoChart" height="120"></canvas>
+</div>
+
+<!-- Modal: Cumpleaños -->
+<div class="modal fade" id="modalCumple" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content text-center p-4" style="background-color: var(--card-bg); color: var(--text);">
+      <h2>🎉🎂 ¡Feliz cumpleaños!</h2>
+      <p class="mt-3">Todo el equipo de GymApp te desea un día espectacular. ¡Que este nuevo año te traiga fuerza, salud y muchos PRs! 💪</p>
+      <button class="btn btn-primary mt-2" data-bs-dismiss="modal">¡Gracias!</button>
+    </div>
+  </div>
 </div>
 
 <!-- Modal: Cambiar ejercicio -->
@@ -58,6 +77,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>

@@ -144,6 +144,72 @@ Google en el plan gratuito Spark.
 
 Toda esta lógica de sugerencias/advertencias es por **reglas simples**, no inteligencia artificial real — está pensada como una ayuda orientativa, no como reemplazo de un profesional (ver disclaimers).
 
+## 9. Panel de administrador (cuenta ernestoarevalo@gmail.com)
+
+El panel de administración (`/admin`) usa **firebase-admin** en el backend
+(Flask), porque resetear contraseñas, deshabilitar o eliminar usuarios de
+verdad requiere privilegios de servidor que el SDK del navegador no tiene.
+
+### Configurarlo (necesario para que el panel funcione):
+
+1. Firebase Console → ⚙️ Configuración del proyecto → pestaña **"Cuentas de
+   servicio"** → botón **"Generar nueva clave privada"**. Se descarga un
+   archivo `.json`.
+2. **En local**: guardá ese archivo como `gym-app/serviceAccountKey.json`
+   (ya está en `.gitignore`, nunca se sube a GitHub).
+3. **En Render**: NO subas el archivo. En su lugar:
+   - Abrí el `.json` descargado, copiá todo su contenido.
+   - En Render → tu servicio → pestaña **Environment** → **Add Environment
+     Variable** → nombre `FIREBASE_SERVICE_ACCOUNT_JSON`, valor: pegá el
+     JSON completo (todo en una sola variable, como texto).
+   - Redeploy el servicio.
+4. Solo la cuenta `ernestoarevalo@gmail.com` puede usar `/admin` y las rutas
+   `/api/admin/*` — el backend verifica el correo del token de Firebase en
+   cada request, así que cambiar esto desde el navegador no sirve para
+   saltear la protección.
+
+### Qué permite hacer
+
+- Ver todos los usuarios (perfil, días, enfoque, estado de la cuenta).
+- Editar nombre, correo, días y enfoque de cualquier usuario.
+- Resetear la contraseña de cualquier usuario (se define una nueva
+  directamente).
+- Habilitar/deshabilitar el acceso de un usuario sin borrar sus datos.
+- Eliminar usuarios por completo (cuenta de Auth + datos en Firestore).
+- Crear usuarios nuevos manualmente.
+
+## 10. Otras novedades de esta versión
+
+- **Calentamiento y movilidad articular**: el dashboard ahora muestra, antes
+  de la rutina, un bloque general de calentamiento y otro de movilidad
+  articular (formato inspirado en tu proyecto `gymroutine`).
+- **Técnica completa por ejercicio**: cada ejercicio del catálogo
+  (`data/ejercicios.json`) tiene ahora postura, errores comunes y
+  consideraciones de seguridad, visibles en un desplegable "Ver técnica
+  completa". Hay 5 ejercicios por grupo muscular (30 en total).
+- **Mejorar mi rutina**: rota los ejercicios de cada grupo muscular hacia
+  otra opción del catálogo y sube progresivamente las series. Guarda la
+  rutina previa, así que siempre se puede volver atrás con el botón
+  "Volver a la rutina anterior".
+- **Fecha de nacimiento + cumpleaños**: se pide en el cuestionario inicial
+  (o al completar perfil con Google). El día del cumpleaños, el dashboard
+  muestra un pop-up de felicitación.
+- **Foto de perfil**: se guarda como una URL de imagen (no hay subida de
+  archivos binarios, para mantener el hosting 100% gratuito sin necesitar
+  Firebase Storage de pago).
+- **Cambio de nombre de usuario**: permitido una sola vez desde `/perfil`.
+- **Google con cuenta nueva**: si alguien entra con Google y no tiene cuenta
+  todavía, se le pide nombre de usuario y fecha de nacimiento en
+  `/completar-perfil` antes de crear la cuenta (en vez de autocompletarla).
+- **Modo Bestia con mascota pixel-art**: se agregó el personaje "Capitán
+  Beast" (tomado de tu proyecto `gymroutine`) como decoración del modo
+  bestia.
+
+⚠️ **Importante**: "Mejorar mi rutina" y las sugerencias de `armar-rutina`
+son reglas simples programadas por mí, no inteligencia artificial real ni
+asesoramiento de un profesional certificado. Por eso los disclaimers
+existen y se piden explícitamente.
+
 ## 7. Próximos pasos sugeridos
 
 - Migrar `ejercicios.json` a una colección de Firestore para poder editar

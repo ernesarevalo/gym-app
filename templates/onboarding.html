@@ -17,6 +17,11 @@
 
   <form id="formOnboarding">
     <div class="mb-3">
+      <label class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control" id="fechaNacimiento" required>
+    </div>
+
+    <div class="mb-3">
       <label class="form-label">Nivel de experiencia</label>
       <select class="form-select" id="nivel" required>
         <option value="">Selecciona...</option>
@@ -55,6 +60,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/onboarding.js') }}"></script>
 </body>
