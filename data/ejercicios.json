@@ -1,307 +1,1664 @@
 [
   {
-    "id": "pecho_1", "nombre": "Press de Banca con Barra", "grupo_muscular": "Pecho",
-    "descripcion": "Ejercicio base de empuje horizontal para pecho, hombro anterior y tríceps.",
-    "video_url": "https://www.youtube.com/results?search_query=press+de+banca+con+barra+tecnica",
+    "id": "pecho_1",
+    "nombre": "Press de Banca con Barra",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Acostado en el banco, pies firmes en el suelo, ligero arco lumbar natural, omóplatos retraídos contra el banco.",
+    "explicacion": "Acostado en el banco, pies firmes en el suelo, ligero arco lumbar natural, omóplatos retraídos contra el banco. Bajá la barra controlada hasta tocar el pecho y empujá hacia arriba.",
     "tecnica": {
-      "postura": "Acostado en el banco, pies firmes en el suelo, ligero arco natural en la zona lumbar, omóplatos retraídos y hundidos contra el banco.",
-      "errores_comunes": "Despegar los glúteos del banco, rebotar la barra en el pecho, codos completamente abiertos a 90° (sobrecarga el hombro).",
-      "seguridad": "Usá siempre un ayudante o jaula de seguridad con pesos altos. Bajá la barra de forma controlada hasta tocar el pecho, sin rebotar."
-    }
+      "postura": "Acostado en el banco, pies firmes en el suelo, ligero arco lumbar natural, omóplatos retraídos contra el banco. Bajá la barra controlada hasta tocar el pecho y empujá hacia arriba.",
+      "errores_comunes": "Despegar los glúteos del banco, rebotar la barra en el pecho, abrir demasiado los codos (90°).",
+      "seguridad": "Usá un ayudante o jaula de seguridad con cargas altas. Bajá la barra sin rebotar."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Apretá los omóplatos antes de cada repetición.",
+      "Exhalá con fuerza al empujar hacia arriba."
+    ],
+    "grupos_complementarios": [
+      "Hombros",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20de%20Banca%20con%20Barra%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20de%20Banca%20con%20Barra%20ejercicio"
   },
   {
-    "id": "pecho_2", "nombre": "Aperturas con Mancuernas", "grupo_muscular": "Pecho",
-    "descripcion": "Ejercicio de aislamiento que estira y contrae el pecho en un arco amplio.",
-    "video_url": "https://www.youtube.com/results?search_query=aperturas+con+mancuernas+tecnica",
+    "id": "pecho_2",
+    "nombre": "Press Inclinado con Mancuernas",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Banco a 30-45°, mancuernas a la altura del pecho alto, antebrazos perpendiculares al suelo en la posición baja.",
+    "explicacion": "Banco a 30-45°, mancuernas a la altura del pecho alto, antebrazos perpendiculares al suelo en la posición baja.",
     "tecnica": {
-      "postura": "Acostado en banco plano, mancuernas sobre el pecho con brazos extendidos y ligera flexión de codo fija durante todo el movimiento.",
-      "errores_comunes": "Flexionar y extender el codo durante el recorrido (lo convierte en un press), bajar demasiado profundo y forzar el hombro.",
-      "seguridad": "No uses pesos muy altos en este ejercicio: la posición estirada de hombro es vulnerable. Priorizá el control sobre la carga."
-    }
-  },
-  {
-    "id": "pecho_3", "nombre": "Press Inclinado con Mancuernas", "grupo_muscular": "Pecho",
-    "descripcion": "Variante en banco inclinado que enfatiza la porción superior (clavicular) del pecho.",
-    "video_url": "https://www.youtube.com/results?search_query=press+inclinado+mancuernas+tecnica",
-    "tecnica": {
-      "postura": "Banco a 30-45°. Mancuernas a la altura del pecho alto, antebrazos perpendiculares al suelo en la posición baja.",
+      "postura": "Banco a 30-45°, mancuernas a la altura del pecho alto, antebrazos perpendiculares al suelo en la posición baja.",
       "errores_comunes": "Inclinar el banco a más de 45° (pasa el trabajo a hombro), arquear excesivamente la espalda baja.",
-      "seguridad": "Controlá el descenso de las mancuernas; en la posición baja el hombro está en una posición de riesgo si se pierde el control."
-    }
+      "seguridad": "Controlá el descenso; en la posición baja el hombro está en una zona de riesgo si se pierde el control."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Mantené las muñecas firmes, alineadas con el antebrazo.",
+      "No bloquees los codos con fuerza arriba."
+    ],
+    "grupos_complementarios": [
+      "Hombros",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20Inclinado%20con%20Mancuernas%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20Inclinado%20con%20Mancuernas%20ejercicio"
   },
   {
-    "id": "pecho_4", "nombre": "Fondos en Paralelas (Dips)", "grupo_muscular": "Pecho",
-    "descripcion": "Ejercicio con el propio peso corporal que trabaja pecho bajo y tríceps.",
-    "video_url": "https://www.youtube.com/results?search_query=fondos+en+paralelas+pecho+tecnica",
+    "id": "pecho_3",
+    "nombre": "Aperturas con Mancuernas",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Acostado en banco plano, mancuernas sobre el pecho con los brazos extendidos y una ligera flexión de codo fija durante todo el recorrido.",
+    "explicacion": "Acostado en banco plano, mancuernas sobre el pecho con los brazos extendidos y una ligera flexión de codo fija durante todo el recorrido.",
+    "tecnica": {
+      "postura": "Acostado en banco plano, mancuernas sobre el pecho con los brazos extendidos y una ligera flexión de codo fija durante todo el recorrido.",
+      "errores_comunes": "Flexionar y extender el codo durante el movimiento (se convierte en un press), bajar demasiado profundo.",
+      "seguridad": "No uses pesos muy altos: la posición estirada de hombro es vulnerable. Priorizá el control sobre la carga."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Imaginá que abrazás un árbol grande.",
+      "Sentí el estiramiento en el pecho, no en el hombro."
+    ],
+    "grupos_complementarios": [
+      "Hombros"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Aperturas%20con%20Mancuernas%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Aperturas%20con%20Mancuernas%20ejercicio"
+  },
+  {
+    "id": "pecho_4",
+    "nombre": "Fondos en Paralelas (Dips)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Cuerpo ligeramente inclinado hacia adelante para enfatizar pecho, codos hacia afuera, descenso hasta 90° de flexión de codo.",
+    "explicacion": "Cuerpo ligeramente inclinado hacia adelante para enfatizar pecho, codos hacia afuera, descenso hasta 90° de flexión de codo.",
     "tecnica": {
       "postura": "Cuerpo ligeramente inclinado hacia adelante para enfatizar pecho, codos hacia afuera, descenso hasta 90° de flexión de codo.",
       "errores_comunes": "Bajar demasiado profundo (sobrecarga el hombro), mantener el cuerpo totalmente vertical (pasa el trabajo a tríceps).",
-      "seguridad": "Si sentís dolor en el hombro anterior, reducí el rango de movimiento o usá la máquina asistida en vez de cuerpo libre."
-    }
+      "seguridad": "Si sentís dolor en el hombro anterior, reducí el rango o usá la máquina asistida."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Cuanto más inclinado hacia adelante, más trabaja el pecho.",
+      "Controlá la bajada, no te dejes caer."
+    ],
+    "grupos_complementarios": [
+      "Brazos",
+      "Hombros"
+    ],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Fondos%20en%20Paralelas%20%28Dips%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Fondos%20en%20Paralelas%20%28Dips%29%20ejercicio"
   },
   {
-    "id": "pecho_5", "nombre": "Press en Máquina (Chest Press)", "grupo_muscular": "Pecho",
-    "descripcion": "Variante guiada ideal para aprender el patrón de empuje con menor exigencia de estabilización.",
-    "video_url": "https://www.youtube.com/results?search_query=chest+press+maquina+tecnica",
+    "id": "pecho_5",
+    "nombre": "Press en Máquina (Chest Press)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Espalda y cabeza apoyadas contra el respaldo, agarres a la altura del pecho, codos ligeramente por debajo de los hombros.",
+    "explicacion": "Espalda y cabeza apoyadas contra el respaldo, agarres a la altura del pecho, codos ligeramente por debajo de los hombros.",
     "tecnica": {
       "postura": "Espalda y cabeza apoyadas contra el respaldo, agarres a la altura del pecho, codos ligeramente por debajo de los hombros.",
-      "errores_comunes": "Despegar la espalda del respaldo al empujar, usar un rango de movimiento parcial.",
-      "seguridad": "Ideal para principiantes o para trabajar cerca del fallo muscular con menor riesgo que con barra libre."
-    }
+      "errores_comunes": "Despegar la espalda del respaldo al empujar, usar rango de movimiento parcial.",
+      "seguridad": "Ideal para principiantes o para trabajar cerca del fallo con menor riesgo que con barra libre."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Ajustá el asiento para que los agarres queden a la altura del pecho.",
+      "Empujá y exhalá al mismo tiempo."
+    ],
+    "grupos_complementarios": [
+      "Hombros",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20en%20M%C3%A1quina%20%28Chest%20Press%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20en%20M%C3%A1quina%20%28Chest%20Press%29%20ejercicio"
   },
-
   {
-    "id": "espalda_1", "nombre": "Dominadas (Pull-up)", "grupo_muscular": "Espalda",
-    "descripcion": "Ejercicio de tracción vertical con el propio peso corporal, clave para el dorsal ancho.",
-    "video_url": "https://www.youtube.com/results?search_query=dominadas+tecnica",
+    "id": "pecho_6",
+    "nombre": "Press Declinado con Barra",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Banco declinado (cabeza más abajo que los pies), barra a la altura del pecho bajo, trayectoria similar al press plano.",
+    "explicacion": "Banco declinado (cabeza más abajo que los pies), barra a la altura del pecho bajo, trayectoria similar al press plano.",
+    "tecnica": {
+      "postura": "Banco declinado (cabeza más abajo que los pies), barra a la altura del pecho bajo, trayectoria similar al press plano.",
+      "errores_comunes": "Usar demasiada inclinación negativa, perder el control de la barra cerca de la cara.",
+      "seguridad": "Asegurate de que el banco esté bien sujeto al piso o anclado; usá ayudante con cargas altas."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Enfatiza la porción inferior del pecho.",
+      "Mantené los pies bien sujetos al soporte del banco."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20Declinado%20con%20Barra%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20Declinado%20con%20Barra%20ejercicio"
+  },
+  {
+    "id": "pecho_7",
+    "nombre": "Cruces en Polea (Cable Crossover)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "De pie entre dos poleas altas, brazos extendidos hacia los lados, juntar las manos al frente del cuerpo en un arco controlado.",
+    "explicacion": "De pie entre dos poleas altas, brazos extendidos hacia los lados, juntar las manos al frente del cuerpo en un arco controlado.",
+    "tecnica": {
+      "postura": "De pie entre dos poleas altas, brazos extendidos hacia los lados, juntar las manos al frente del cuerpo en un arco controlado.",
+      "errores_comunes": "Usar impulso del torso, terminar el movimiento muy arriba (pasa el trabajo a hombro anterior).",
+      "seguridad": "Da un paso adelante para estabilidad y evitá pesos excesivos que te hagan perder la forma."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Terminá el movimiento a la altura del abdomen, no de la cara.",
+      "Apretá fuerte el pecho al juntar las manos."
+    ],
+    "grupos_complementarios": [
+      "Hombros"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Cruces%20en%20Polea%20%28Cable%20Crossover%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Cruces%20en%20Polea%20%28Cable%20Crossover%29%20ejercicio"
+  },
+  {
+    "id": "pecho_8",
+    "nombre": "Pec Deck (Máquina de Aperturas)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Sentado con la espalda apoyada, antebrazos contra las almohadillas, juntar los brazos al frente apretando el pecho.",
+    "explicacion": "Sentado con la espalda apoyada, antebrazos contra las almohadillas, juntar los brazos al frente apretando el pecho.",
+    "tecnica": {
+      "postura": "Sentado con la espalda apoyada, antebrazos contra las almohadillas, juntar los brazos al frente apretando el pecho.",
+      "errores_comunes": "Usar demasiado peso y perder el control en la fase negativa, encoger los hombros.",
+      "seguridad": "Ajustá el asiento para que los hombros no queden ni muy arriba ni muy abajo respecto a las almohadillas."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Pausá 1 segundo en la contracción máxima.",
+      "Volvé despacio a la posición inicial."
+    ],
+    "grupos_complementarios": [
+      "Hombros"
+    ],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Pec%20Deck%20%28M%C3%A1quina%20de%20Aperturas%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Pec%20Deck%20%28M%C3%A1quina%20de%20Aperturas%29%20ejercicio"
+  },
+  {
+    "id": "pecho_9",
+    "nombre": "Flexiones de Pecho (Push-up)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Manos un poco más anchas que los hombros, cuerpo en línea recta de cabeza a talones, descenso hasta casi tocar el pecho al suelo.",
+    "explicacion": "Manos un poco más anchas que los hombros, cuerpo en línea recta de cabeza a talones, descenso hasta casi tocar el pecho al suelo.",
+    "tecnica": {
+      "postura": "Manos un poco más anchas que los hombros, cuerpo en línea recta de cabeza a talones, descenso hasta casi tocar el pecho al suelo.",
+      "errores_comunes": "Dejar caer la cadera, no completar el rango completo, abrir demasiado los codos.",
+      "seguridad": "Si no podés hacer el ejercicio completo, apoyá las rodillas para reducir la dificultad sin perder la forma."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Apretá el abdomen como en una plancha durante todo el movimiento.",
+      "Exhalá al subir."
+    ],
+    "grupos_complementarios": [
+      "Brazos",
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Flexiones%20de%20Pecho%20%28Push-up%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Flexiones%20de%20Pecho%20%28Push-up%29%20ejercicio"
+  },
+  {
+    "id": "pecho_10",
+    "nombre": "Pullover con Mancuerna",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Acostado perpendicular en un banco (solo la espalda alta apoyada), mancuerna sostenida con ambas manos detrás de la cabeza, bajar en arco y subir.",
+    "explicacion": "Acostado perpendicular en un banco (solo la espalda alta apoyada), mancuerna sostenida con ambas manos detrás de la cabeza, bajar en arco y subir.",
+    "tecnica": {
+      "postura": "Acostado perpendicular en un banco (solo la espalda alta apoyada), mancuerna sostenida con ambas manos detrás de la cabeza, bajar en arco y subir.",
+      "errores_comunes": "Arquear demasiado la espalda baja, usar peso excesivo que limite el rango de movimiento.",
+      "seguridad": "Empezá con poco peso: es un ejercicio de estiramiento profundo de hombro y pecho, sensible si se fuerza."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Sentí el estiramiento del pecho y dorsal en la posición baja.",
+      "Mantené los brazos con una ligera flexión fija."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Pullover%20con%20Mancuerna%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Pullover%20con%20Mancuerna%20ejercicio"
+  },
+  {
+    "id": "espalda_1",
+    "nombre": "Dominadas (Pull-up)",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Agarre prono un poco más ancho que los hombros, escápulas activas desde el inicio, subida hasta que la barbilla pase la barra.",
+    "explicacion": "Agarre prono un poco más ancho que los hombros, escápulas activas desde el inicio, subida hasta que la barbilla pase la barra.",
     "tecnica": {
       "postura": "Agarre prono un poco más ancho que los hombros, escápulas activas desde el inicio, subida hasta que la barbilla pase la barra.",
       "errores_comunes": "Balancear el cuerpo (kipping) para ayudarse, no completar el rango (no extender los brazos abajo).",
-      "seguridad": "Si no podés hacer dominadas completas, usá bandas elásticas de asistencia o la máquina de tracción asistida en vez de hacer trampa con el impulso."
-    }
+      "seguridad": "Si no podés hacer dominadas completas, usá bandas de asistencia o la máquina de tracción asistida en vez de hacer trampa con impulso."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Activá los omóplatos ('escápulas abajo') antes de tirar.",
+      "Bajá controlado, no te dejes caer de golpe."
+    ],
+    "grupos_complementarios": [
+      "Brazos",
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Dominadas%20%28Pull-up%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Dominadas%20%28Pull-up%29%20ejercicio"
   },
   {
-    "id": "espalda_2", "nombre": "Remo con Barra", "grupo_muscular": "Espalda",
-    "descripcion": "Ejercicio de tracción horizontal que desarrolla espesor de espalda media.",
-    "video_url": "https://www.youtube.com/results?search_query=remo+con+barra+tecnica",
+    "id": "espalda_2",
+    "nombre": "Remo con Barra",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Torso inclinado ~45°, espalda neutra, tirar la barra hacia el abdomen apretando los omóplatos.",
+    "explicacion": "Torso inclinado ~45°, espalda neutra, tirar la barra hacia el abdomen apretando los omóplatos.",
     "tecnica": {
-      "postura": "Torso inclinado ~45°, espalda neutra (ni arqueada ni redondeada), tirar la barra hacia el abdomen apretando los omóplatos.",
-      "errores_comunes": "Redondear la espalda baja, usar impulso de cadera en exceso, tirar la barra hacia el pecho en vez del abdomen.",
+      "postura": "Torso inclinado ~45°, espalda neutra, tirar la barra hacia el abdomen apretando los omóplatos.",
+      "errores_comunes": "Redondear la espalda baja, usar impulso de cadera en exceso, tirar la barra hacia el pecho.",
       "seguridad": "Si tenés antecedentes de lumbalgia, preferí variantes apoyadas en banco (remo en T con soporte de pecho)."
-    }
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Mirá hacia adelante, no hacia abajo.",
+      "Apretá los omóplatos en la parte alta del movimiento."
+    ],
+    "grupos_complementarios": [
+      "Brazos",
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Remo%20con%20Barra%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Remo%20con%20Barra%20ejercicio"
   },
   {
-    "id": "espalda_3", "nombre": "Jalón al Pecho en Polea", "grupo_muscular": "Espalda",
-    "descripcion": "Variante guiada de tracción vertical, accesible para todos los niveles.",
-    "video_url": "https://www.youtube.com/results?search_query=jalon+al+pecho+polea+tecnica",
+    "id": "espalda_3",
+    "nombre": "Jalón al Pecho en Polea",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Sentado con muslos fijos bajo el soporte, agarre ancho, tirar la barra hacia la parte alta del pecho llevando codos abajo y atrás.",
+    "explicacion": "Sentado con muslos fijos bajo el soporte, agarre ancho, tirar la barra hacia la parte alta del pecho llevando codos abajo y atrás.",
     "tecnica": {
-      "postura": "Sentado con muslos fijos bajo el soporte, agarre ancho, tirar la barra hacia la parte alta del pecho llevando los codos hacia abajo y atrás.",
-      "errores_comunes": "Inclinarse demasiado hacia atrás para 'ayudar' con el peso del cuerpo, tirar la barra detrás de la nuca (riesgo de hombro).",
-      "seguridad": "Mantené el torso erguido con una leve inclinación; evitá el jalón tras nuca, es innecesariamente riesgoso para el hombro."
-    }
+      "postura": "Sentado con muslos fijos bajo el soporte, agarre ancho, tirar la barra hacia la parte alta del pecho llevando codos abajo y atrás.",
+      "errores_comunes": "Inclinarse demasiado hacia atrás para 'ayudar' con el peso del cuerpo, tirar la barra detrás de la nuca.",
+      "seguridad": "Mantené el torso erguido con leve inclinación; evitá el jalón tras nuca, es innecesariamente riesgoso."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Imaginá que llevás los codos a los bolsillos de atrás.",
+      "Controlá la vuelta, no dejes que el peso te 'tire' del agarre."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Jal%C3%B3n%20al%20Pecho%20en%20Polea%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Jal%C3%B3n%20al%20Pecho%20en%20Polea%20ejercicio"
   },
   {
-    "id": "espalda_4", "nombre": "Remo Sentado en Polea Baja", "grupo_muscular": "Espalda",
-    "descripcion": "Tracción horizontal en polea que permite controlar bien el recorrido y la tensión constante.",
-    "video_url": "https://www.youtube.com/results?search_query=remo+sentado+polea+baja+tecnica",
+    "id": "espalda_4",
+    "nombre": "Remo Sentado en Polea Baja",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Espalda recta, leve inclinación de torso hacia adelante al estirar y hacia atrás al tirar, sin exagerar el movimiento de cadera.",
+    "explicacion": "Espalda recta, leve inclinación de torso hacia adelante al estirar y hacia atrás al tirar, sin exagerar el movimiento de cadera.",
     "tecnica": {
       "postura": "Espalda recta, leve inclinación de torso hacia adelante al estirar y hacia atrás al tirar, sin exagerar el movimiento de cadera.",
       "errores_comunes": "Usar demasiado balanceo de torso en vez de tracción de espalda, encoger los hombros hacia las orejas.",
       "seguridad": "Mantené los hombros 'abajo y atrás' durante todo el recorrido para proteger la zona cervical."
-    }
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Pausá 1 segundo apretando los omóplatos al final de cada repetición.",
+      "No uses más balanceo del necesario."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Remo%20Sentado%20en%20Polea%20Baja%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Remo%20Sentado%20en%20Polea%20Baja%20ejercicio"
   },
   {
-    "id": "espalda_5", "nombre": "Peso Muerto Rumano", "grupo_muscular": "Espalda",
-    "descripcion": "Ejercicio de bisagra de cadera que trabaja erectores espinales, isquiotibiales y glúteos.",
-    "video_url": "https://www.youtube.com/results?search_query=peso+muerto+rumano+tecnica",
+    "id": "espalda_5",
+    "nombre": "Peso Muerto Rumano",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Barra cerca del cuerpo, rodillas con flexión mínima fija, bisagra de cadera empujando los glúteos hacia atrás, espalda neutra.",
+    "explicacion": "Barra cerca del cuerpo, rodillas con flexión mínima fija, bisagra de cadera empujando los glúteos hacia atrás, espalda neutra.",
     "tecnica": {
-      "postura": "Barra cerca del cuerpo, rodillas con flexión mínima y fija, bisagra de cadera empujando los glúteos hacia atrás, espalda neutra todo el recorrido.",
-      "errores_comunes": "Redondear la espalda baja, doblar excesivamente las rodillas (lo convierte en sentadilla), alejar la barra del cuerpo.",
+      "postura": "Barra cerca del cuerpo, rodillas con flexión mínima fija, bisagra de cadera empujando los glúteos hacia atrás, espalda neutra.",
+      "errores_comunes": "Redondear la espalda baja, doblar excesivamente las rodillas (se convierte en sentadilla), alejar la barra del cuerpo.",
       "seguridad": "Empezá con poco peso hasta dominar la técnica de bisagra de cadera; es uno de los ejercicios con mayor riesgo si se ejecuta mal."
-    }
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "La barra debe 'rozar' las piernas todo el recorrido.",
+      "Sentí el estiramiento en isquiotibiales, no en la espalda baja."
+    ],
+    "grupos_complementarios": [
+      "Piernas",
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Peso%20Muerto%20Rumano%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Peso%20Muerto%20Rumano%20ejercicio"
   },
-
   {
-    "id": "piernas_1", "nombre": "Sentadilla con Barra", "grupo_muscular": "Piernas",
-    "descripcion": "Ejercicio fundamental de pierna completa: cuádriceps, glúteos y core.",
-    "video_url": "https://www.youtube.com/results?search_query=sentadilla+con+barra+tecnica",
+    "id": "espalda_6",
+    "nombre": "Remo en T",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Torso apoyado sobre un banco inclinado o en la máquina de remo en T, tirar el agarre hacia el abdomen apretando la espalda.",
+    "explicacion": "Torso apoyado sobre un banco inclinado o en la máquina de remo en T, tirar el agarre hacia el abdomen apretando la espalda.",
+    "tecnica": {
+      "postura": "Torso apoyado sobre un banco inclinado o en la máquina de remo en T, tirar el agarre hacia el abdomen apretando la espalda.",
+      "errores_comunes": "Levantar la cabeza buscando el peso, no completar el rango de extensión de brazos.",
+      "seguridad": "El soporte de pecho reduce el estrés lumbar: ideal si tenés molestias en la zona baja de la espalda con el remo libre."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Mantené el pecho pegado al soporte durante todo el movimiento.",
+      "Apretá bien los omóplatos arriba."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Remo%20en%20T%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Remo%20en%20T%20ejercicio"
+  },
+  {
+    "id": "espalda_7",
+    "nombre": "Pull-over en Polea Alta",
+    "grupo_muscular": "Espalda",
+    "descripcion": "De pie frente a la polea alta, brazos extendidos, tirar la barra hacia abajo en arco hasta los muslos manteniendo los codos casi fijos.",
+    "explicacion": "De pie frente a la polea alta, brazos extendidos, tirar la barra hacia abajo en arco hasta los muslos manteniendo los codos casi fijos.",
+    "tecnica": {
+      "postura": "De pie frente a la polea alta, brazos extendidos, tirar la barra hacia abajo en arco hasta los muslos manteniendo los codos casi fijos.",
+      "errores_comunes": "Flexionar mucho los codos (se convierte en jalón), usar impulso de cadera.",
+      "seguridad": "Mantené el torso estable; es un ejercicio de aislamiento de dorsal, no de fuerza bruta."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Pensá en 'llevar los codos hacia las caderas'.",
+      "Controlá la vuelta a la posición inicial."
+    ],
+    "grupos_complementarios": [
+      "Brazos",
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Pull-over%20en%20Polea%20Alta%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Pull-over%20en%20Polea%20Alta%20ejercicio"
+  },
+  {
+    "id": "espalda_8",
+    "nombre": "Remo con Mancuerna a Una Mano",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Apoyado en banco con una mano y una rodilla, espalda paralela al suelo, tirar la mancuerna hacia la cadera.",
+    "explicacion": "Apoyado en banco con una mano y una rodilla, espalda paralela al suelo, tirar la mancuerna hacia la cadera.",
+    "tecnica": {
+      "postura": "Apoyado en banco con una mano y una rodilla, espalda paralela al suelo, tirar la mancuerna hacia la cadera.",
+      "errores_comunes": "Rotar el torso al tirar, usar impulso en vez de fuerza de espalda.",
+      "seguridad": "Mantené la espalda neutra y el core activo para no generar torsión en la zona lumbar."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Tirá la mancuerna hacia la cadera, no hacia el pecho.",
+      "Apretá el omóplato al final del recorrido."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Remo%20con%20Mancuerna%20a%20Una%20Mano%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Remo%20con%20Mancuerna%20a%20Una%20Mano%20ejercicio"
+  },
+  {
+    "id": "espalda_9",
+    "nombre": "Hiperextensiones (Banco Romano)",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Cadera apoyada en el banco, piernas fijas, descender el torso controlado y subir hasta la línea recta del cuerpo (sin hiperextender).",
+    "explicacion": "Cadera apoyada en el banco, piernas fijas, descender el torso controlado y subir hasta la línea recta del cuerpo (sin hiperextender).",
+    "tecnica": {
+      "postura": "Cadera apoyada en el banco, piernas fijas, descender el torso controlado y subir hasta la línea recta del cuerpo (sin hiperextender).",
+      "errores_comunes": "Subir más allá de la línea recta (hiperextensión excesiva de la zona lumbar), usar impulso brusco.",
+      "seguridad": "Subí solo hasta la alineación neutra del cuerpo; ir más arriba no agrega beneficio y aumenta el riesgo lumbar."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Cruzá los brazos sobre el pecho para más dificultad.",
+      "Movimiento lento y controlado, sin rebote."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Hiperextensiones%20%28Banco%20Romano%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Hiperextensiones%20%28Banco%20Romano%29%20ejercicio"
+  },
+  {
+    "id": "espalda_10",
+    "nombre": "Jalón con Agarre Cerrado",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Agarre en V o cerrado en la polea alta, tirar hacia el pecho alto manteniendo el torso erguido con leve inclinación hacia atrás.",
+    "explicacion": "Agarre en V o cerrado en la polea alta, tirar hacia el pecho alto manteniendo el torso erguido con leve inclinación hacia atrás.",
+    "tecnica": {
+      "postura": "Agarre en V o cerrado en la polea alta, tirar hacia el pecho alto manteniendo el torso erguido con leve inclinación hacia atrás.",
+      "errores_comunes": "Usar demasiado impulso de torso, no completar la extensión completa de brazos arriba.",
+      "seguridad": "El agarre cerrado reduce la participación del hombro: buena opción si sentís molestias con el agarre ancho."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Apretá la espalda en la parte baja del movimiento.",
+      "Controlá la fase de subida del peso (excéntrica)."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Jal%C3%B3n%20con%20Agarre%20Cerrado%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Jal%C3%B3n%20con%20Agarre%20Cerrado%20ejercicio"
+  },
+  {
+    "id": "piernas_1",
+    "nombre": "Sentadilla con Barra",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Barra sobre los trapecios, pies al ancho de hombros con puntas levemente afuera, descenso controlado hasta muslos paralelos al suelo.",
+    "explicacion": "Barra sobre los trapecios, pies al ancho de hombros con puntas levemente afuera, descenso controlado hasta muslos paralelos al suelo.",
     "tecnica": {
       "postura": "Barra sobre los trapecios, pies al ancho de hombros con puntas levemente afuera, descenso controlado hasta muslos paralelos al suelo.",
-      "errores_comunes": "Rodillas que colapsan hacia adentro, talones que se levantan del suelo, espalda que se redondea en el descenso.",
-      "seguridad": "Usá una jaula con seguros (rack) cuando trabajes con cargas altas, para poder soltar la barra si fallás en el fondo."
-    }
+      "errores_comunes": "Rodillas que colapsan hacia adentro, talones que se levantan, espalda que se redondea en el descenso.",
+      "seguridad": "Usá una jaula con seguros (rack) con cargas altas, para poder soltar la barra si fallás en el fondo."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Empujá las rodillas hacia afuera al bajar.",
+      "Mirá al frente, no hacia abajo."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20con%20Barra%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Sentadilla%20con%20Barra%20ejercicio"
   },
   {
-    "id": "piernas_2", "nombre": "Zancadas (Lunges)", "grupo_muscular": "Piernas",
-    "descripcion": "Ejercicio unilateral que mejora fuerza, equilibrio y simetría entre piernas.",
-    "video_url": "https://www.youtube.com/results?search_query=zancadas+tecnica",
+    "id": "piernas_2",
+    "nombre": "Zancadas (Lunges)",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Paso largo hacia adelante, torso erguido, rodilla trasera descendiendo casi hasta el suelo sin golpearlo.",
+    "explicacion": "Paso largo hacia adelante, torso erguido, rodilla trasera descendiendo casi hasta el suelo sin golpearlo.",
     "tecnica": {
       "postura": "Paso largo hacia adelante, torso erguido, rodilla trasera descendiendo casi hasta el suelo sin golpearlo.",
       "errores_comunes": "Pasos demasiado cortos (sobrecarga la rodilla delantera), inclinar el torso hacia adelante.",
-      "seguridad": "Si tenés molestias de rodilla, probá la variante 'zancada estática' (sin desplazamiento) para controlar mejor el equilibrio."
-    }
+      "seguridad": "Si tenés molestias de rodilla, probá la variante 'zancada estática' (sin desplazamiento)."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "La rodilla delantera no debe pasar mucho la punta del pie.",
+      "Mantené el core activo para no perder el equilibrio."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Zancadas%20%28Lunges%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Zancadas%20%28Lunges%29%20ejercicio"
   },
   {
-    "id": "piernas_3", "nombre": "Prensa de Piernas (Leg Press)", "grupo_muscular": "Piernas",
-    "descripcion": "Variante guiada que permite cargar volumen alto de cuádriceps y glúteo con menor exigencia de estabilización.",
-    "video_url": "https://www.youtube.com/results?search_query=prensa+de+piernas+tecnica",
+    "id": "piernas_3",
+    "nombre": "Prensa de Piernas (Leg Press)",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Pies al ancho de hombros en la plataforma, espalda baja en contacto total con el respaldo, descenso controlado sin bloquear rodillas arriba.",
+    "explicacion": "Pies al ancho de hombros en la plataforma, espalda baja en contacto total con el respaldo, descenso controlado sin bloquear rodillas arriba.",
     "tecnica": {
       "postura": "Pies al ancho de hombros en la plataforma, espalda baja en contacto total con el respaldo, descenso controlado sin bloquear rodillas arriba.",
       "errores_comunes": "Despegar la espalda baja del respaldo en el descenso profundo, bloquear violentamente las rodillas al extender.",
-      "seguridad": "No lleves las rodillas hasta el pecho si eso te hace despegar la zona lumbar: limitá el rango a lo que tu movilidad permite con seguridad."
-    }
+      "seguridad": "No lleves las rodillas hasta el pecho si eso te hace despegar la zona lumbar: limitá el rango a lo seguro."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Cambiá la posición de los pies para enfatizar distintas zonas (arriba=glúteo, abajo=cuádriceps).",
+      "No bloquees de golpe las rodillas."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Prensa%20de%20Piernas%20%28Leg%20Press%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Prensa%20de%20Piernas%20%28Leg%20Press%29%20ejercicio"
   },
   {
-    "id": "piernas_4", "nombre": "Curl Femoral en Máquina", "grupo_muscular": "Piernas",
-    "descripcion": "Ejercicio de aislamiento para isquiotibiales, complementario a los movimientos de cuádriceps.",
-    "video_url": "https://www.youtube.com/results?search_query=curl+femoral+maquina+tecnica",
+    "id": "piernas_4",
+    "nombre": "Curl Femoral en Máquina",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Cadera bien apoyada contra el banco, flexión de rodilla controlada llevando el talón hacia el glúteo.",
+    "explicacion": "Cadera bien apoyada contra el banco, flexión de rodilla controlada llevando el talón hacia el glúteo.",
     "tecnica": {
       "postura": "Cadera bien apoyada contra el banco, flexión de rodilla controlada llevando el talón hacia el glúteo.",
       "errores_comunes": "Levantar la cadera del banco para 'ayudar' con más peso, hacer el movimiento con impulso brusco.",
-      "seguridad": "Priorizá el control en la fase negativa (de vuelta); es donde se genera más estímulo y menos riesgo de lesión por impulso."
-    }
+      "seguridad": "Priorizá el control en la fase negativa (de vuelta); ahí se genera más estímulo y menos riesgo de lesión."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Apretá fuerte el isquiotibial arriba.",
+      "Movimiento lento, sin rebotes."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Curl%20Femoral%20en%20M%C3%A1quina%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Curl%20Femoral%20en%20M%C3%A1quina%20ejercicio"
   },
   {
-    "id": "piernas_5", "nombre": "Elevación de Talones (Gemelos de Pie)", "grupo_muscular": "Piernas",
-    "descripcion": "Ejercicio de aislamiento para gastrocnemio (pantorrilla).",
-    "video_url": "https://www.youtube.com/results?search_query=elevacion+de+talones+gemelos+tecnica",
+    "id": "piernas_5",
+    "nombre": "Elevación de Talones (Gemelos de Pie)",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Puntas de pie apoyadas en un escalón, subida hasta la máxima elevación, bajada controlada hasta sentir el estiramiento.",
+    "explicacion": "Puntas de pie apoyadas en un escalón, subida hasta la máxima elevación, bajada controlada hasta sentir el estiramiento.",
     "tecnica": {
-      "postura": "Puntas de pie apoyadas en un escalón o plataforma, subida hasta la máxima elevación, bajada controlada hasta sentir el estiramiento.",
+      "postura": "Puntas de pie apoyadas en un escalón, subida hasta la máxima elevación, bajada controlada hasta sentir el estiramiento.",
       "errores_comunes": "Hacer el movimiento muy rápido perdiendo el rango completo, no llegar a la fase de estiramiento abajo.",
       "seguridad": "Sostenete de un soporte fijo para no perder el equilibrio, especialmente al usar peso adicional."
-    }
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Pausá 1 segundo en la posición más alta.",
+      "Bajá lento hasta sentir el estiramiento completo."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20de%20Talones%20%28Gemelos%20de%20Pie%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Elevaci%C3%B3n%20de%20Talones%20%28Gemelos%20de%20Pie%29%20ejercicio"
   },
-
   {
-    "id": "hombros_1", "nombre": "Press Militar con Mancuernas", "grupo_muscular": "Hombros",
-    "descripcion": "Ejercicio de empuje vertical que desarrolla el deltoides en su totalidad.",
-    "video_url": "https://www.youtube.com/results?search_query=press+militar+mancuernas+tecnica",
+    "id": "piernas_6",
+    "nombre": "Sentadilla Búlgara",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Pie trasero apoyado sobre un banco, pie delantero adelante, descenso controlado flexionando la rodilla delantera.",
+    "explicacion": "Pie trasero apoyado sobre un banco, pie delantero adelante, descenso controlado flexionando la rodilla delantera.",
+    "tecnica": {
+      "postura": "Pie trasero apoyado sobre un banco, pie delantero adelante, descenso controlado flexionando la rodilla delantera.",
+      "errores_comunes": "Apoyar demasiado peso en la pierna trasera, inclinar el torso hacia adelante en exceso.",
+      "seguridad": "Es un ejercicio de equilibrio exigente: empezá sin peso hasta dominar la estabilidad."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "El 80-90% del peso debe ir en la pierna delantera.",
+      "Mantené el torso lo más vertical posible."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20B%C3%BAlgara%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Sentadilla%20B%C3%BAlgara%20ejercicio"
+  },
+  {
+    "id": "piernas_7",
+    "nombre": "Peso Muerto Convencional",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Barra sobre la mitad del pie, espalda neutra, empuje con piernas y cadera al mismo tiempo para levantar la barra del suelo.",
+    "explicacion": "Barra sobre la mitad del pie, espalda neutra, empuje con piernas y cadera al mismo tiempo para levantar la barra del suelo.",
+    "tecnica": {
+      "postura": "Barra sobre la mitad del pie, espalda neutra, empuje con piernas y cadera al mismo tiempo para levantar la barra del suelo.",
+      "errores_comunes": "Redondear la espalda baja, alejar la barra del cuerpo, levantar la cadera antes que los hombros.",
+      "seguridad": "Es uno de los ejercicios más técnicos: dominá primero el peso muerto rumano y la bisagra de cadera antes de cargar peso alto."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "La barra debe subir pegada a las piernas.",
+      "Empujá el suelo con los pies, no 'tires' solo con la espalda."
+    ],
+    "grupos_complementarios": [
+      "Espalda",
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Peso%20Muerto%20Convencional%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Peso%20Muerto%20Convencional%20ejercicio"
+  },
+  {
+    "id": "piernas_8",
+    "nombre": "Extensión de Cuádriceps en Máquina",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Espalda apoyada en el respaldo, extender la rodilla hasta casi la extensión completa sin bloquear con violencia.",
+    "explicacion": "Espalda apoyada en el respaldo, extender la rodilla hasta casi la extensión completa sin bloquear con violencia.",
+    "tecnica": {
+      "postura": "Espalda apoyada en el respaldo, extender la rodilla hasta casi la extensión completa sin bloquear con violencia.",
+      "errores_comunes": "Usar impulso, bajar el peso muy rápido sin control.",
+      "seguridad": "Evitá el bloqueo brusco de rodilla arriba; controlá ambas fases del movimiento."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Apretá el cuádriceps en la extensión máxima.",
+      "Ajustá el respaldo para que la rodilla quede alineada con el eje de la máquina."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Extensi%C3%B3n%20de%20Cu%C3%A1driceps%20en%20M%C3%A1quina%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Extensi%C3%B3n%20de%20Cu%C3%A1driceps%20en%20M%C3%A1quina%20ejercicio"
+  },
+  {
+    "id": "piernas_9",
+    "nombre": "Hip Thrust",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Espalda alta apoyada en un banco, barra sobre la cadera, empujar la cadera hacia arriba apretando el glúteo en la posición alta.",
+    "explicacion": "Espalda alta apoyada en un banco, barra sobre la cadera, empujar la cadera hacia arriba apretando el glúteo en la posición alta.",
+    "tecnica": {
+      "postura": "Espalda alta apoyada en un banco, barra sobre la cadera, empujar la cadera hacia arriba apretando el glúteo en la posición alta.",
+      "errores_comunes": "Hiperextender la zona lumbar arriba en vez de usar el glúteo, no completar el rango.",
+      "seguridad": "Usá una almohadilla para la barra; es uno de los ejercicios más efectivos y seguros para glúteo si se ejecuta con control."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Apretá el glúteo con fuerza en la posición alta y pausá 1 seg.",
+      "El mentón debe ir levemente hacia el pecho arriba."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Hip%20Thrust%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Hip%20Thrust%20ejercicio"
+  },
+  {
+    "id": "piernas_10",
+    "nombre": "Sentadilla Goblet",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Sostener una mancuerna o kettlebell contra el pecho, descenso entre las piernas manteniendo el torso erguido.",
+    "explicacion": "Sostener una mancuerna o kettlebell contra el pecho, descenso entre las piernas manteniendo el torso erguido.",
+    "tecnica": {
+      "postura": "Sostener una mancuerna o kettlebell contra el pecho, descenso entre las piernas manteniendo el torso erguido.",
+      "errores_comunes": "Dejar caer el peso hacia adelante, no bajar lo suficiente.",
+      "seguridad": "Excelente variante para aprender el patrón de sentadilla con buena postura antes de pasar a barra."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Los codos pueden 'guiarse' entre las rodillas en el fondo.",
+      "Mantené los talones siempre en el suelo."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20Goblet%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Sentadilla%20Goblet%20ejercicio"
+  },
+  {
+    "id": "hombros_1",
+    "nombre": "Press Militar con Mancuernas",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Mancuernas a la altura de los hombros, core activo, empuje hacia arriba sin arquear excesivamente la espalda baja.",
+    "explicacion": "Mancuernas a la altura de los hombros, core activo, empuje hacia arriba sin arquear excesivamente la espalda baja.",
     "tecnica": {
       "postura": "Mancuernas a la altura de los hombros, core activo, empuje hacia arriba sin arquear excesivamente la espalda baja.",
-      "errores_comunes": "Arquear demasiado la zona lumbar para 'ayudar' al empuje, bajar las mancuernas más allá de la línea de los hombros.",
-      "seguridad": "Si tenés molestias de hombro al levantar por encima de la cabeza, probá la variante sentado con respaldo para mayor estabilidad."
-    }
+      "errores_comunes": "Arquear demasiado la zona lumbar, bajar las mancuernas más allá de la línea de los hombros.",
+      "seguridad": "Si tenés molestias al levantar por encima de la cabeza, probá la variante sentado con respaldo."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Exhalá al empujar hacia arriba.",
+      "No bloquees los codos con violencia arriba."
+    ],
+    "grupos_complementarios": [
+      "Pecho",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20Militar%20con%20Mancuernas%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20Militar%20con%20Mancuernas%20ejercicio"
   },
   {
-    "id": "hombros_2", "nombre": "Elevaciones Laterales", "grupo_muscular": "Hombros",
-    "descripcion": "Ejercicio de aislamiento para el deltoides lateral (da ancho de hombros).",
-    "video_url": "https://www.youtube.com/results?search_query=elevaciones+laterales+tecnica",
+    "id": "hombros_2",
+    "nombre": "Elevaciones Laterales",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Brazos con ligera flexión de codo, elevación lateral hasta la altura del hombro, bajada controlada.",
+    "explicacion": "Brazos con ligera flexión de codo, elevación lateral hasta la altura del hombro, bajada controlada.",
     "tecnica": {
       "postura": "Brazos con ligera flexión de codo, elevación lateral hasta la altura del hombro, bajada controlada.",
-      "errores_comunes": "Usar impulso del torso (balanceo), subir los brazos por encima de la altura del hombro (involucra trapecio en exceso).",
-      "seguridad": "Usá un peso que te permita controlar todo el recorrido sin balancear el cuerpo; es un ejercicio donde menos peso bien ejecutado rinde más."
-    }
+      "errores_comunes": "Usar impulso del torso (balanceo), subir los brazos por encima de la altura del hombro.",
+      "seguridad": "Usá un peso que te permita controlar todo el recorrido sin balancear el cuerpo."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Imaginá que estás 'vertiendo agua' al subir (rotación leve de muñeca).",
+      "Menos peso bien ejecutado rinde más acá."
+    ],
+    "grupos_complementarios": [
+      "Pecho",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Elevaciones%20Laterales%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Elevaciones%20Laterales%20ejercicio"
   },
   {
-    "id": "hombros_3", "nombre": "Elevaciones Posteriores (Pájaros)", "grupo_muscular": "Hombros",
-    "descripcion": "Ejercicio de aislamiento para el deltoides posterior, clave para la salud del hombro.",
-    "video_url": "https://www.youtube.com/results?search_query=elevaciones+posteriores+pajaros+tecnica",
+    "id": "hombros_3",
+    "nombre": "Elevaciones Posteriores (Pájaros)",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Torso inclinado hacia adelante casi paralelo al suelo, brazos con ligera flexión, elevar hacia los lados apretando los omóplatos.",
+    "explicacion": "Torso inclinado hacia adelante casi paralelo al suelo, brazos con ligera flexión, elevar hacia los lados apretando los omóplatos.",
     "tecnica": {
       "postura": "Torso inclinado hacia adelante casi paralelo al suelo, brazos con ligera flexión, elevar hacia los lados apretando los omóplatos.",
       "errores_comunes": "Redondear la espalda alta, usar impulso de torso en vez de hombro posterior.",
-      "seguridad": "Apoyá el pecho en un banco inclinado si te cuesta mantener la espalda recta en la posición inclinada."
-    }
+      "seguridad": "Apoyá el pecho en un banco inclinado si te cuesta mantener la espalda recta."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Pensá en 'separar los omóplatos' al elevar.",
+      "Movimiento lento, sin rebote."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Elevaciones%20Posteriores%20%28P%C3%A1jaros%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Elevaciones%20Posteriores%20%28P%C3%A1jaros%29%20ejercicio"
   },
   {
-    "id": "hombros_4", "nombre": "Press Arnold", "grupo_muscular": "Hombros",
-    "descripcion": "Variante de press con rotación que trabaja las tres porciones del deltoides.",
-    "video_url": "https://www.youtube.com/results?search_query=press+arnold+tecnica",
+    "id": "hombros_4",
+    "nombre": "Press Arnold",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Comenzar con mancuernas frente a la cara, palmas hacia el cuerpo, rotar y empujar hacia arriba terminando con palmas hacia adelante.",
+    "explicacion": "Comenzar con mancuernas frente a la cara, palmas hacia el cuerpo, rotar y empujar hacia arriba terminando con palmas hacia adelante.",
     "tecnica": {
       "postura": "Comenzar con mancuernas frente a la cara, palmas hacia el cuerpo, rotar y empujar hacia arriba terminando con palmas hacia adelante.",
       "errores_comunes": "Hacer la rotación demasiado rápido perdiendo el control, arquear la espalda al empujar.",
-      "seguridad": "Es un ejercicio más técnico; dominá primero el press militar simple antes de incorporar la rotación con peso alto."
-    }
+      "seguridad": "Dominá primero el press militar simple antes de incorporar la rotación con peso alto."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Hacé la rotación de forma fluida, no abrupta.",
+      "Mantené el core firme durante todo el movimiento."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20Arnold%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20Arnold%20ejercicio"
   },
   {
-    "id": "hombros_5", "nombre": "Face Pull en Polea", "grupo_muscular": "Hombros",
-    "descripcion": "Ejercicio de salud articular para el hombro posterior y rotadores externos.",
-    "video_url": "https://www.youtube.com/results?search_query=face+pull+polea+tecnica",
+    "id": "hombros_5",
+    "nombre": "Face Pull en Polea",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Cuerda a la altura de la cara, tirar separando las manos hacia los lados de la cabeza, codos altos.",
+    "explicacion": "Cuerda a la altura de la cara, tirar separando las manos hacia los lados de la cabeza, codos altos.",
     "tecnica": {
       "postura": "Cuerda a la altura de la cara, tirar separando las manos hacia los lados de la cabeza, codos altos.",
       "errores_comunes": "Tirar muy bajo (hacia el pecho), usar demasiado peso perdiendo la forma.",
-      "seguridad": "Este ejercicio es preventivo: priorizá poco peso y mucha técnica; es ideal para equilibrar el trabajo de empuje de pecho/hombro."
-    }
+      "seguridad": "Es preventivo: priorizá poco peso y mucha técnica; equilibra el trabajo de empuje de pecho/hombro."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Apuntá los pulgares hacia atrás al final del movimiento.",
+      "Ideal para hacer antes del entrenamiento de pecho/hombro."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Face%20Pull%20en%20Polea%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Face%20Pull%20en%20Polea%20ejercicio"
   },
-
   {
-    "id": "brazos_1", "nombre": "Curl de Bíceps con Barra", "grupo_muscular": "Brazos",
-    "descripcion": "Ejercicio clásico de aislamiento para el bíceps.",
-    "video_url": "https://www.youtube.com/results?search_query=curl+biceps+barra+tecnica",
+    "id": "hombros_6",
+    "nombre": "Press Militar con Barra",
+    "grupo_muscular": "Hombros",
+    "descripcion": "De pie, barra a la altura de la clavícula, empuje vertical hasta extender completamente los brazos sobre la cabeza.",
+    "explicacion": "De pie, barra a la altura de la clavícula, empuje vertical hasta extender completamente los brazos sobre la cabeza.",
+    "tecnica": {
+      "postura": "De pie, barra a la altura de la clavícula, empuje vertical hasta extender completamente los brazos sobre la cabeza.",
+      "errores_comunes": "Arquear excesivamente la espalda baja, empujar la barra hacia adelante en vez de recto hacia arriba.",
+      "seguridad": "Apretá glúteos y abdomen para estabilizar la zona lumbar durante el empuje."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "La barra debe pasar cerca de la cara en su trayectoria.",
+      "Terminá con la cabeza levemente adelantada bajo la barra arriba."
+    ],
+    "grupos_complementarios": [
+      "Pecho",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20Militar%20con%20Barra%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20Militar%20con%20Barra%20ejercicio"
+  },
+  {
+    "id": "hombros_7",
+    "nombre": "Elevación Frontal con Mancuernas",
+    "grupo_muscular": "Hombros",
+    "descripcion": "De pie, mancuernas al frente de los muslos, elevar uno o ambos brazos hasta la altura del hombro con leve flexión de codo.",
+    "explicacion": "De pie, mancuernas al frente de los muslos, elevar uno o ambos brazos hasta la altura del hombro con leve flexión de codo.",
+    "tecnica": {
+      "postura": "De pie, mancuernas al frente de los muslos, elevar uno o ambos brazos hasta la altura del hombro con leve flexión de codo.",
+      "errores_comunes": "Usar impulso de espalda baja, subir más alto de la línea del hombro.",
+      "seguridad": "Alterná los brazos si te resulta difícil mantener la zona lumbar estable con ambos a la vez."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Controlá especialmente la bajada.",
+      "No balancees el cuerpo para ayudar a subir el peso."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20Frontal%20con%20Mancuernas%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Elevaci%C3%B3n%20Frontal%20con%20Mancuernas%20ejercicio"
+  },
+  {
+    "id": "hombros_8",
+    "nombre": "Remo al Cuello (Upright Row)",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Agarre cerrado en la barra, tirar verticalmente hacia arriba hasta la altura del pecho/clavícula, codos guiando el movimiento.",
+    "explicacion": "Agarre cerrado en la barra, tirar verticalmente hacia arriba hasta la altura del pecho/clavícula, codos guiando el movimiento.",
+    "tecnica": {
+      "postura": "Agarre cerrado en la barra, tirar verticalmente hacia arriba hasta la altura del pecho/clavícula, codos guiando el movimiento.",
+      "errores_comunes": "Subir la barra demasiado alto (riesgo de pinzamiento de hombro), usar agarre muy cerrado.",
+      "seguridad": "Si sentís molestia en el hombro, usá un agarre más ancho o reemplazá por elevaciones laterales."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Los codos siempre van por encima de las manos.",
+      "No subas más allá de la altura del pecho."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Remo%20al%20Cuello%20%28Upright%20Row%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Remo%20al%20Cuello%20%28Upright%20Row%29%20ejercicio"
+  },
+  {
+    "id": "hombros_9",
+    "nombre": "Press en Máquina de Hombro",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Espalda apoyada en el respaldo, agarres a la altura del hombro, empuje vertical guiado por la máquina.",
+    "explicacion": "Espalda apoyada en el respaldo, agarres a la altura del hombro, empuje vertical guiado por la máquina.",
+    "tecnica": {
+      "postura": "Espalda apoyada en el respaldo, agarres a la altura del hombro, empuje vertical guiado por la máquina.",
+      "errores_comunes": "Despegar la espalda del respaldo, usar rango parcial de movimiento.",
+      "seguridad": "Buena opción para trabajar hombro con menor exigencia de estabilización que con peso libre."
+    },
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "6-10",
+    "tips": [
+      "Ajustá el asiento para que el agarre quede a la altura correcta del hombro.",
+      "Exhalá al empujar."
+    ],
+    "grupos_complementarios": [
+      "Pecho",
+      "Brazos"
+    ],
+    "peso_recomendado": {
+      "principiante": "20-30% de la pila de pesos",
+      "intermedio": "40-60% de la pila de pesos",
+      "avanzado": "70%+ de la pila de pesos"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20en%20M%C3%A1quina%20de%20Hombro%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20en%20M%C3%A1quina%20de%20Hombro%20ejercicio"
+  },
+  {
+    "id": "hombros_10",
+    "nombre": "Encogimientos de Hombros (Shrugs)",
+    "grupo_muscular": "Hombros",
+    "descripcion": "De pie con mancuernas o barra a los lados, elevar los hombros hacia las orejas sin flexionar los codos.",
+    "explicacion": "De pie con mancuernas o barra a los lados, elevar los hombros hacia las orejas sin flexionar los codos.",
+    "tecnica": {
+      "postura": "De pie con mancuernas o barra a los lados, elevar los hombros hacia las orejas sin flexionar los codos.",
+      "errores_comunes": "Rotar los hombros en círculo (no es necesario y puede generar molestia), usar impulso de rodillas.",
+      "seguridad": "Es un ejercicio de trapecio, no de hombro: subí solo verticalmente, sin rotación."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Pausá 1 segundo arriba apretando el trapecio.",
+      "Bajá controlado, sin dejar caer el peso de golpe."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Encogimientos%20de%20Hombros%20%28Shrugs%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Encogimientos%20de%20Hombros%20%28Shrugs%29%20ejercicio"
+  },
+  {
+    "id": "brazos_1",
+    "nombre": "Curl de Bíceps con Barra",
+    "grupo_muscular": "Brazos",
+    "descripcion": "De pie, codos pegados al torso, flexión completa llevando la barra hacia los hombros, bajada controlada.",
+    "explicacion": "De pie, codos pegados al torso, flexión completa llevando la barra hacia los hombros, bajada controlada.",
     "tecnica": {
       "postura": "De pie, codos pegados al torso, flexión completa llevando la barra hacia los hombros, bajada controlada.",
       "errores_comunes": "Balancear el torso hacia atrás para ayudar a subir el peso, mover los codos hacia adelante durante la subida.",
-      "seguridad": "Si notás dolor de muñeca, probá con barra Z (curva), que reduce la tensión en la articulación de la muñeca."
-    }
+      "seguridad": "Si notás dolor de muñeca, probá con barra Z (curva), que reduce la tensión en la articulación."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Los codos no se mueven, solo el antebrazo.",
+      "Controlá especialmente la bajada (fase negativa)."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Curl%20de%20B%C3%ADceps%20con%20Barra%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Curl%20de%20B%C3%ADceps%20con%20Barra%20ejercicio"
   },
   {
-    "id": "brazos_2", "nombre": "Press Francés (Extensión de Tríceps)", "grupo_muscular": "Brazos",
-    "descripcion": "Ejercicio de aislamiento para la cabeza larga del tríceps.",
-    "video_url": "https://www.youtube.com/results?search_query=press+frances+tecnica",
+    "id": "brazos_2",
+    "nombre": "Press Francés (Extensión de Tríceps)",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Acostado, brazos extendidos sobre el pecho, flexionar solo el codo bajando el peso hacia la frente.",
+    "explicacion": "Acostado, brazos extendidos sobre el pecho, flexionar solo el codo bajando el peso hacia la frente.",
     "tecnica": {
       "postura": "Acostado, brazos extendidos sobre el pecho, flexionar solo el codo bajando el peso hacia la frente.",
       "errores_comunes": "Mover los hombros/codos hacia adelante y atrás en vez de mantenerlos fijos, bajar el peso demasiado rápido.",
-      "seguridad": "Controlá especialmente la bajada cerca de la cabeza; usá un peso que puedas frenar en cualquier punto del recorrido."
-    }
+      "seguridad": "Controlá especialmente la bajada cerca de la cabeza; usá un peso que puedas frenar en cualquier punto."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Los codos apuntan al techo durante todo el movimiento.",
+      "Empezá con poco peso para dominar la trayectoria."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Press%20Franc%C3%A9s%20%28Extensi%C3%B3n%20de%20Tr%C3%ADceps%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Press%20Franc%C3%A9s%20%28Extensi%C3%B3n%20de%20Tr%C3%ADceps%29%20ejercicio"
   },
   {
-    "id": "brazos_3", "nombre": "Curl Martillo con Mancuernas", "grupo_muscular": "Brazos",
-    "descripcion": "Variante de curl que trabaja bíceps y braquial (da grosor al brazo).",
-    "video_url": "https://www.youtube.com/results?search_query=curl+martillo+mancuernas+tecnica",
+    "id": "brazos_3",
+    "nombre": "Curl Martillo con Mancuernas",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Agarre neutro (palmas enfrentadas), codos fijos al torso, flexión controlada de codo.",
+    "explicacion": "Agarre neutro (palmas enfrentadas), codos fijos al torso, flexión controlada de codo.",
     "tecnica": {
       "postura": "Agarre neutro (palmas enfrentadas), codos fijos al torso, flexión controlada de codo.",
       "errores_comunes": "Rotar la muñeca durante el movimiento, usar impulso de hombro.",
-      "seguridad": "Es una variante más amigable para la muñeca que el curl tradicional; buena opción si sentís molestias con el agarre supino."
-    }
+      "seguridad": "Es más amigable para la muñeca que el curl tradicional; buena opción si sentís molestias con agarre supino."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Mantené el agarre neutro todo el recorrido.",
+      "Alterná brazos si te cuesta controlar ambos a la vez."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Curl%20Martillo%20con%20Mancuernas%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Curl%20Martillo%20con%20Mancuernas%20ejercicio"
   },
   {
-    "id": "brazos_4", "nombre": "Fondos de Tríceps en Banco", "grupo_muscular": "Brazos",
-    "descripcion": "Ejercicio con el propio peso corporal enfocado en tríceps.",
-    "video_url": "https://www.youtube.com/results?search_query=fondos+triceps+banco+tecnica",
+    "id": "brazos_4",
+    "nombre": "Fondos de Tríceps en Banco",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Manos en el borde del banco, piernas extendidas o flexionadas según dificultad, descenso flexionando los codos hacia atrás.",
+    "explicacion": "Manos en el borde del banco, piernas extendidas o flexionadas según dificultad, descenso flexionando los codos hacia atrás.",
     "tecnica": {
       "postura": "Manos en el borde del banco, piernas extendidas o flexionadas según dificultad, descenso flexionando los codos hacia atrás.",
       "errores_comunes": "Bajar demasiado profundo sobrecargando el hombro, separar los codos hacia los lados.",
-      "seguridad": "Si sentís pinzamiento en el hombro, reducí el rango de descenso o flexioná más las rodillas para quitar carga."
-    }
+      "seguridad": "Si sentís pinzamiento en el hombro, reducí el rango o flexioná más las rodillas para quitar carga."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Los codos apuntan hacia atrás, no hacia los lados.",
+      "Cuanto más lejos los pies, mayor la dificultad."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Fondos%20de%20Tr%C3%ADceps%20en%20Banco%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Fondos%20de%20Tr%C3%ADceps%20en%20Banco%20ejercicio"
   },
   {
-    "id": "brazos_5", "nombre": "Extensión de Tríceps en Polea", "grupo_muscular": "Brazos",
-    "descripcion": "Ejercicio de aislamiento con tensión constante para el tríceps.",
-    "video_url": "https://www.youtube.com/results?search_query=extension+triceps+polea+tecnica",
+    "id": "brazos_5",
+    "nombre": "Extensión de Tríceps en Polea",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Codos fijos pegados al torso, extender el antebrazo hacia abajo sin mover el hombro.",
+    "explicacion": "Codos fijos pegados al torso, extender el antebrazo hacia abajo sin mover el hombro.",
     "tecnica": {
       "postura": "Codos fijos pegados al torso, extender el antebrazo hacia abajo sin mover el hombro.",
       "errores_comunes": "Despegar los codos del torso (le resta trabajo al tríceps), usar todo el cuerpo para empujar la barra.",
-      "seguridad": "Mantené una postura estable; este ejercicio es seguro para casi todos los niveles si se respeta la técnica de codos fijos."
-    }
+      "seguridad": "Es seguro para casi todos los niveles si se respeta la técnica de codos fijos."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Probá con cuerda en vez de barra para mayor rango.",
+      "Apretá el tríceps en la extensión completa."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20en%20Polea%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20en%20Polea%20ejercicio"
   },
-
   {
-    "id": "core_1", "nombre": "Plancha Abdominal (Plank)", "grupo_muscular": "Core",
-    "descripcion": "Ejercicio isométrico fundamental para la estabilidad del core.",
-    "video_url": "https://www.youtube.com/results?search_query=plancha+abdominal+tecnica",
+    "id": "brazos_6",
+    "nombre": "Curl en Banco Scott (Predicador)",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Brazos apoyados completamente sobre el banco inclinado, flexión de codo sin levantar los brazos del soporte.",
+    "explicacion": "Brazos apoyados completamente sobre el banco inclinado, flexión de codo sin levantar los brazos del soporte.",
+    "tecnica": {
+      "postura": "Brazos apoyados completamente sobre el banco inclinado, flexión de codo sin levantar los brazos del soporte.",
+      "errores_comunes": "Levantar los hombros/brazos del banco para ayudar a subir el peso, no completar la extensión abajo.",
+      "seguridad": "El apoyo del banco elimina el impulso de hombro: ideal para aislar bien el bíceps con poco riesgo."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "No completes la extensión total si te genera molestia en el codo.",
+      "Controlá la bajada lentamente."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Barra vacía (20kg) o 10-20kg por lado",
+      "intermedio": "30-50kg por lado",
+      "avanzado": "60kg+ por lado, progresar según técnica"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Curl%20en%20Banco%20Scott%20%28Predicador%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Curl%20en%20Banco%20Scott%20%28Predicador%29%20ejercicio"
+  },
+  {
+    "id": "brazos_7",
+    "nombre": "Curl Concentrado",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Sentado, codo apoyado contra la parte interna del muslo, flexión completa de codo con control total.",
+    "explicacion": "Sentado, codo apoyado contra la parte interna del muslo, flexión completa de codo con control total.",
+    "tecnica": {
+      "postura": "Sentado, codo apoyado contra la parte interna del muslo, flexión completa de codo con control total.",
+      "errores_comunes": "Usar impulso del torso, no apoyar bien el codo (pierde estabilidad).",
+      "seguridad": "Es de los ejercicios de bíceps más aislados: usá poco peso y mucho control."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Apretá el bíceps con fuerza en la posición más alta.",
+      "Mirá el movimiento para mejorar la conexión mente-músculo."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Curl%20Concentrado%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Curl%20Concentrado%20ejercicio"
+  },
+  {
+    "id": "brazos_8",
+    "nombre": "Patada de Tríceps (Kickback)",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Torso inclinado hacia adelante, brazo con codo fijo a 90° pegado al torso, extender el antebrazo hacia atrás.",
+    "explicacion": "Torso inclinado hacia adelante, brazo con codo fijo a 90° pegado al torso, extender el antebrazo hacia atrás.",
+    "tecnica": {
+      "postura": "Torso inclinado hacia adelante, brazo con codo fijo a 90° pegado al torso, extender el antebrazo hacia atrás.",
+      "errores_comunes": "Mover el hombro/codo durante la extensión, usar impulso.",
+      "seguridad": "Mantené el codo siempre fijo y alto, paralelo al torso, durante todo el movimiento."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Apretá el tríceps en la extensión completa.",
+      "Usá poco peso: es un ejercicio de aislamiento puro."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Patada%20de%20Tr%C3%ADceps%20%28Kickback%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Patada%20de%20Tr%C3%ADceps%20%28Kickback%29%20ejercicio"
+  },
+  {
+    "id": "brazos_9",
+    "nombre": "Curl en Polea Baja",
+    "grupo_muscular": "Brazos",
+    "descripcion": "De pie frente a la polea baja, codos fijos al torso, flexión controlada llevando la barra hacia los hombros.",
+    "explicacion": "De pie frente a la polea baja, codos fijos al torso, flexión controlada llevando la barra hacia los hombros.",
+    "tecnica": {
+      "postura": "De pie frente a la polea baja, codos fijos al torso, flexión controlada llevando la barra hacia los hombros.",
+      "errores_comunes": "Balancear el torso, no controlar la fase de bajada del peso.",
+      "seguridad": "La polea ofrece tensión constante en todo el recorrido, a diferencia de la mancuerna o barra libre."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Mantené los codos pegados al cuerpo todo el tiempo.",
+      "Probá distintos agarres (barra recta, cuerda, agarre EZ)."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Curl%20en%20Polea%20Baja%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Curl%20en%20Polea%20Baja%20ejercicio"
+  },
+  {
+    "id": "brazos_10",
+    "nombre": "Extensión de Tríceps sobre la Cabeza con Mancuerna",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Sentado o de pie, mancuerna sostenida con ambas manos detrás de la cabeza, extender los brazos hacia arriba.",
+    "explicacion": "Sentado o de pie, mancuerna sostenida con ambas manos detrás de la cabeza, extender los brazos hacia arriba.",
+    "tecnica": {
+      "postura": "Sentado o de pie, mancuerna sostenida con ambas manos detrás de la cabeza, extender los brazos hacia arriba.",
+      "errores_comunes": "Abrir demasiado los codos hacia los lados, bajar el peso muy rápido cerca de la cabeza.",
+      "seguridad": "Controlá especialmente la bajada cerca de la nuca; empezá con poco peso."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "tips": [
+      "Los codos apuntan hacia adelante, cerca de las orejas.",
+      "Mantené el core firme para no arquear la espalda."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "peso_recomendado": {
+      "principiante": "4-8kg por mancuerna",
+      "intermedio": "10-18kg por mancuerna",
+      "avanzado": "20kg+ por mancuerna"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20sobre%20la%20Cabeza%20con%20Mancuerna%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20sobre%20la%20Cabeza%20con%20Mancuerna%20ejercicio"
+  },
+  {
+    "id": "core_1",
+    "nombre": "Plancha Abdominal (Plank)",
+    "grupo_muscular": "Core",
+    "descripcion": "Antebrazos y puntas de pie apoyados, cuerpo en línea recta de cabeza a talones, ombligo activado hacia adentro.",
+    "explicacion": "Antebrazos y puntas de pie apoyados, cuerpo en línea recta de cabeza a talones, ombligo activado hacia adentro.",
     "tecnica": {
       "postura": "Antebrazos y puntas de pie apoyados, cuerpo en línea recta de cabeza a talones, ombligo activado hacia adentro.",
       "errores_comunes": "Dejar caer las caderas, elevar demasiado el glúteo, aguantar la respiración en vez de respirar normalmente.",
       "seguridad": "Si el abdomen se proyecta hacia afuera (doming) durante el ejercicio, bajá las rodillas al suelo de inmediato."
-    }
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Apretá glúteos y abdomen al mismo tiempo.",
+      "Respirá de forma normal, no aguantes el aire."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Plancha%20Abdominal%20%28Plank%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Plancha%20Abdominal%20%28Plank%29%20ejercicio"
   },
   {
-    "id": "core_2", "nombre": "Crunch Abdominal", "grupo_muscular": "Core",
-    "descripcion": "Ejercicio clásico de flexión de tronco para el recto abdominal.",
-    "video_url": "https://www.youtube.com/results?search_query=crunch+abdominal+tecnica",
+    "id": "core_2",
+    "nombre": "Crunch Abdominal",
+    "grupo_muscular": "Core",
+    "descripcion": "Acostado boca arriba, rodillas flexionadas, elevar el torso contrayendo el abdomen sin tirar del cuello con las manos.",
+    "explicacion": "Acostado boca arriba, rodillas flexionadas, elevar el torso contrayendo el abdomen sin tirar del cuello con las manos.",
     "tecnica": {
       "postura": "Acostado boca arriba, rodillas flexionadas, elevar el torso contrayendo el abdomen sin tirar del cuello con las manos.",
       "errores_comunes": "Tirar del cuello con las manos, hacer el movimiento muy rápido perdiendo la contracción.",
-      "seguridad": "Mantené el mentón separado del pecho (como sosteniendo una pelota chica bajo el cuello) para no forzar la cervical."
-    }
+      "seguridad": "Mantené el mentón separado del pecho (como sosteniendo una pelota chica bajo el cuello)."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Exhalá al subir, contrayendo el abdomen al máximo.",
+      "Movimiento corto y controlado, no necesitás sentarte completo."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Crunch%20Abdominal%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Crunch%20Abdominal%20ejercicio"
   },
   {
-    "id": "core_3", "nombre": "Elevación de Piernas Colgado", "grupo_muscular": "Core",
-    "descripcion": "Ejercicio avanzado de core que enfatiza el abdomen inferior.",
-    "video_url": "https://www.youtube.com/results?search_query=elevacion+de+piernas+colgado+tecnica",
+    "id": "core_3",
+    "nombre": "Elevación de Piernas Colgado",
+    "grupo_muscular": "Core",
+    "descripcion": "Colgado de la barra, elevar las piernas (rectas o flexionadas según nivel) controlando el balanceo del cuerpo.",
+    "explicacion": "Colgado de la barra, elevar las piernas (rectas o flexionadas según nivel) controlando el balanceo del cuerpo.",
     "tecnica": {
       "postura": "Colgado de la barra, elevar las piernas (rectas o flexionadas según nivel) controlando el balanceo del cuerpo.",
       "errores_comunes": "Usar impulso/balanceo en vez de fuerza abdominal, arquear la espalda baja al subir las piernas.",
-      "seguridad": "Si no tenés fuerza de agarre o core suficiente, empezá con la variante de rodillas flexionadas antes de piernas rectas."
-    }
+      "seguridad": "Si no tenés fuerza de agarre o core suficiente, empezá con la variante de rodillas flexionadas."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Exhalá al subir las piernas.",
+      "Controlá la bajada, no dejes que el balanceo haga el trabajo."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20de%20Piernas%20Colgado%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Elevaci%C3%B3n%20de%20Piernas%20Colgado%20ejercicio"
   },
   {
-    "id": "core_4", "nombre": "Russian Twist", "grupo_muscular": "Core",
-    "descripcion": "Ejercicio rotacional para los oblicuos.",
-    "video_url": "https://www.youtube.com/results?search_query=russian+twist+tecnica",
+    "id": "core_4",
+    "nombre": "Russian Twist",
+    "grupo_muscular": "Core",
+    "descripcion": "Sentado con torso inclinado hacia atrás, pies apoyados o elevados según dificultad, rotar el torso de lado a lado con control.",
+    "explicacion": "Sentado con torso inclinado hacia atrás, pies apoyados o elevados según dificultad, rotar el torso de lado a lado con control.",
     "tecnica": {
       "postura": "Sentado con torso inclinado hacia atrás, pies apoyados o elevados según dificultad, rotar el torso de lado a lado con control.",
       "errores_comunes": "Mover solo los brazos en vez de rotar el torso completo, hacer el movimiento demasiado rápido.",
-      "seguridad": "Si tenés molestias lumbares, mantené los pies apoyados en el suelo en vez de elevados, para reducir la exigencia en la zona baja de la espalda."
-    }
+      "seguridad": "Si tenés molestias lumbares, mantené los pies apoyados en el suelo en vez de elevados."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Rotá desde las costillas, no solo los brazos.",
+      "Agregá peso (disco o mancuerna) cuando domines la forma."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Russian%20Twist%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Russian%20Twist%20ejercicio"
   },
   {
-    "id": "core_5", "nombre": "Dead Bug", "grupo_muscular": "Core",
-    "descripcion": "Ejercicio de estabilidad y control motor para el core, muy usado también en rehabilitación.",
-    "video_url": "https://www.youtube.com/results?search_query=dead+bug+ejercicio+tecnica",
+    "id": "core_5",
+    "nombre": "Dead Bug",
+    "grupo_muscular": "Core",
+    "descripcion": "Acostado boca arriba, rodillas y brazos en 90°, extender un brazo y la pierna contraria simultáneamente sin despegar la espalda baja del suelo.",
+    "explicacion": "Acostado boca arriba, rodillas y brazos en 90°, extender un brazo y la pierna contraria simultáneamente sin despegar la espalda baja del suelo.",
     "tecnica": {
-      "postura": "Acostado boca arriba, rodillas y brazos en 90°, extender un brazo y la pierna contraria simultáneamente sin que la espalda baja se despegue del suelo.",
+      "postura": "Acostado boca arriba, rodillas y brazos en 90°, extender un brazo y la pierna contraria simultáneamente sin despegar la espalda baja del suelo.",
       "errores_comunes": "Despegar la zona lumbar del suelo, mover ambos lados al mismo tiempo en vez de alternar de forma controlada.",
-      "seguridad": "Es un ejercicio de bajo riesgo y muy recomendado para fortalecer el core sin cargar la espalda; ideal también para principiantes."
-    }
+      "seguridad": "Es de bajo riesgo y muy recomendado para fortalecer el core sin cargar la espalda; ideal también para principiantes."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "La espalda baja debe quedar pegada al piso todo el tiempo.",
+      "Movimiento lento y controlado, sin prisa."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Dead%20Bug%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Dead%20Bug%20ejercicio"
+  },
+  {
+    "id": "core_6",
+    "nombre": "Plancha Lateral",
+    "grupo_muscular": "Core",
+    "descripcion": "De costado, apoyado en un antebrazo, cuerpo en línea recta, cadera elevada del suelo y sostenida.",
+    "explicacion": "De costado, apoyado en un antebrazo, cuerpo en línea recta, cadera elevada del suelo y sostenida.",
+    "tecnica": {
+      "postura": "De costado, apoyado en un antebrazo, cuerpo en línea recta, cadera elevada del suelo y sostenida.",
+      "errores_comunes": "Dejar caer la cadera, rotar el torso hacia adelante o atrás.",
+      "seguridad": "Si te cuesta sostener, apoyá la rodilla de abajo en el suelo como variante más sencilla."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Apretá el oblicuo del lado que trabaja.",
+      "Mirá hacia adelante, no hacia el suelo."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Plancha%20Lateral%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Plancha%20Lateral%20ejercicio"
+  },
+  {
+    "id": "core_7",
+    "nombre": "Rueda Abdominal (Ab Wheel)",
+    "grupo_muscular": "Core",
+    "descripcion": "De rodillas, sostener la rueda con ambas manos, extender el cuerpo hacia adelante manteniendo el abdomen contraído, volver con control.",
+    "explicacion": "De rodillas, sostener la rueda con ambas manos, extender el cuerpo hacia adelante manteniendo el abdomen contraído, volver con control.",
+    "tecnica": {
+      "postura": "De rodillas, sostener la rueda con ambas manos, extender el cuerpo hacia adelante manteniendo el abdomen contraído, volver con control.",
+      "errores_comunes": "Arquear la espalda baja al extender demasiado, perder el control en la vuelta.",
+      "seguridad": "Es un ejercicio avanzado: practicá primero con un rango corto antes de extender completamente."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Cuanto más lejos extiendas, mayor la dificultad.",
+      "Apretá fuerte el abdomen durante todo el recorrido."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Rueda%20Abdominal%20%28Ab%20Wheel%29%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Rueda%20Abdominal%20%28Ab%20Wheel%29%20ejercicio"
+  },
+  {
+    "id": "core_8",
+    "nombre": "Mountain Climbers",
+    "grupo_muscular": "Core",
+    "descripcion": "Posición de plancha alta, llevar alternadamente las rodillas hacia el pecho de forma rápida pero controlada.",
+    "explicacion": "Posición de plancha alta, llevar alternadamente las rodillas hacia el pecho de forma rápida pero controlada.",
+    "tecnica": {
+      "postura": "Posición de plancha alta, llevar alternadamente las rodillas hacia el pecho de forma rápida pero controlada.",
+      "errores_comunes": "Dejar subir la cadera, perder la alineación de plancha durante el movimiento.",
+      "seguridad": "Si te cuesta mantener la forma a alta velocidad, hacelo más lento; la técnica importa más que la velocidad."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Mantené las caderas a la altura de los hombros todo el tiempo.",
+      "Sirve también como ejercicio cardiovascular."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Mountain%20Climbers%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Mountain%20Climbers%20ejercicio"
+  },
+  {
+    "id": "core_9",
+    "nombre": "Crunch en Polea Alta",
+    "grupo_muscular": "Core",
+    "descripcion": "De rodillas frente a la polea alta, cuerda detrás de la cabeza, flexionar el torso hacia abajo contrayendo el abdomen.",
+    "explicacion": "De rodillas frente a la polea alta, cuerda detrás de la cabeza, flexionar el torso hacia abajo contrayendo el abdomen.",
+    "tecnica": {
+      "postura": "De rodillas frente a la polea alta, cuerda detrás de la cabeza, flexionar el torso hacia abajo contrayendo el abdomen.",
+      "errores_comunes": "Tirar con los brazos en vez de flexionar con el abdomen, usar las caderas para el movimiento.",
+      "seguridad": "Las caderas se mantienen fijas; el movimiento es de flexión de columna torácica, no de cadera."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Pensá en 'enroscar' la columna, no en tirar con los brazos.",
+      "Exhalá al contraer hacia abajo."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Peso bajo, foco 100% en técnica",
+      "intermedio": "Peso medio, sentir el músculo trabajando",
+      "avanzado": "Peso alto manteniendo control total"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Crunch%20en%20Polea%20Alta%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Crunch%20en%20Polea%20Alta%20ejercicio"
+  },
+  {
+    "id": "core_10",
+    "nombre": "Elevación de Piernas Acostado",
+    "grupo_muscular": "Core",
+    "descripcion": "Acostado boca arriba, manos bajo la zona lumbar o a los lados, elevar las piernas rectas hasta 90° y bajar con control.",
+    "explicacion": "Acostado boca arriba, manos bajo la zona lumbar o a los lados, elevar las piernas rectas hasta 90° y bajar con control.",
+    "tecnica": {
+      "postura": "Acostado boca arriba, manos bajo la zona lumbar o a los lados, elevar las piernas rectas hasta 90° y bajar con control.",
+      "errores_comunes": "Dejar que la espalda baja se arquee al bajar las piernas, usar impulso.",
+      "seguridad": "Si sentís molestia lumbar, no bajes las piernas hasta el suelo: limitá el rango a lo que controles sin arquear la espalda."
+    },
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-20 o tiempo",
+    "tips": [
+      "Mantené la zona lumbar pegada al piso en todo momento.",
+      "Bajá las piernas más lento de lo que las subís."
+    ],
+    "grupos_complementarios": [],
+    "peso_recomendado": {
+      "principiante": "Solo el peso del cuerpo (o asistido con banda)",
+      "intermedio": "Peso del cuerpo, buscar más repeticiones",
+      "avanzado": "Agregar peso extra (chaleco o cinturón con disco)"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20de%20Piernas%20Acostado%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.tiktok.com/search?q=Elevaci%C3%B3n%20de%20Piernas%20Acostado%20ejercicio"
   }
 ]

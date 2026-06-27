@@ -11,6 +11,11 @@ let ejerciciosCatalogo = [];
 let rutinaBuilder = []; // [{dia, titulo, ejercicios:[...]}]
 let diaSeleccionado = 0;
 
+const ICONOS_GRUPO = {
+  "Pecho": "🎯", "Espalda": "🦴", "Piernas": "🦵",
+  "Hombros": "🤷", "Brazos": "💪", "Core": "🔥"
+};
+
 // ---------- REGLAS DE SINERGIA ENTRE GRUPOS MUSCULARES ----------
 // Para cada grupo, qué otros grupos conviene combinar el mismo día y por qué.
 const SINERGIA = {
@@ -137,8 +142,13 @@ function renderEjerciciosDelDia() {
     card.innerHTML = `
       <div class="d-flex justify-content-between align-items-start flex-wrap">
         <div>
-          <h5 class="mb-1">${ej.nombre}</h5>
-          <p class="mb-0 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps (${ej.tipo_entrenamiento || ""})</p>
+          <h5 class="mb-1">${ICONOS_GRUPO[ej.grupo_muscular] || "🏋️"} ${ej.nombre}</h5>
+          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps (${ej.tipo_entrenamiento || ""})</p>
+          ${ej.tips && ej.tips.length ? `<p class="mb-1 small">💡 ${ej.tips[0]}</p>` : ""}
+          <div class="d-flex gap-2 small">
+            ${ej.video_url ? `<a href="${ej.video_url}" target="_blank">▶ YouTube</a>` : ""}
+            ${ej.tiktok_url ? `<a href="${ej.tiktok_url}" target="_blank">🎵 TikTok</a>` : ""}
+          </div>
         </div>
         <button class="btn btn-sm btn-outline-light btnQuitar">Quitar</button>
       </div>
@@ -203,12 +213,30 @@ function limpiarInfoYSugerencias() {
 function mostrarInfoGrupo(ejercicio) {
   const info = document.getElementById("infoEjercicioElegido");
   info.classList.remove("d-none");
-  info.innerHTML = `💡 <strong>${ejercicio.nombre}</strong> entrena principalmente: <strong>${ejercicio.grupo_muscular}</strong>.`;
+
+  let html = `💡 <strong>${ejercicio.nombre}</strong> entrena principalmente: <strong>${ejercicio.grupo_muscular}</strong>.`;
+
+  if (ejercicio.series_recomendadas) {
+    html += `<br>📊 Sugerido por defecto: <strong>${ejercicio.series_recomendadas} series x ${ejercicio.repeticiones_recomendadas} reps</strong>.`;
+  }
+  if (ejercicio.peso_recomendado) {
+    html += `<br>🏋️ Peso orientativo — Principiante: ${ejercicio.peso_recomendado.principiante} · Intermedio: ${ejercicio.peso_recomendado.intermedio} · Avanzado: ${ejercicio.peso_recomendado.avanzado}.`;
+  }
+  if (ejercicio.tips && ejercicio.tips.length) {
+    html += `<br>💡 Tip: ${ejercicio.tips[0]}`;
+  }
+  html += `<br><div class="d-flex gap-3 mt-1">`;
+  if (ejercicio.video_url) html += `<a href="${ejercicio.video_url}" target="_blank">▶ Ver en YouTube</a>`;
+  if (ejercicio.tiktok_url) html += `<a href="${ejercicio.tiktok_url}" target="_blank">🎵 Ver en TikTok</a>`;
+  html += `</div>`;
+
+  info.innerHTML = html;
 }
 
 function mostrarSugerencias(ejercicio) {
   const cont = document.getElementById("sugerenciasEjercicio");
   const dia = rutinaBuilder[diaSeleccionado];
+  const idsYaEnDia = new Set(dia.ejercicios.map(e => e.ejercicio_id));
   const gruposYaEnDia = new Set(dia.ejercicios.map(e => e.grupo_muscular));
   gruposYaEnDia.add(ejercicio.grupo_muscular);
 
@@ -220,18 +248,35 @@ function mostrarSugerencias(ejercicio) {
     return;
   }
 
-  let html = `<p class="small text-secondary mb-2">Para completar bien este día, también podrías sumar:</p>`;
+  cont.innerHTML = `<p class="small text-secondary mb-2">Para completar bien este día, también podrías sumar (clic para agregar directo):</p>`;
+
   sugerenciasFiltradas.forEach(s => {
-    const ejemplos = ejerciciosCatalogo.filter(e => e.grupo_muscular === s.grupo).slice(0, 2);
+    const ejemplos = ejerciciosCatalogo.filter(e => e.grupo_muscular === s.grupo && !idsYaEnDia.has(e.id)).slice(0, 3);
     ejemplos.forEach(ej => {
-      html += `
-        <div class="ejercicio-card py-2 px-3 mb-2">
-          <strong>${ej.nombre}</strong> <span class="text-secondary small">(${s.grupo})</span>
-          <p class="small mb-0 text-secondary">📎 ${s.motivo}</p>
-        </div>`;
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "ejercicio-card py-2 px-3 mb-2 w-100 text-start border-0";
+      card.innerHTML = `
+        <strong>+ ${ej.nombre}</strong> <span class="text-secondary small">(${s.grupo})</span>
+        <p class="small mb-0 text-secondary">📎 ${s.motivo}</p>
+      `;
+      card.addEventListener("click", () => agregarEjercicioRapido(ej));
+      cont.appendChild(card);
     });
   });
-  cont.innerHTML = html;
+}
+
+// Agrega un ejercicio sugerido directamente, usando el preset actualmente
+// seleccionado en el panel (por defecto Hipertrofia), sin tener que volver
+// a elegir grupo/ejercicio manualmente.
+function agregarEjercicioRapido(ejercicio) {
+  agregarAlDia(ejercicio);
+  renderTabsDias();
+  renderEjerciciosDelDia();
+  // Recalcula sugerencias para seguir completando el día con el ejercicio principal elegido
+  const idActual = document.getElementById("selectEjercicio").value;
+  const principal = ejerciciosCatalogo.find(e => e.id === idActual);
+  if (principal) mostrarSugerencias(principal);
 }
 
 // ---------- PRESETS DE SERIES/REPS ----------
@@ -311,42 +356,73 @@ function actualizarExplicacionPersonalizada() {
 }
 
 // ---------- AGREGAR EJERCICIO AL DÍA ----------
-document.getElementById("btnAgregarEjercicio").addEventListener("click", () => {
-  const ejercicioId = document.getElementById("selectEjercicio").value;
-  const ejercicio = ejerciciosCatalogo.find(e => e.id === ejercicioId);
-  if (!ejercicio) return;
 
-  let series, reps, tipo;
+function obtenerSeriesRepsTipoActuales(ejercicio) {
   const preset = PRESETS.find(p => p.id === presetSeleccionado);
 
   if (preset.id === "personalizado") {
-    series = parseInt(document.getElementById("customSeries").value, 10);
-    reps = parseInt(document.getElementById("customReps").value, 10);
-    if (!series || !reps) {
-      alert("Completá series y repeticiones para continuar.");
-      return;
-    }
-    tipo = clasificarPorRepeticiones(reps).tipo;
-  } else {
-    series = preset.series;
-    reps = preset.reps;
-    tipo = preset.tipo;
+    const series = parseInt(document.getElementById("customSeries").value, 10);
+    const reps = parseInt(document.getElementById("customReps").value, 10);
+    if (!series || !reps) return null;
+    return { series, reps, tipo: clasificarPorRepeticiones(reps).tipo };
+  }
+
+  // Si el ejercicio tiene sus propias series/reps recomendadas, las usamos
+  // como base, salvo que el preset elegido sea explícitamente otro tipo.
+  if (preset.id === "hipertrofia" && ejercicio.series_recomendadas && ejercicio.repeticiones_recomendadas) {
+    return { series: ejercicio.series_recomendadas, reps: ejercicio.repeticiones_recomendadas, tipo: "Hipertrofia" };
+  }
+
+  return { series: preset.series, reps: preset.reps, tipo: preset.tipo };
+}
+
+function agregarAlDia(ejercicio) {
+  const valores = obtenerSeriesRepsTipoActuales(ejercicio);
+  if (!valores) {
+    alert("Completá series y repeticiones para continuar.");
+    return false;
   }
 
   const dia = rutinaBuilder[diaSeleccionado];
+
+  if (dia.ejercicios.some(e => e.ejercicio_id === ejercicio.id)) {
+    alert("Ese ejercicio ya está agregado a este día.");
+    return false;
+  }
+
   dia.ejercicios.push({
     ejercicio_id: ejercicio.id,
     nombre: ejercicio.nombre,
     grupo_muscular: ejercicio.grupo_muscular,
     descripcion: ejercicio.descripcion,
+    tecnica: ejercicio.tecnica || null,
+    tips: ejercicio.tips || [],
+    peso_recomendado: ejercicio.peso_recomendado || null,
     video_url: ejercicio.video_url,
-    series,
-    repeticiones: reps,
-    tipo_entrenamiento: tipo,
+    tiktok_url: ejercicio.tiktok_url || null,
+    series: valores.series,
+    repeticiones: valores.reps,
+    tipo_entrenamiento: valores.tipo,
     peso_actual: null
   });
+  return true;
+}
 
-  limpiarPanelAgregar();
+document.getElementById("btnAgregarEjercicio").addEventListener("click", () => {
+  const ejercicioId = document.getElementById("selectEjercicio").value;
+  const ejercicio = ejerciciosCatalogo.find(e => e.id === ejercicioId);
+  if (!ejercicio) return;
+
+  const agregado = agregarAlDia(ejercicio);
+  if (!agregado) return;
+
+  // Mantenemos el grupo seleccionado para que sea fácil agregar varios
+  // ejercicios del mismo o de otros grupos sin perder el contexto.
+  // Solo reseteamos la elección puntual del ejercicio.
+  document.getElementById("selectEjercicio").value = "";
+  document.getElementById("btnAgregarEjercicio").disabled = true;
+  limpiarInfoYSugerencias();
+
   renderTabsDias();
   renderEjerciciosDelDia();
 });

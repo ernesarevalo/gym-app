@@ -2,6 +2,11 @@
 
 const ADMIN_EMAIL = "ernestoarevalo@gmail.com";
 
+const ICONOS_GRUPO = {
+  "Pecho": "🎯", "Espalda": "🦴", "Piernas": "🦵",
+  "Hombros": "🤷", "Brazos": "💪", "Core": "🔥"
+};
+
 let usuarioActual = null;
 let datosUsuario = null;
 let rutinaActual = [];
@@ -157,10 +162,15 @@ function renderDia(idx) {
     card.innerHTML = `
       <div class="d-flex justify-content-between align-items-start flex-wrap">
         <div>
-          <h5>${ej.nombre}</h5>
+          <h5>${ICONOS_GRUPO[ej.grupo_muscular] || "🏋️"} ${ej.nombre}</h5>
           <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps ${ej.tipo_entrenamiento ? "(" + ej.tipo_entrenamiento + ")" : ""}</p>
           <p class="mb-1">${ej.descripcion || ""}</p>
-          <a href="${ej.video_url}" target="_blank" class="small">▶ Ver demostración</a>
+          ${ej.tips && ej.tips.length ? `<p class="mb-1 small">💡 ${ej.tips[0]}</p>` : ""}
+          ${ej.peso_recomendado ? `<p class="mb-1 small text-secondary">🏋️ Peso orientativo — Principiante: ${ej.peso_recomendado.principiante} · Intermedio: ${ej.peso_recomendado.intermedio} · Avanzado: ${ej.peso_recomendado.avanzado}</p>` : ""}
+          <div class="d-flex gap-3 small">
+            <a href="${ej.video_url}" target="_blank">▶ YouTube</a>
+            ${ej.tiktok_url ? `<a href="${ej.tiktok_url}" target="_blank">🎵 TikTok</a>` : ""}
+          </div>
           ${renderTecnica(ej, idGen)}
         </div>
         <button class="btn btn-sm btn-outline-light btnCambiar" data-idx="${ejIdx}">Cambiar ejercicio</button>
@@ -215,7 +225,10 @@ async function reemplazarEjercicio(nuevoEjercicio) {
     nombre: nuevoEjercicio.nombre,
     descripcion: nuevoEjercicio.descripcion,
     tecnica: nuevoEjercicio.tecnica || null,
+    tips: nuevoEjercicio.tips || [],
+    peso_recomendado: nuevoEjercicio.peso_recomendado || null,
     video_url: nuevoEjercicio.video_url,
+    tiktok_url: nuevoEjercicio.tiktok_url || null,
     grupo_muscular: nuevoEjercicio.grupo_muscular,
     peso_actual: null
   };
@@ -285,21 +298,24 @@ selectEjercicioProgreso.addEventListener("change", (e) => {
 });
 
 async function cargarGraficoProgreso(ejercicioId) {
+  // Nota: evitamos .orderBy() encadenado a .where() para no necesitar un
+  // índice compuesto en Firestore (eso generaba el error "query requires
+  // an index" en consola). Ordenamos en el cliente en su lugar.
   const snap = await db.collection("usuarios").doc(usuarioActual.uid)
     .collection("progreso")
     .where("ejercicio_id", "==", ejercicioId)
-    .orderBy("fecha", "asc")
     .get();
 
-  const labels = [];
-  const valores = [];
-
+  const registros = [];
   snap.forEach(doc => {
     const d = doc.data();
     const fecha = d.fecha ? d.fecha.toDate() : new Date();
-    labels.push(fecha.toLocaleDateString());
-    valores.push(d.peso);
+    registros.push({ fecha, peso: d.peso });
   });
+  registros.sort((a, b) => a.fecha - b.fecha);
+
+  const labels = registros.map(r => r.fecha.toLocaleDateString());
+  const valores = registros.map(r => r.peso);
 
   const ctx = document.getElementById("progresoChart");
   if (chartProgreso) chartProgreso.destroy();

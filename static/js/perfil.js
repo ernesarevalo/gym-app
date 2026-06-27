@@ -156,4 +156,29 @@ auth.onAuthStateChanged(async (user) => {
   }
   usuarioActual = user;
   await cargarPerfil();
+
+  if (user.email === "ernestoarevalo@gmail.com" && typeof RUTINA_GYMROUTINE !== "undefined") {
+    document.getElementById("zonaImportarGymroutine").classList.remove("d-none");
+  }
+});
+
+document.getElementById("btnImportarGymroutine")?.addEventListener("click", async () => {
+  if (!confirm("Esto va a reemplazar tu rutina actual por tu rutina real de gymroutine (5 días). Tu rutina actual se guarda como respaldo y podés volver a ella desde el dashboard. ¿Continuar?")) {
+    return;
+  }
+  try {
+    const snap = await db.collection("usuarios").doc(usuarioActual.uid).get();
+    const actual = snap.data() || {};
+
+    await db.collection("usuarios").doc(usuarioActual.uid).update({
+      rutina: RUTINA_GYMROUTINE,
+      rutina_anterior: actual.rutina || firebase.firestore.FieldValue.delete(),
+      "perfil.dias": RUTINA_GYMROUTINE.length
+    });
+
+    mostrarOk("¡Tu rutina de gymroutine fue importada! Yendo al dashboard...");
+    setTimeout(() => window.location.href = "/dashboard", 1200);
+  } catch (err) {
+    mostrarError("Error al importar: " + err.message);
+  }
 });
