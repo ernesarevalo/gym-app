@@ -55,6 +55,28 @@ def dashboard():
     return render_template("dashboard.html")
 
 
+@app.route("/perfil")
+def perfil():
+    """Datos personales, preferencias y accesos a disclaimers/rutina."""
+    return render_template("perfil.html")
+
+
+@app.route("/disclaimers")
+def disclaimers():
+    """Aviso médico, privacidad y términos de uso.
+    Se firma la primera vez que se ingresa; se puede volver a ver desde
+    el perfil en modo solo lectura.
+    """
+    return render_template("disclaimers.html")
+
+
+@app.route("/armar-rutina")
+def armar_rutina():
+    """Armador manual de rutina: el usuario elige sus propios ejercicios
+    por día, con sugerencias y advertencias en tiempo real."""
+    return render_template("armar_rutina.html")
+
+
 # ---------- API DE EJERCICIOS ----------
 
 @app.route("/api/ejercicios", methods=["GET"])

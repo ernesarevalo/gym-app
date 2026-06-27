@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>GymApp - Mi Perfil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar px-3" style="background-color: var(--navbar-bg);">
+  <a href="/dashboard" class="navbar-brand app-logo mb-0 h1" style="text-decoration:none;">💪 GymApp</a>
+  <div class="d-flex gap-2">
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+    <a href="/dashboard" class="btn btn-outline-light btn-sm">⬅ Volver a mi rutina</a>
+  </div>
+</nav>
+
+<div class="container py-4" style="max-width: 600px;">
+  <h4 class="mb-4">👤 Mi perfil</h4>
+
+  <div id="perfilError" class="alert alert-danger d-none"></div>
+  <div id="perfilOk" class="alert alert-success d-none"></div>
+
+  <div class="card p-4 mb-4">
+    <h5 class="mb-3">Datos personales</h5>
+    <div class="mb-3">
+      <label class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" id="pNombre">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" id="pUsername" disabled>
+      <div class="form-text">El nombre de usuario no se puede cambiar por ahora.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="pEmail" disabled>
+    </div>
+    <button id="btnGuardarDatos" class="btn btn-outline-light w-100">Guardar datos personales</button>
+  </div>
+
+  <div class="card p-4 mb-4">
+    <h5 class="mb-3">Preferencias de entrenamiento</h5>
+    <div class="mb-3">
+      <label class="form-label">Nivel de experiencia</label>
+      <select class="form-select" id="pNivel">
+        <option value="Principiante">Principiante</option>
+        <option value="Intermedio">Intermedio</option>
+        <option value="Avanzado">Avanzado</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Días disponibles por semana</label>
+      <select class="form-select" id="pDias">
+        <option value="3">3 días</option>
+        <option value="4">4 días</option>
+        <option value="5">5 días</option>
+        <option value="6">6 días</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Enfoque del entrenamiento</label>
+      <select class="form-select" id="pEnfoque">
+        <option value="Fuerza">Fuerza (1-5 repeticiones)</option>
+        <option value="Hipertrofia">Hipertrofia (6-12 repeticiones)</option>
+        <option value="Resistencia">Resistencia muscular (15+ repeticiones)</option>
+      </select>
+    </div>
+    <button id="btnGuardarPreferencias" class="btn btn-primary w-100">Guardar preferencias</button>
+    <div class="form-text mt-2">
+      Guardar tus preferencias no modifica automáticamente tu rutina actual.
+      Si cambiaste de días o de enfoque, te recomendamos volver a generar tu
+      rutina o editarla manualmente desde "Armar mi rutina".
+    </div>
+  </div>
+
+  <div class="card p-4 mb-4">
+    <h5 class="mb-3">🛠️ Tu rutina</h5>
+    <a href="/armar-rutina" class="btn btn-outline-light w-100 mb-2">Armar / editar mi rutina personalizada</a>
+    <a href="/onboarding" class="btn btn-outline-light w-100">Generar una rutina automática nueva</a>
+  </div>
+
+  <div class="card p-4 mb-4">
+    <h5 class="mb-3">📋 Disclaimers</h5>
+    <p class="text-secondary">Aviso médico, privacidad y términos de uso que aceptaste al crear tu cuenta.</p>
+    <a href="/disclaimers" class="btn btn-outline-light w-100">Ver disclaimers</a>
+  </div>
+
+  <button id="btnLogout" class="btn btn-outline-light w-100 mb-5">Cerrar sesión</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/perfil.js') }}"></script>
+</body>
+</html>

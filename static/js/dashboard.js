@@ -35,7 +35,15 @@ async function cargarRutina() {
   const docSnap = await db.collection("usuarios").doc(usuarioActual.uid).get();
   const data = docSnap.data();
 
-  if (!data || !data.rutina) {
+  if (!data || !data.disclaimers_aceptados) {
+    window.location.href = "/disclaimers";
+    return;
+  }
+
+  const navNombre = document.getElementById("navNombreUsuario");
+  if (navNombre) navNombre.textContent = data.username || data.nombre || "Mi perfil";
+
+  if (!data.rutina) {
     window.location.href = "/onboarding";
     return;
   }

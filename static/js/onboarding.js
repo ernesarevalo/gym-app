@@ -111,7 +111,16 @@ formOnboarding.addEventListener("submit", async (e) => {
   window.location.href = "/dashboard";
 });
 
-// Protege la página: si no hay sesión, vuelve al login
-auth.onAuthStateChanged((user) => {
-  if (!user) window.location.href = "/";
+// Protege la página: si no hay sesión, vuelve al login.
+// Si no aceptó los disclaimers todavía, lo manda primero ahí.
+auth.onAuthStateChanged(async (user) => {
+  if (!user) {
+    window.location.href = "/";
+    return;
+  }
+  const snap = await db.collection("usuarios").doc(user.uid).get();
+  const data = snap.data();
+  if (!data || !data.disclaimers_aceptados) {
+    window.location.href = "/disclaimers";
+  }
 });

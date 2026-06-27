@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>GymApp - Armar mi rutina</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar px-3" style="background-color: var(--navbar-bg);">
+  <span id="appLogo" class="navbar-brand app-logo mb-0 h1">💪 GymApp</span>
+  <div class="d-flex gap-2">
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+    <a href="/dashboard" class="btn btn-outline-light btn-sm">⬅ Volver a mi rutina</a>
+  </div>
+</nav>
+
+<div class="container py-4" style="max-width: 800px;">
+  <h4 class="mb-2">🛠️ Armar mi rutina personalizada</h4>
+  <p class="text-secondary">
+    Elegí tus propios ejercicios por día. Te vamos a ir sugiriendo ejercicios
+    complementarios y avisando si te estás cargando de más.
+  </p>
+
+  <div class="card p-3 mb-4 d-flex flex-row align-items-center gap-3 flex-wrap">
+    <label class="form-label mb-0">Cantidad de días a entrenar:</label>
+    <select id="selectCantidadDias" class="form-select" style="max-width:160px;">
+      <option value="3">3 días</option>
+      <option value="4">4 días</option>
+      <option value="5">5 días</option>
+      <option value="6">6 días</option>
+    </select>
+  </div>
+
+  <div id="tabsDiasBuilder" class="d-flex gap-2 mb-4 flex-wrap"></div>
+
+  <div id="ejerciciosDelDia" class="mb-4"></div>
+
+  <!-- Advertencia de sobrecarga del día -->
+  <div id="avisoSobrecarga" class="alert alert-warning d-none"></div>
+
+  <!-- Panel para agregar ejercicio -->
+  <div class="card p-4 mb-4">
+    <h5 class="mb-3">➕ Agregar ejercicio a este día</h5>
+
+    <div class="mb-3">
+      <label class="form-label">Grupo muscular</label>
+      <select id="selectGrupo" class="form-select">
+        <option value="">Selecciona un grupo...</option>
+        <option>Pecho</option>
+        <option>Espalda</option>
+        <option>Piernas</option>
+        <option>Hombros</option>
+        <option>Brazos</option>
+        <option>Core</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Ejercicio</label>
+      <select id="selectEjercicio" class="form-select" disabled>
+        <option value="">Primero elegí un grupo muscular...</option>
+      </select>
+    </div>
+
+    <div id="infoEjercicioElegido" class="alert alert-info d-none"></div>
+    <div id="sugerenciasEjercicio" class="mb-3"></div>
+
+    <div class="mb-3">
+      <label class="form-label">Series y repeticiones</label>
+      <div id="presetsContainer" class="d-flex flex-column gap-2"></div>
+    </div>
+
+    <div id="explicacionTipo" class="alert alert-secondary d-none small"></div>
+
+    <button id="btnAgregarEjercicio" class="btn btn-primary w-100" disabled>
+      Agregar este ejercicio al día
+    </button>
+  </div>
+
+  <button id="btnGuardarRutinaPersonalizada" class="btn btn-primary w-100 mb-5">
+    💾 Guardar mi rutina personalizada
+  </button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/armar_rutina.js') }}"></script>
+</body>
+</html>

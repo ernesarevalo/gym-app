@@ -46,7 +46,9 @@ gym-app/
 3. En el menú lateral entra a **Compilación > Firestore Database** → "Crear
    base de datos" → elige modo de **producción** y la región más cercana.
 4. Configura las reglas de seguridad de Firestore (pestaña "Reglas") para
-   que cada usuario solo pueda leer/escribir su propio documento:
+   que cada usuario solo pueda leer/escribir su propio documento, y que la
+   colección `usernames` (usada para poder loguearse con nombre de usuario)
+   sea de lectura pública pero solo el propio usuario pueda crear su entrada:
 
    ```
    rules_version = '2';
@@ -57,6 +59,11 @@ gym-app/
          match /progreso/{docId} {
            allow read, write: if request.auth != null && request.auth.uid == userId;
          }
+       }
+       match /usernames/{username} {
+         allow read: if true;
+         allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+         allow update, delete: if request.auth != null && resource.data.uid == request.auth.uid;
        }
      }
    }
@@ -127,6 +134,15 @@ http://127.0.0.1:5000
 
 **Firebase:** no necesita despliegue adicional, ya vive en la nube de
 Google en el plan gratuito Spark.
+
+## 8. Novedades: login flexible, perfil, rutina personalizada y disclaimers
+
+- **Login flexible**: en `/` ahora se puede iniciar sesión con correo+contraseña, **nombre de usuario**+contraseña, o Google. El registro pide nombre, nombre de usuario (único) y correo. La colección `usernames` mapea usuario → uid/email.
+- **`/disclaimers`**: aviso médico, política de privacidad y términos de uso. Se firma obligatoriamente la primera vez que se ingresa (checkbox + botón "Aceptar y continuar", que guarda `disclaimers_aceptados: true` en Firestore). Se puede volver a consultar después desde el perfil, en modo solo lectura.
+- **`/perfil`**: accesible clickeando "Mi perfil" en el navbar del dashboard. Permite editar nombre, ver usuario/correo (no editables), y cambiar nivel/días/enfoque. También da acceso directo a "Armar mi rutina", a generar una rutina automática nueva, y a los disclaimers.
+- **`/armar-rutina`**: armador manual de rutina. Por cada día elegís grupo muscular → ejercicio → series/repeticiones (con presets de Fuerza/Hipertrofia/Resistencia explicados, o números personalizados que se autoclasifican). Al elegir un ejercicio, la app muestra qué grupo entrena y sugiere ejercicios complementarios para ese mismo día con el motivo. También avisa si el día tiene demasiados ejercicios, demasiado volumen de un mismo grupo muscular, o demasiadas series totales.
+
+Toda esta lógica de sugerencias/advertencias es por **reglas simples**, no inteligencia artificial real — está pensada como una ayuda orientativa, no como reemplazo de un profesional (ver disclaimers).
 
 ## 7. Próximos pasos sugeridos
 

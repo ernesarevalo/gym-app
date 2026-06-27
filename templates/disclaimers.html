@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>GymApp - Términos, Privacidad y Aviso Médico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container py-4" style="max-width: 700px;">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 id="appLogo" class="app-logo mb-0">📋 Antes de empezar</h3>
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+  </div>
+
+  <div class="card p-4 mb-3">
+    <h5>🩺 Aviso médico importante</h5>
+    <p>
+      GymApp es una herramienta de organización de entrenamiento y <strong>no
+      reemplaza la evaluación, el diagnóstico ni la supervisión de un profesional
+      de la salud o de un profesor de educación física certificado</strong>.
+    </p>
+    <p>
+      Antes de comenzar cualquier programa de ejercicio, especialmente si tenés
+      una condición médica preexistente, lesiones, estás embarazada, o no
+      realizás actividad física regularmente, consultá con tu médico. Las rutinas,
+      series, repeticiones y pesos sugeridos por esta aplicación son
+      <strong>orientativos y genéricos</strong>; un profesor de gimnasio
+      certificado debe supervisar y ajustar tu técnica y tu carga de
+      entrenamiento de forma personalizada.
+    </p>
+    <p class="mb-0">
+      El uso de esta aplicación y de la información que contiene es bajo tu
+      propio riesgo. GymApp, sus desarrolladores y administradores no se
+      responsabilizan por lesiones, daños o perjuicios derivados directa o
+      indirectamente del uso de la app o de la ejecución de los ejercicios
+      mostrados.
+    </p>
+  </div>
+
+  <div class="card p-4 mb-3">
+    <h5>🔒 Privacidad de tus datos</h5>
+    <p>
+      Esta app guarda en tu cuenta (mediante Firebase, de Google) los datos que
+      ingresás voluntariamente: nombre, nombre de usuario, correo, nivel de
+      experiencia, días de entrenamiento, enfoque, la rutina que armes o que se
+      te genere, y el historial de pesos que registres.
+    </p>
+    <p>
+      No vendemos ni compartimos tus datos con terceros con fines comerciales.
+      Tus datos solo son accesibles por tu propia cuenta (mediante reglas de
+      seguridad de la base de datos) y por quienes administran la
+      infraestructura técnica de la app con fines de mantenimiento.
+    </p>
+    <p class="mb-0">
+      Podés solicitar la eliminación de tu cuenta y tus datos en cualquier
+      momento contactando al administrador de la app.
+    </p>
+  </div>
+
+  <div class="card p-4 mb-3">
+    <h5>⚠️ Uso de la app</h5>
+    <p class="mb-0">
+      Las sugerencias automáticas de ejercicios, combinaciones de grupos
+      musculares y advertencias de sobrecarga son generadas por reglas simples
+      y <strong>no constituyen asesoramiento profesional</strong>. La decisión
+      final sobre qué entrenar, cuánto peso usar y cómo progresar es siempre
+      tuya y/o de tu profesional a cargo.
+    </p>
+  </div>
+
+  <div id="zonaAceptar" class="card p-4">
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="checkAcepto">
+      <label class="form-check-label" for="checkAcepto">
+        Leí y entiendo el aviso médico, la política de privacidad y los
+        términos de uso de esta aplicación, y acepto utilizarla bajo mi propia
+        responsabilidad.
+      </label>
+    </div>
+    <button id="btnAceptar" class="btn btn-primary w-100" disabled>
+      Aceptar y continuar
+    </button>
+    <div id="aceptarError" class="alert alert-danger mt-3 d-none"></div>
+  </div>
+
+  <div id="zonaVolver" class="text-center mt-3 d-none">
+    <a href="/perfil" class="btn btn-outline-light">⬅ Volver a mi perfil</a>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/disclaimers.js') }}"></script>
+</body>
+</html>

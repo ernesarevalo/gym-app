@@ -11,15 +11,21 @@
 
 <nav class="navbar px-3" style="background-color: var(--navbar-bg);">
   <span id="appLogo" class="navbar-brand app-logo mb-0 h1">💪 GymApp</span>
-  <div class="d-flex gap-2">
+  <div class="d-flex gap-2 align-items-center">
     <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
+    <a id="navPerfil" href="/perfil" class="btn btn-outline-light btn-sm" style="text-decoration:none;">
+      👤 <span id="navNombreUsuario">Mi perfil</span>
+    </a>
     <button id="btnLogout" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
   </div>
 </nav>
 
 <div class="container py-4">
 
-  <h4 class="mb-3">Mi rutina semanal</h4>
+  <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+    <h4 class="mb-0">Mi rutina semanal</h4>
+    <a href="/armar-rutina" class="btn btn-outline-light btn-sm">🛠️ Armar mi propia rutina</a>
+  </div>
   <div id="tabsDias" class="d-flex gap-2 mb-4 flex-wrap"></div>
 
   <div id="contenidoDia"></div>

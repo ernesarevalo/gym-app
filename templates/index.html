@@ -16,21 +16,52 @@
   <h2 id="appLogo" class="app-logo text-center mb-4">💪 GymApp</h2>
 
   <div id="authError" class="alert alert-danger d-none"></div>
+  <div id="authInfo" class="alert alert-info d-none"></div>
 
-  <form id="formAuth">
+  <!-- Toggle entre Login y Registro -->
+  <div class="d-flex mb-3 gap-2">
+    <button type="button" id="tabLogin" class="btn btn-sm btn-primary flex-grow-1">Iniciar Sesión</button>
+    <button type="button" id="tabRegister" class="btn btn-sm btn-outline-light flex-grow-1">Crear Cuenta</button>
+  </div>
+
+  <!-- FORM LOGIN -->
+  <form id="formLogin">
     <div class="mb-3">
-      <label class="form-label">Correo electrónico</label>
-      <input type="email" class="form-control" id="email" required>
+      <label class="form-label">Correo electrónico o nombre de usuario</label>
+      <input type="text" class="form-control" id="loginIdentifier" required
+             placeholder="tu@correo.com  ó  tu_usuario">
     </div>
     <div class="mb-3">
       <label class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="password" required minlength="6">
+      <input type="password" class="form-control" id="loginPassword" required minlength="6">
     </div>
-    <button type="submit" id="btnLogin" class="btn btn-primary w-100 mb-2">Iniciar Sesión</button>
-    <button type="button" id="btnRegister" class="btn btn-outline-light w-100 mb-3">Crear Cuenta</button>
+    <button type="submit" class="btn btn-primary w-100 mb-2">Iniciar Sesión</button>
   </form>
 
-  <div class="text-center mb-2">— o —</div>
+  <!-- FORM REGISTRO -->
+  <form id="formRegister" class="d-none">
+    <div class="mb-3">
+      <label class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" id="regNombre" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" id="regUsername" required minlength="3"
+             pattern="[a-zA-Z0-9_\.]+" title="Solo letras, números, punto y guión bajo">
+      <div class="form-text">Sin espacios. Lo vas a poder usar para iniciar sesión en vez del correo.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="regEmail" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="regPassword" required minlength="6">
+    </div>
+    <button type="submit" class="btn btn-primary w-100 mb-2">Crear Cuenta</button>
+  </form>
+
+  <div class="text-center my-2">— o —</div>
 
   <button id="btnGoogle" class="btn btn-light w-100 d-flex align-items-center justify-content-center gap-2">
     <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
