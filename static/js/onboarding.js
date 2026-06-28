@@ -46,6 +46,8 @@ async function obtenerEjercicios() {
   return obtenerCatalogoEjercicios();
 }
 
+const MINIMO_EJERCICIOS_POR_DIA = 5;
+
 function elegirEjercicioPorGrupo(ejercicios, grupo, offset = 0) {
   const filtrados = ejercicios.filter(e => e.grupo_muscular === grupo);
   if (filtrados.length === 0) return null;
@@ -54,36 +56,57 @@ function elegirEjercicioPorGrupo(ejercicios, grupo, offset = 0) {
   return filtrados[offset % filtrados.length];
 }
 
-async function generarRutina(dias, enfoque, offset = 0) {
+async function generarRutina(dias, enfoque, offsetGlobal = 0) {
   const ejercicios = await obtenerEjercicios();
   const split = SPLITS[dias];
   const reps = REPS_POR_ENFOQUE[enfoque];
 
-  const rutina = split.map((grupos, index) => {
-    const ejerciciosDelDia = grupos
-      .map((grupo, i) => elegirEjercicioPorGrupo(ejercicios, grupo, offset + i + index))
-      .filter(Boolean)
-      .map(ej => ({
-        ejercicio_id: ej.id,
-        nombre: ej.nombre,
-        grupo_muscular: ej.grupo_muscular,
-        descripcion: ej.descripcion,
-        tecnica: ej.tecnica || null,
-        tips: ej.tips || [],
-        peso_recomendado: ej.peso_recomendado || null,
-        video_url: ej.video_url,
-        tiktok_url: ej.tiktok_url || null,
-        imagen_url: ej.imagen_url || null,
-        series: 4,
-        repeticiones: reps,
-        tipo_entrenamiento: enfoque,
-        peso_actual: null
-      }));
+  const rutina = split.map((grupos, indexDia) => {
+    // Repartimos al menos MINIMO_EJERCICIOS_POR_DIA ejercicios entre los
+    // grupos musculares asignados a este día (varios ejercicios distintos
+    // por grupo, no solo uno), usando lo disponible en el catálogo.
+    const porGrupo = Math.max(1, Math.ceil(MINIMO_EJERCICIOS_POR_DIA / grupos.length));
+    const idsUsados = new Set();
+    const ejerciciosDelDia = [];
+
+    grupos.forEach((grupo, gIdx) => {
+      for (let k = 0; k < porGrupo; k++) {
+        const offset = offsetGlobal + indexDia * 7 + gIdx * 3 + k;
+        let candidato = elegirEjercicioPorGrupo(ejercicios, grupo, offset);
+        // Evita repetir el mismo ejercicio dos veces en el mismo día
+        let intentos = 0;
+        while (candidato && idsUsados.has(candidato.id) && intentos < 10) {
+          intentos++;
+          candidato = elegirEjercicioPorGrupo(ejercicios, grupo, offset + intentos);
+        }
+        if (candidato && !idsUsados.has(candidato.id)) {
+          idsUsados.add(candidato.id);
+          ejerciciosDelDia.push(candidato);
+        }
+      }
+    });
+
+    const ejerciciosFormateados = ejerciciosDelDia.map(ej => ({
+      ejercicio_id: ej.id,
+      nombre: ej.nombre,
+      grupo_muscular: ej.grupo_muscular,
+      descripcion: ej.descripcion,
+      tecnica: ej.tecnica || null,
+      tips: ej.tips || [],
+      peso_recomendado: ej.peso_recomendado || null,
+      video_url: ej.video_url,
+      tiktok_url: ej.tiktok_url || null,
+      imagen_url: ej.imagen_url || null,
+      series: 4,
+      repeticiones: reps,
+      tipo_entrenamiento: enfoque,
+      peso_actual: null
+    }));
 
     return {
-      dia: index + 1,
-      titulo: `Día ${index + 1}: ${grupos.join(" + ")}`,
-      ejercicios: ejerciciosDelDia
+      dia: indexDia + 1,
+      titulo: `Día ${indexDia + 1}: ${grupos.join(" + ")}`,
+      ejercicios: ejerciciosFormateados
     };
   });
 
