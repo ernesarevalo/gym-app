@@ -31,8 +31,7 @@ auth.onAuthStateChanged(async (user) => {
   }
   usuarioActual = user;
 
-  const res = await fetch("/api/ejercicios");
-  catalogoCompleto = await res.json();
+  catalogoCompleto = await obtenerCatalogoEjercicios();
 
   if (user.email === ADMIN_EMAIL) {
     document.getElementById("navAdminLink").classList.remove("d-none");
@@ -68,7 +67,6 @@ async function cargarRutina() {
   }
 
   rutinaActual = data.rutina;
-  renderCalentamientoYMovilidad();
   renderTabsDias();
   renderDia(0);
   poblarSelectorProgreso();
@@ -77,29 +75,63 @@ async function cargarRutina() {
   document.getElementById("btnVolverAnterior").classList.toggle("d-none", !data.rutina_anterior);
 }
 
-// ---------- CALENTAMIENTO Y MOVILIDAD (formato inspirado en daBeast) ----------
+// ---------- CALENTAMIENTO Y MOVILIDAD ESPECÍFICOS POR DÍA ----------
+// En vez de un bloque genérico, se calcula según los grupos musculares
+// que realmente se entrenan ese día (formato inspirado en daBeast).
 
-function renderCalentamientoYMovilidad() {
+const CALENTAMIENTO_POR_GRUPO = {
+  "Pecho": "10-12 flexiones de pecho lentas sin peso (o apoyadas en rodillas)",
+  "Espalda": "15 remos con banda elástica liviana + 20-30 seg colgado de una barra (dead hang)",
+  "Piernas": "15 sentadillas con peso corporal + 10 zancadas caminando por pierna",
+  "Hombros": "Círculos de brazos amplios ×10 por sentido + 15 rotaciones externas con banda liviana",
+  "Brazos": "15 curl con banda elástica liviana + 15 extensiones de tríceps sin peso",
+  "Core": "20-30 seg de plancha abdominal + 10 dead bugs por lado"
+};
+
+const MOVILIDAD_POR_GRUPO = {
+  "Pecho": "Apertura de pecho en marco de puerta, 30 seg por lado",
+  "Espalda": "Gato-camello (flexión/extensión de columna) ×8 repeticiones lentas",
+  "Piernas": "Círculos de cadera ×10 por lado + rotaciones de tobillo ×10 por pie",
+  "Hombros": "Círculos de hombro amplios ×10 adelante y ×10 atrás",
+  "Brazos": "Rotaciones de muñeca ×10 por lado + estiramiento de antebrazo 20 seg",
+  "Core": "Rotaciones de torso suaves de pie ×10 por lado"
+};
+
+function renderCalentamientoYMovilidadDelDia(dia) {
+  const gruposDelDia = [...new Set(dia.ejercicios.map(e => e.grupo_muscular))];
+
+  if (gruposDelDia.length === 0) {
+    document.getElementById("seccionCalentamiento").innerHTML = "";
+    document.getElementById("seccionMovilidad").innerHTML = "";
+    return;
+  }
+
+  const itemsCalentamiento = gruposDelDia
+    .filter(g => CALENTAMIENTO_POR_GRUPO[g])
+    .map(g => `<li><strong>${ICONOS_GRUPO[g] || ""} ${g}:</strong> ${CALENTAMIENTO_POR_GRUPO[g]}</li>`)
+    .join("");
+
+  const itemsMovilidad = gruposDelDia
+    .filter(g => MOVILIDAD_POR_GRUPO[g])
+    .map(g => `<li><strong>${ICONOS_GRUPO[g] || ""} ${g}:</strong> ${MOVILIDAD_POR_GRUPO[g]}</li>`)
+    .join("");
+
   document.getElementById("seccionCalentamiento").innerHTML = `
-    <h5>🔥 Calentamiento general (5-7 min, antes de cada entrenamiento)</h5>
+    <h5>🔥 Calentamiento específico para ${dia.titulo}</h5>
+    <p class="small text-secondary mb-2">Antes de tus ejercicios principales, 5-7 minutos:</p>
     <ul class="mb-0">
-      <li><strong>0:00–3:00</strong> — Cardio suave (caminata rápida, bicicleta o cuerda): sube la temperatura corporal general.</li>
-      <li><strong>3:00–5:00</strong> — Activación dinámica: sentadillas con peso corporal, zancadas caminando, círculos de brazos.</li>
-      <li><strong>5:00–7:00</strong> — 1-2 series livianas del primer ejercicio de tu rutina, con poco peso, para preparar el patrón de movimiento específico.</li>
+      <li>1-2 min de cardio suave general (caminata rápida, bicicleta o cuerda).</li>
+      ${itemsCalentamiento}
     </ul>
   `;
 
   document.getElementById("seccionMovilidad").innerHTML = `
-    <h5>🧘 Movilidad articular (2-3 min, después del calentamiento)</h5>
-    <ul class="mb-0">
-      <li><strong>Hombros</strong> — círculos amplios ×10 hacia adelante y ×10 hacia atrás.</li>
-      <li><strong>Cadera</strong> — círculos de cadera ×10 por lado, abre la articulación antes de cargar peso.</li>
-      <li><strong>Tobillos</strong> — rotaciones y flexiones ×10 por pie, importante antes de sentadillas o zancadas.</li>
-      <li><strong>Columna</strong> — gato-camello (flexión/extensión de espalda) ×8 repeticiones lentas.</li>
-    </ul>
+    <h5>🧘 Movilidad articular para ${dia.titulo}</h5>
+    <ul class="mb-0">${itemsMovilidad}</ul>
     <p class="small text-secondary mt-2 mb-0">
-      Esta rutina de movilidad es orientativa y general. Si tenés alguna lesión o
-      limitación, consultá con tu profesional antes de realizarla (ver disclaimers).
+      Esta movilidad está pensada para los grupos musculares de este día específico.
+      Es orientativa; si tenés alguna lesión o limitación, consultá con tu profesional
+      antes de realizarla (ver disclaimers).
     </p>
   `;
 }
@@ -153,6 +185,7 @@ function renderDia(idx) {
   renderTabsDias();
 
   const dia = rutinaActual[idx];
+  renderCalentamientoYMovilidadDelDia(dia);
   contenidoDia.innerHTML = `<h5 class="mb-3">${dia.titulo}</h5>`;
 
   dia.ejercicios.forEach((ej, ejIdx) => {
@@ -170,6 +203,7 @@ function renderDia(idx) {
           <div class="d-flex gap-3 small">
             <a href="${ej.video_url}" target="_blank">▶ YouTube</a>
             ${ej.tiktok_url ? `<a href="${ej.tiktok_url}" target="_blank">🎵 TikTok</a>` : ""}
+            ${ej.imagen_url ? `<a href="${ej.imagen_url}" target="_blank">🖼️ Ver GIF/Imagen</a>` : ""}
           </div>
           ${renderTecnica(ej, idGen)}
         </div>
@@ -199,8 +233,7 @@ async function abrirModalCambio(diaIdx, ejIdx) {
   const grupo = rutinaActual[diaIdx].ejercicios[ejIdx].grupo_muscular;
   grupoParaReemplazo = grupo;
 
-  const res = await fetch(`/api/ejercicios/${encodeURIComponent(grupo)}`);
-  const opciones = await res.json();
+  const opciones = await obtenerCatalogoEjerciciosPorGrupo(grupo);
 
   listaReemplazos.innerHTML = "";
   opciones.forEach(op => {
@@ -229,6 +262,7 @@ async function reemplazarEjercicio(nuevoEjercicio) {
     peso_recomendado: nuevoEjercicio.peso_recomendado || null,
     video_url: nuevoEjercicio.video_url,
     tiktok_url: nuevoEjercicio.tiktok_url || null,
+    imagen_url: nuevoEjercicio.imagen_url || null,
     grupo_muscular: nuevoEjercicio.grupo_muscular,
     peso_actual: null
   };

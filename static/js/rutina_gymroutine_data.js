@@ -17,11 +17,12 @@ const RUTINA_GYMROUTINE = [
           "Activá el core antes de arrancar. Empujá el suelo con los antebrazos. Apretá glúteos. Mantené la posición sin comprometer la forma. Si falla la técnica, terminá la serie."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Plancha%20Abdominal%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Plancha%20Abdominal%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Plancha%20Abdominal%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "60 seg",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Plancha%20Abdominal%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_espinales_d1",
@@ -37,11 +38,12 @@ const RUTINA_GYMROUTINE = [
           "Elevá levemente el pecho del suelo (5-10 cm). Pausá 1 seg apretando los glúteos. Bajá 2 seg. Mirada al suelo en todo momento."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Espinales%20%28Superman%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Espinales%20%28Superman%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Espinales%20%28Superman%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "12",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Espinales%20%28Superman%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_sentadilla_cajon",
@@ -57,11 +59,12 @@ const RUTINA_GYMROUTINE = [
           "Descenso controlado 3 seg → toque suave del cajón sin desplomarte → pausa 1 seg → subida explosiva. Inhalá al bajar, exhalá fuerte al subir para proteger el core. Los talones empujan el suelo."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20al%20Caj%C3%B3n%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Sentadilla%20al%20Caj%C3%B3n%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Sentadilla%20al%20Caj%C3%B3n%20ejercicio%20site%3Atiktok.com",
         "series": 5,
         "repeticiones": "6",
         "tipo_entrenamiento": "Fuerza",
-        "peso_actual": 80
+        "peso_actual": 80,
+        "imagen_url": "https://www.google.com/search?q=Sentadilla%20al%20Caj%C3%B3n%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_sentadilla_hack",
@@ -77,11 +80,12 @@ const RUTINA_GYMROUTINE = [
           "Bajá hasta profundidad máxima cómoda. Empujá desde los talones. Nunca bloqueés completamente las rodillas arriba."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20Hack%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Sentadilla%20Hack%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Sentadilla%20Hack%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "8-12",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 100
+        "peso_actual": 100,
+        "imagen_url": "https://www.google.com/search?q=Sentadilla%20Hack%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_prensa_d1",
@@ -97,11 +101,12 @@ const RUTINA_GYMROUTINE = [
           "Rango completo. Bajá hasta 90° de rodilla o más. Empujá desde el talón. Micro-flexión arriba siempre."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Prensa%20de%20Piernas%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Prensa%20de%20Piernas%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Prensa%20de%20Piernas%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "15-20",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": 120
+        "peso_actual": 120,
+        "imagen_url": "https://www.google.com/search?q=Prensa%20de%20Piernas%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_femoral_camilla",
@@ -117,11 +122,12 @@ const RUTINA_GYMROUTINE = [
           "Flexionás la rodilla trayendo el talón al glúteo. Apretá los isquios 1 segundo abajo. Bajá 3 seg controlado."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Camilla%20Femoral%20%28Curl%20Femoral%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Camilla%20Femoral%20%28Curl%20Femoral%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Camilla%20Femoral%20%28Curl%20Femoral%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "12",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 35
+        "peso_actual": 35,
+        "imagen_url": "https://www.google.com/search?q=Camilla%20Femoral%20%28Curl%20Femoral%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_aductor_maquina",
@@ -137,11 +143,12 @@ const RUTINA_GYMROUTINE = [
           "Cerrá controlado. Pausá al final. Abrí 3 seg resistiendo el peso. Sin rebote."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Aductor%20en%20M%C3%A1quina%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Aductor%20en%20M%C3%A1quina%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Aductor%20en%20M%C3%A1quina%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "10",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 40
+        "peso_actual": 40,
+        "imagen_url": "https://www.google.com/search?q=Aductor%20en%20M%C3%A1quina%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_pantorrilla_d1",
@@ -157,11 +164,12 @@ const RUTINA_GYMROUTINE = [
           "Bajá hasta estiramiento completo del talón. Subí hasta quedar en punta de pie completa. Pausa 1 seg arriba. Bajá 3 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Pantorrilla%20en%20M%C3%A1quina%20/%20Escal%C3%B3n%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Pantorrilla%20en%20M%C3%A1quina%20/%20Escal%C3%B3n%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Pantorrilla%20en%20M%C3%A1quina%20/%20Escal%C3%B3n%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "15",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Pantorrilla%20en%20M%C3%A1quina%20/%20Escal%C3%B3n%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_bici_d1",
@@ -177,11 +185,12 @@ const RUTINA_GYMROUTINE = [
           "30 seg de pedaleo a máxima intensidad (como un pique en la cancha) → 60 seg de pedaleo muy suave. Repetilo hasta completar 10 minutos. La intensidad del sprint tiene que ser real — imaginá que vas a buscar la pelota."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Bici%20Fija%20%E2%80%94%20Intervalos%20F%C3%BAtbol%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Bici%20Fija%20%E2%80%94%20Intervalos%20F%C3%BAtbol%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Bici%20Fija%20%E2%80%94%20Intervalos%20F%C3%BAtbol%20ejercicio%20site%3Atiktok.com",
         "series": 1,
         "repeticiones": "10 min (30 seg fuerte / 60 seg suave)",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Bici%20Fija%20%E2%80%94%20Intervalos%20F%C3%BAtbol%20ejercicio%20gif%20tecnica&tbm=isch"
       }
     ]
   },
@@ -203,11 +212,12 @@ const RUTINA_GYMROUTINE = [
           "Core activo. Glúteos apretados. Empujá el suelo con los antebrazos. Mantené sin comprometer la postura."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Plancha%20Abdominal%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Plancha%20Abdominal%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Plancha%20Abdominal%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "60 seg",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Plancha%20Abdominal%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_posterior_mancuernas",
@@ -223,11 +233,12 @@ const RUTINA_GYMROUTINE = [
           "Abrí los brazos como alas hasta la altura de los hombros. Sentí cómo se juntan las escápulas al cerrar. Bajá 2-3 seg. Los 10+10 son 10 reps normales + 10 reps con pausa arriba."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Posterior%20con%20Mancuernas%20%28Vuelo%20Posterior%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Posterior%20con%20Mancuernas%20%28Vuelo%20Posterior%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Posterior%20con%20Mancuernas%20%28Vuelo%20Posterior%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "10+10",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 8
+        "peso_actual": 8,
+        "imagen_url": "https://www.google.com/search?q=Posterior%20con%20Mancuernas%20%28Vuelo%20Posterior%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_banco_plano_pausa",
@@ -243,11 +254,12 @@ const RUTINA_GYMROUTINE = [
           "Bajá controlado 2-3 seg → pausa completa de 1 segundo real en el pecho (sin apoyo, sin rebote) → empujá explosivo. La pausa elimina el rebote y construye fuerza brutal."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Press%20de%20Banca%20con%20Pausa%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Press%20de%20Banca%20con%20Pausa%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Press%20de%20Banca%20con%20Pausa%20ejercicio%20site%3Atiktok.com",
         "series": 6,
         "repeticiones": "6",
         "tipo_entrenamiento": "Fuerza",
-        "peso_actual": 80
+        "peso_actual": 80,
+        "imagen_url": "https://www.google.com/search?q=Press%20de%20Banca%20con%20Pausa%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_press_cerrado_d2",
@@ -263,11 +275,12 @@ const RUTINA_GYMROUTINE = [
           "Bajá la barra hacia la parte baja del pecho / abdomen alto. Codos pegados al cuerpo. Empujá en línea recta. El mejor ejercicio para que el tríceps explote."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Press%20Cerrado%20%28Tr%C3%ADceps%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Press%20Cerrado%20%28Tr%C3%ADceps%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Press%20Cerrado%20%28Tr%C3%ADceps%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "8",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 60
+        "peso_actual": 60,
+        "imagen_url": "https://www.google.com/search?q=Press%20Cerrado%20%28Tr%C3%ADceps%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_inclinado_barra",
@@ -283,11 +296,12 @@ const RUTINA_GYMROUTINE = [
           "Foco en la parte alta del pecho. Bajá hasta el pecho superior. Empujá hacia arriba y levemente atrás."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Press%20Inclinado%20con%20Barra%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Press%20Inclinado%20con%20Barra%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Press%20Inclinado%20con%20Barra%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "6",
         "tipo_entrenamiento": "Fuerza",
-        "peso_actual": 60
+        "peso_actual": 60,
+        "imagen_url": "https://www.google.com/search?q=Press%20Inclinado%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_press_hombro_mancuerna",
@@ -303,11 +317,12 @@ const RUTINA_GYMROUTINE = [
           "Subí las mancuernas sin chocar arriba (dejá espacio). Bajá hasta pulgares a altura de orejas. Movimiento controlado 2 seg en el descenso."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Press%20de%20Hombro%20con%20Mancuernas%20Sentado%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Press%20de%20Hombro%20con%20Mancuernas%20Sentado%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Press%20de%20Hombro%20con%20Mancuernas%20Sentado%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "12-15",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 16
+        "peso_actual": 16,
+        "imagen_url": "https://www.google.com/search?q=Press%20de%20Hombro%20con%20Mancuernas%20Sentado%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_vuelos_laterales_d2",
@@ -323,11 +338,12 @@ const RUTINA_GYMROUTINE = [
           "Brazos casi estirados. Subí hasta altura de hombros. Controlá el descenso 3 seg. ÚLTIMA SERIE: terminá las reps normales → bajá el peso 30% → hacé todas las que puedas hasta que queme (Dropset)."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Vuelos%20Laterales%20%28Dropset%20en%20%C3%BAltima%20serie%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Vuelos%20Laterales%20%28Dropset%20en%20%C3%BAltima%20serie%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Vuelos%20Laterales%20%28Dropset%20en%20%C3%BAltima%20serie%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "12-15",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 8
+        "peso_actual": 8,
+        "imagen_url": "https://www.google.com/search?q=Vuelos%20Laterales%20%28Dropset%20en%20%C3%BAltima%20serie%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_triceps_polea",
@@ -343,11 +359,12 @@ const RUTINA_GYMROUTINE = [
           "Codos fijos a los costados. Solo el antebrazo baja hasta extensión completa. Pausa 1 seg abajo apretando el tríceps. Volvés controlado."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Tr%C3%ADceps%20en%20Polea%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Tr%C3%ADceps%20en%20Polea%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Tr%C3%ADceps%20en%20Polea%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "15-20",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": 20
+        "peso_actual": 20,
+        "imagen_url": "https://www.google.com/search?q=Tr%C3%ADceps%20en%20Polea%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_pallof_press_d2",
@@ -363,11 +380,12 @@ const RUTINA_GYMROUTINE = [
           "Parado de costado a la polea, sostené el agarre con ambas manos frente al pecho. Empujá hacia adelante y evitá que el peso te gire el tronco. Exhalá al estirar los brazos. Pausá 2 seg extendido. Volvés al pecho."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Pallof%20Press%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Pallof%20Press%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Pallof%20Press%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "12 por lado",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 10
+        "peso_actual": 10,
+        "imagen_url": "https://www.google.com/search?q=Pallof%20Press%20ejercicio%20gif%20tecnica&tbm=isch"
       }
     ]
   },
@@ -389,11 +407,12 @@ const RUTINA_GYMROUTINE = [
           "Core activo. Glúteos apretados. Sin comprometer la postura."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Plancha%20Abdominal%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Plancha%20Abdominal%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Plancha%20Abdominal%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "60 seg",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Plancha%20Abdominal%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_espinales_d3",
@@ -409,11 +428,12 @@ const RUTINA_GYMROUTINE = [
           "Elevá levemente el pecho (5-10 cm). Pausá 1 seg apretando glúteos. Bajá 2 seg controlado."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Espinales%20%28Superman%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Espinales%20%28Superman%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Espinales%20%28Superman%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "12",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Espinales%20%28Superman%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_peso_muerto_conv",
@@ -429,11 +449,12 @@ const RUTINA_GYMROUTINE = [
           "Empujá el suelo hacia abajo. Barra pegada al cuerpo. PAUSA de 2 segundos cuando la barra pasa la rodilla al subir — esto obliga a controlar el core y la postura. Lockout completo arriba."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Peso%20Muerto%20Convencional%20con%20Pausa%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Peso%20Muerto%20Convencional%20con%20Pausa%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Peso%20Muerto%20Convencional%20con%20Pausa%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "6",
         "tipo_entrenamiento": "Fuerza",
-        "peso_actual": 100
+        "peso_actual": 100,
+        "imagen_url": "https://www.google.com/search?q=Peso%20Muerto%20Convencional%20con%20Pausa%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_remo_caballo_amplio",
@@ -449,11 +470,12 @@ const RUTINA_GYMROUTINE = [
           "Llevá el peso hacia el ombligo. Imagina que querés tocar a alguien con los codos atrás. Apretá la espalda 1 seg. Bajá 2-3 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Remo%20Caballo%20Agarre%20Amplio%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Remo%20Caballo%20Agarre%20Amplio%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Remo%20Caballo%20Agarre%20Amplio%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "8-12",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 70
+        "peso_actual": 70,
+        "imagen_url": "https://www.google.com/search?q=Remo%20Caballo%20Agarre%20Amplio%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_jalon_cerrado_d3",
@@ -469,11 +491,12 @@ const RUTINA_GYMROUTINE = [
           "Tirá el triángulo hacia el pecho. Codos van hacia las caderas. Apretá el dorsal 1 seg. Subí 2-3 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Jal%C3%B3n%20Cerrado%20%28Tri%C3%A1ngulo%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Jal%C3%B3n%20Cerrado%20%28Tri%C3%A1ngulo%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Jal%C3%B3n%20Cerrado%20%28Tri%C3%A1ngulo%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "12-15",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 55
+        "peso_actual": 55,
+        "imagen_url": "https://www.google.com/search?q=Jal%C3%B3n%20Cerrado%20%28Tri%C3%A1ngulo%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_remo_hammer_un_brazo",
@@ -489,11 +512,12 @@ const RUTINA_GYMROUTINE = [
           "Tirá hacia la cadera sin rotar. Codo cerca del cuerpo. Apretá el dorsal arriba. Bajá 2-3 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Remo%20Hammer%201%20Brazo%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Remo%20Hammer%201%20Brazo%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Remo%20Hammer%201%20Brazo%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "8-10",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 30
+        "peso_actual": 30,
+        "imagen_url": "https://www.google.com/search?q=Remo%20Hammer%201%20Brazo%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_jalon_abierto",
@@ -509,11 +533,12 @@ const RUTINA_GYMROUTINE = [
           "Llevá la barra al pecho. Codos hacia abajo y afuera. Foco en abrir la espalda. Controlá el regreso 2-3 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Jal%C3%B3n%20Abierto%20%28Agarre%20Amplio%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Jal%C3%B3n%20Abierto%20%28Agarre%20Amplio%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Jal%C3%B3n%20Abierto%20%28Agarre%20Amplio%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "8-10",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 50
+        "peso_actual": 50,
+        "imagen_url": "https://www.google.com/search?q=Jal%C3%B3n%20Abierto%20%28Agarre%20Amplio%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_biceps_barra_w",
@@ -529,11 +554,12 @@ const RUTINA_GYMROUTINE = [
           "Flexionás completamente. Apretá el bíceps arriba 1 seg. Bajá 2-3 seg. Sin balanceo."
         ],
         "video_url": "https://www.youtube.com/results?search_query=B%C3%ADceps%20Barra%20W%20%28Curl%20con%20Barra%20EZ%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=B%C3%ADceps%20Barra%20W%20%28Curl%20con%20Barra%20EZ%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=B%C3%ADceps%20Barra%20W%20%28Curl%20con%20Barra%20EZ%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "8",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 30
+        "peso_actual": 30,
+        "imagen_url": "https://www.google.com/search?q=B%C3%ADceps%20Barra%20W%20%28Curl%20con%20Barra%20EZ%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_biceps_polea_soga",
@@ -549,11 +575,12 @@ const RUTINA_GYMROUTINE = [
           "Al llegar arriba, SEPARÁS las puntas de la soga hacia afuera. Eso trabaja la cabeza externa del bíceps dándole más pico y definición. Apretá 1 seg. Bajá 2-3 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=B%C3%ADceps%20en%20Polea%20con%20Soga%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=B%C3%ADceps%20en%20Polea%20con%20Soga%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=B%C3%ADceps%20en%20Polea%20con%20Soga%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "10-15",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 15
+        "peso_actual": 15,
+        "imagen_url": "https://www.google.com/search?q=B%C3%ADceps%20en%20Polea%20con%20Soga%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_farmer_walk_d3",
@@ -569,11 +596,12 @@ const RUTINA_GYMROUTINE = [
           "Agarrá las mancuernas más pesadas que puedas sostener con buena forma. Caminás derecho, pecho arriba, hombros atrás y pasos cortos. Doble beneficio: te da estabilidad para que no te muevan cuando vas hombro a hombro en el fútbol, y te deja los antebrazos como rocas."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Caminata%20del%20Granjero%20%28Farmer%20Walk%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Caminata%20del%20Granjero%20%28Farmer%20Walk%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Caminata%20del%20Granjero%20%28Farmer%20Walk%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "30 metros",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": 28
+        "peso_actual": 28,
+        "imagen_url": "https://www.google.com/search?q=Caminata%20del%20Granjero%20%28Farmer%20Walk%29%20ejercicio%20gif%20tecnica&tbm=isch"
       }
     ]
   },
@@ -595,11 +623,12 @@ const RUTINA_GYMROUTINE = [
           "Exhalá todo → ombligo hacia adentro y arriba → mantené 30 seg respirando superficialmente si podés → soltá → respirá normal → repetí."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Stomach%20Vacuum%20%28Vac%C3%ADo%20Abdominal%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Stomach%20Vacuum%20%28Vac%C3%ADo%20Abdominal%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Stomach%20Vacuum%20%28Vac%C3%ADo%20Abdominal%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "30 seg",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Stomach%20Vacuum%20%28Vac%C3%ADo%20Abdominal%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_dead_bug_press",
@@ -615,11 +644,12 @@ const RUTINA_GYMROUTINE = [
           "Presioná la mano izquierda contra el muslo izquierdo → bajá brazo derecho y pierna derecha juntos → volvés → alternás. Lento y controlado."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Dead%20Bug%20con%20Press%20de%20Manos%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Dead%20Bug%20con%20Press%20de%20Manos%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Dead%20Bug%20con%20Press%20de%20Manos%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "10 por lado",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Dead%20Bug%20con%20Press%20de%20Manos%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_side_plank_banco",
@@ -635,11 +665,12 @@ const RUTINA_GYMROUTINE = [
           "Cuerpo en línea recta de cabeza a pies. Cadera arriba. Mantené 30 seg. Cambiá de lado. Si falla la forma, bajá a 20 seg."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Side%20Plank%20en%20Banco%20%28Plancha%20Lateral%20Elevada%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Side%20Plank%20en%20Banco%20%28Plancha%20Lateral%20Elevada%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Side%20Plank%20en%20Banco%20%28Plancha%20Lateral%20Elevada%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "30 seg por lado",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Side%20Plank%20en%20Banco%20%28Plancha%20Lateral%20Elevada%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_incline_walking",
@@ -655,11 +686,12 @@ const RUTINA_GYMROUTINE = [
           "Inclinación 5-10% → velocidad 5-6 km/h → 30-40 min constante → sin agarrarte → enfocate en la respiración nasal durante todo el recorrido."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Caminata%20con%20Inclinaci%C3%B3n%20%28Incline%20Walking%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Caminata%20con%20Inclinaci%C3%B3n%20%28Incline%20Walking%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Caminata%20con%20Inclinaci%C3%B3n%20%28Incline%20Walking%29%20ejercicio%20site%3Atiktok.com",
         "series": 1,
         "repeticiones": "30-40 min continuo",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Caminata%20con%20Inclinaci%C3%B3n%20%28Incline%20Walking%29%20ejercicio%20gif%20tecnica&tbm=isch"
       }
     ]
   },
@@ -681,11 +713,12 @@ const RUTINA_GYMROUTINE = [
           "Rodilla superior en el banco → cuerpo recto → cadera arriba → mantené 20 seg → bajá → repetí del otro lado. Progresá a 30 seg cuando sea fácil."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Copenhagen%20Plank%20%28versi%C3%B3n%20f%C3%A1cil%20con%20rodilla%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Copenhagen%20Plank%20%28versi%C3%B3n%20f%C3%A1cil%20con%20rodilla%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Copenhagen%20Plank%20%28versi%C3%B3n%20f%C3%A1cil%20con%20rodilla%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "20 seg por lado",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Copenhagen%20Plank%20%28versi%C3%B3n%20f%C3%A1cil%20con%20rodilla%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_bear_crawl",
@@ -701,11 +734,12 @@ const RUTINA_GYMROUTINE = [
           "Rodillas 2 cm del suelo → avanzás moviendo mano derecha + pie izquierdo juntos → luego mano izquierda + pie derecho → espalda plana todo el tiempo → lento y controlado."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Caminata%20de%20Oso%20%28Bear%20Crawl%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Caminata%20de%20Oso%20%28Bear%20Crawl%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Caminata%20de%20Oso%20%28Bear%20Crawl%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "10 metros (ida y vuelta)",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Caminata%20de%20Oso%20%28Bear%20Crawl%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_kb_swings",
@@ -721,11 +755,12 @@ const RUTINA_GYMROUTINE = [
           "Cadera atrás → kettlebell pasa entre las piernas → explosión de glúteos → kettlebell sube a altura de hombros → dejás caer con control → repetís sin parar."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Kettlebell%20Swings%20%28o%20Mancuerna%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Kettlebell%20Swings%20%28o%20Mancuerna%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Kettlebell%20Swings%20%28o%20Mancuerna%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "15",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": 16
+        "peso_actual": 16,
+        "imagen_url": "https://www.google.com/search?q=Kettlebell%20Swings%20%28o%20Mancuerna%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_goblet_squat",
@@ -741,11 +776,12 @@ const RUTINA_GYMROUTINE = [
           "Pesa al pecho → bajás manteniendo el torso vertical → rodillas abren sobre los pies → profundidad cómoda → empujás desde el talón → exhalás al subir."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Goblet%20Squat%20%28Sentadilla%20Goblet%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Goblet%20Squat%20%28Sentadilla%20Goblet%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Goblet%20Squat%20%28Sentadilla%20Goblet%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "12",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 16
+        "peso_actual": 16,
+        "imagen_url": "https://www.google.com/search?q=Goblet%20Squat%20%28Sentadilla%20Goblet%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_step_ups_d5",
@@ -761,11 +797,12 @@ const RUTINA_GYMROUTINE = [
           "Pie de trabajo en el cajón → empujás SOLO con esa pierna → subís → la pierna de atrás sube pero no empuja → bajás controlado → repetís todas las reps de un lado antes de cambiar."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Step-ups%20%28Subidas%20al%20Caj%C3%B3n%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Step-ups%20%28Subidas%20al%20Caj%C3%B3n%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Step-ups%20%28Subidas%20al%20Caj%C3%B3n%29%20ejercicio%20site%3Atiktok.com",
         "series": 4,
         "repeticiones": "10 por pierna",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": 14
+        "peso_actual": 14,
+        "imagen_url": "https://www.google.com/search?q=Step-ups%20%28Subidas%20al%20Caj%C3%B3n%29%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_sprint_intervals_d5",
@@ -781,11 +818,12 @@ const RUTINA_GYMROUTINE = [
           "Cinta: 30 seg corriendo rápido (7-10 km/h) → 60 seg caminata lenta (3-4 km/h) → repetís 8-10 veces. Bici: 30 seg resistencia máxima → 60 seg resistencia mínima → 8-10 veces."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Intervalos%20de%20Piques%20%E2%80%94%20Cinta%20o%20Bici%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Intervalos%20de%20Piques%20%E2%80%94%20Cinta%20o%20Bici%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Intervalos%20de%20Piques%20%E2%80%94%20Cinta%20o%20Bici%20ejercicio%20site%3Atiktok.com",
         "series": 1,
         "repeticiones": "8-10 repeticiones (30 seg fuerte / 60 seg suave)",
         "tipo_entrenamiento": "Hipertrofia",
-        "peso_actual": null
+        "peso_actual": null,
+        "imagen_url": "https://www.google.com/search?q=Intervalos%20de%20Piques%20%E2%80%94%20Cinta%20o%20Bici%20ejercicio%20gif%20tecnica&tbm=isch"
       },
       {
         "ejercicio_id": "gr_face_pull_d5",
@@ -801,11 +839,12 @@ const RUTINA_GYMROUTINE = [
           "Tirás la cuerda hacia tu frente separando ambos extremos. Codos a altura de hombros o más arriba. Pausa 1 seg. Soltás controlado. Mejora la postura que hace que hombros y pecho luzcan más."
         ],
         "video_url": "https://www.youtube.com/results?search_query=Face%20Pull%20%28Bonus%20final%20%E2%80%94%20Hombros/Postura%29%20tecnica%20ejercicio",
-        "tiktok_url": "https://www.tiktok.com/search?q=Face%20Pull%20%28Bonus%20final%20%E2%80%94%20Hombros/Postura%29%20ejercicio",
+        "tiktok_url": "https://www.google.com/search?q=Face%20Pull%20%28Bonus%20final%20%E2%80%94%20Hombros/Postura%29%20ejercicio%20site%3Atiktok.com",
         "series": 3,
         "repeticiones": "15",
         "tipo_entrenamiento": "Resistencia",
-        "peso_actual": 12
+        "peso_actual": 12,
+        "imagen_url": "https://www.google.com/search?q=Face%20Pull%20%28Bonus%20final%20%E2%80%94%20Hombros/Postura%29%20ejercicio%20gif%20tecnica&tbm=isch"
       }
     ]
   }

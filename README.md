@@ -65,9 +65,17 @@ gym-app/
          allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
          allow update, delete: if request.auth != null && resource.data.uid == request.auth.uid;
        }
+       match /ejercicios/{ejercicioId} {
+         allow read: if true;
+         allow write: if request.auth != null && request.auth.token.email == "ernestoarevalo@gmail.com";
+       }
      }
    }
    ```
+
+   **IMPORTANTE**: actualizá estas reglas en la consola de Firebase (pestaña
+   "Reglas" de Firestore) cada vez que copies este bloque actualizado; las
+   reglas no se actualizan solas con el código del repo.
 
 5. Ve a **Configuración del proyecto** (ícono de engranaje arriba a la
    izquierda) → pestaña "General" → sección "Tus apps" → clic en el ícono

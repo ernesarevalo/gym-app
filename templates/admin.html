@@ -49,6 +49,37 @@
         <tbody id="tablaUsuarios"></tbody>
       </table>
     </div>
+
+    <hr class="my-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+      <h4 class="mb-0">🏋️ Base de ejercicios</h4>
+      <div class="d-flex gap-2">
+        <button id="btnMigrarEjercicios" class="btn btn-outline-light btn-sm">⬆️ Cargar catálogo base a Firestore</button>
+        <button id="btnNuevoEjercicio" class="btn btn-primary btn-sm">+ Nuevo ejercicio</button>
+      </div>
+    </div>
+    <p class="small text-secondary">
+      Si es la primera vez que usás esta sección, hacé clic en "Cargar catálogo base a Firestore"
+      una sola vez para copiar los 60 ejercicios iniciales. Después de eso, editá/agregá/borrá
+      ejercicios libremente desde aquí — los cambios se reflejan al instante en toda la app.
+    </p>
+
+    <input type="text" id="buscadorEjercicios" class="form-control mb-3" placeholder="Buscar ejercicio por nombre o grupo muscular...">
+
+    <div class="table-responsive">
+      <table class="table table-sm align-middle" style="color: var(--text);">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Grupo</th>
+            <th>Series x Reps</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaEjercicios"></tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -128,6 +159,98 @@
   </div>
 </div>
 
+<!-- Modal: editar/crear ejercicio -->
+<div class="modal fade" id="modalEjercicio" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color: var(--card-bg); color: var(--text);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tituloModalEjercicio">Editar ejercicio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="ejEditId">
+        <div class="row g-2">
+          <div class="col-md-6">
+            <label class="form-label">Nombre</label>
+            <input type="text" id="ejNombre" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Grupo muscular</label>
+            <select id="ejGrupo" class="form-select">
+              <option>Pecho</option><option>Espalda</option><option>Piernas</option>
+              <option>Hombros</option><option>Brazos</option><option>Core</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-2 mt-2">
+          <label class="form-label">Descripción breve</label>
+          <input type="text" id="ejDescripcion" class="form-control">
+        </div>
+        <div class="row g-2">
+          <div class="col-md-6">
+            <label class="form-label">Series recomendadas</label>
+            <input type="number" id="ejSeries" class="form-control" min="1" max="10">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Repeticiones recomendadas</label>
+            <input type="text" id="ejReps" class="form-control" placeholder="ej: 8-12">
+          </div>
+        </div>
+        <hr>
+        <p class="small text-secondary mb-1">Técnica</p>
+        <div class="mb-2">
+          <label class="form-label small">Postura</label>
+          <textarea id="ejPostura" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-2">
+          <label class="form-label small">Errores comunes</label>
+          <textarea id="ejErrores" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-2">
+          <label class="form-label small">Seguridad</label>
+          <textarea id="ejSeguridad" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-2">
+          <label class="form-label small">Tips (uno por línea)</label>
+          <textarea id="ejTips" class="form-control" rows="2"></textarea>
+        </div>
+        <hr>
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label class="form-label small">Peso — Principiante</label>
+            <input type="text" id="ejPesoPrincipiante" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Peso — Intermedio</label>
+            <input type="text" id="ejPesoIntermedio" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Peso — Avanzado</label>
+            <input type="text" id="ejPesoAvanzado" class="form-control">
+          </div>
+        </div>
+        <div class="row g-2 mt-2">
+          <div class="col-md-4">
+            <label class="form-label small">Link YouTube</label>
+            <input type="text" id="ejVideoUrl" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Link TikTok</label>
+            <input type="text" id="ejTiktokUrl" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Link Imagen/GIF</label>
+            <input type="text" id="ejImagenUrl" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnGuardarEjercicio" class="btn btn-primary">Guardar ejercicio</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
@@ -135,6 +258,7 @@
 <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 <script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+<script src="{{ url_for('static', filename='js/exercises-catalog.js') }}"></script>
 <script>const ADMIN_EMAIL = "{{ admin_email }}";</script>
 <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
 </body>

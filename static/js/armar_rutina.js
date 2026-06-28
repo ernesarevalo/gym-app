@@ -10,6 +10,7 @@ let usuarioActual = null;
 let ejerciciosCatalogo = [];
 let rutinaBuilder = []; // [{dia, titulo, ejercicios:[...]}]
 let diaSeleccionado = 0;
+const MINIMO_EJERCICIOS_POR_DIA = 5;
 
 const ICONOS_GRUPO = {
   "Pecho": "🎯", "Espalda": "🦴", "Piernas": "🦵",
@@ -64,8 +65,7 @@ auth.onAuthStateChanged(async (user) => {
 
   usuarioActual = user;
 
-  const res = await fetch("/api/ejercicios");
-  ejerciciosCatalogo = await res.json();
+  ejerciciosCatalogo = await obtenerCatalogoEjercicios();
 
   const diasGuardados = (data.perfil && data.perfil.dias) || 3;
   document.getElementById("selectCantidadDias").value = diasGuardados;
@@ -130,7 +130,14 @@ function renderTabsDias() {
 function renderEjerciciosDelDia() {
   const cont = document.getElementById("ejerciciosDelDia");
   const dia = rutinaBuilder[diaSeleccionado];
-  cont.innerHTML = `<h5 class="mb-3">Ejercicios del Día ${dia.dia}</h5>`;
+  const cantidad = dia.ejercicios.length;
+  const cumpleMinimo = cantidad >= MINIMO_EJERCICIOS_POR_DIA;
+  cont.innerHTML = `
+    <h5 class="mb-1">Ejercicios del Día ${dia.dia}</h5>
+    <p class="small ${cumpleMinimo ? "text-success" : "text-warning"} mb-3">
+      ${cumpleMinimo ? "✅" : "⏳"} ${cantidad}/${MINIMO_EJERCICIOS_POR_DIA} ejercicios mínimos (sin contar calentamiento ni movilidad)
+    </p>
+  `;
 
   if (dia.ejercicios.length === 0) {
     cont.innerHTML += `<p class="text-secondary">Todavía no agregaste ejercicios a este día.</p>`;
@@ -148,6 +155,7 @@ function renderEjerciciosDelDia() {
           <div class="d-flex gap-2 small">
             ${ej.video_url ? `<a href="${ej.video_url}" target="_blank">▶ YouTube</a>` : ""}
             ${ej.tiktok_url ? `<a href="${ej.tiktok_url}" target="_blank">🎵 TikTok</a>` : ""}
+            ${ej.imagen_url ? `<a href="${ej.imagen_url}" target="_blank">🖼️ GIF</a>` : ""}
           </div>
         </div>
         <button class="btn btn-sm btn-outline-light btnQuitar">Quitar</button>
@@ -228,6 +236,7 @@ function mostrarInfoGrupo(ejercicio) {
   html += `<br><div class="d-flex gap-3 mt-1">`;
   if (ejercicio.video_url) html += `<a href="${ejercicio.video_url}" target="_blank">▶ Ver en YouTube</a>`;
   if (ejercicio.tiktok_url) html += `<a href="${ejercicio.tiktok_url}" target="_blank">🎵 Ver en TikTok</a>`;
+  if (ejercicio.imagen_url) html += `<a href="${ejercicio.imagen_url}" target="_blank">🖼️ Ver GIF/Imagen</a>`;
   html += `</div>`;
 
   info.innerHTML = html;
@@ -243,40 +252,41 @@ function mostrarSugerencias(ejercicio) {
   const sinergias = SINERGIA[ejercicio.grupo_muscular] || [];
   const sugerenciasFiltradas = sinergias.filter(s => !gruposYaEnDia.has(s.grupo));
 
-  if (sugerenciasFiltradas.length === 0) {
+  if (sugerenciasFiltradas.length === 0 && idsYaEnDia.size === 0) {
     cont.innerHTML = "";
     return;
   }
 
-  cont.innerHTML = `<p class="small text-secondary mb-2">Para completar bien este día, también podrías sumar (clic para agregar directo):</p>`;
+  cont.innerHTML = `<p class="small text-secondary mb-2">✅ Tildá los que quieras agregar (se suman al instante y las recomendaciones se actualizan):</p>`;
 
   sugerenciasFiltradas.forEach(s => {
     const ejemplos = ejerciciosCatalogo.filter(e => e.grupo_muscular === s.grupo && !idsYaEnDia.has(e.id)).slice(0, 3);
     ejemplos.forEach(ej => {
-      const card = document.createElement("button");
-      card.type = "button";
-      card.className = "ejercicio-card py-2 px-3 mb-2 w-100 text-start border-0";
+      const card = document.createElement("label");
+      card.className = "ejercicio-card py-2 px-3 mb-2 d-flex align-items-start gap-2 w-100";
+      card.style.cursor = "pointer";
       card.innerHTML = `
-        <strong>+ ${ej.nombre}</strong> <span class="text-secondary small">(${s.grupo})</span>
-        <p class="small mb-0 text-secondary">📎 ${s.motivo}</p>
+        <input type="checkbox" class="form-check-input mt-1 chkSugerencia" data-id="${ej.id}">
+        <div>
+          <strong>${ICONOS_GRUPO[s.grupo] || ""} ${ej.nombre}</strong> <span class="text-secondary small">(${s.grupo})</span>
+          <p class="small mb-0 text-secondary">📎 ${s.motivo}</p>
+        </div>
       `;
-      card.addEventListener("click", () => agregarEjercicioRapido(ej));
+      card.querySelector(".chkSugerencia").addEventListener("change", (e) => {
+        if (e.target.checked) {
+          agregarAlDia(ej);
+        } else {
+          const idx = dia.ejercicios.findIndex(x => x.ejercicio_id === ej.id);
+          if (idx >= 0) dia.ejercicios.splice(idx, 1);
+        }
+        renderTabsDias();
+        renderEjerciciosDelDia();
+        // Recalcula recomendaciones en vivo con el estado actualizado del día
+        mostrarSugerencias(ejercicio);
+      });
       cont.appendChild(card);
     });
   });
-}
-
-// Agrega un ejercicio sugerido directamente, usando el preset actualmente
-// seleccionado en el panel (por defecto Hipertrofia), sin tener que volver
-// a elegir grupo/ejercicio manualmente.
-function agregarEjercicioRapido(ejercicio) {
-  agregarAlDia(ejercicio);
-  renderTabsDias();
-  renderEjerciciosDelDia();
-  // Recalcula sugerencias para seguir completando el día con el ejercicio principal elegido
-  const idActual = document.getElementById("selectEjercicio").value;
-  const principal = ejerciciosCatalogo.find(e => e.id === idActual);
-  if (principal) mostrarSugerencias(principal);
 }
 
 // ---------- PRESETS DE SERIES/REPS ----------
@@ -400,6 +410,7 @@ function agregarAlDia(ejercicio) {
     peso_recomendado: ejercicio.peso_recomendado || null,
     video_url: ejercicio.video_url,
     tiktok_url: ejercicio.tiktok_url || null,
+    imagen_url: ejercicio.imagen_url || null,
     series: valores.series,
     repeticiones: valores.reps,
     tipo_entrenamiento: valores.tipo,
@@ -416,12 +427,11 @@ document.getElementById("btnAgregarEjercicio").addEventListener("click", () => {
   const agregado = agregarAlDia(ejercicio);
   if (!agregado) return;
 
-  // Mantenemos el grupo seleccionado para que sea fácil agregar varios
-  // ejercicios del mismo o de otros grupos sin perder el contexto.
-  // Solo reseteamos la elección puntual del ejercicio.
-  document.getElementById("selectEjercicio").value = "";
+  // Mantenemos el grupo y el ejercicio elegidos, así las sugerencias y
+  // recomendaciones siguen visibles y actualizadas para seguir agregando.
   document.getElementById("btnAgregarEjercicio").disabled = true;
-  limpiarInfoYSugerencias();
+  mostrarInfoGrupo(ejercicio);
+  mostrarSugerencias(ejercicio);
 
   renderTabsDias();
   renderEjerciciosDelDia();
@@ -470,7 +480,18 @@ function evaluarSobrecarga() {
 
 // ---------- GUARDAR RUTINA ----------
 document.getElementById("btnGuardarRutinaPersonalizada").addEventListener("click", async () => {
+  const incompletos = rutinaBuilder.filter(d => d.ejercicios.length > 0 && d.ejercicios.length < MINIMO_EJERCICIOS_POR_DIA);
   const vacios = rutinaBuilder.filter(d => d.ejercicios.length === 0);
+
+  if (incompletos.length > 0) {
+    alert(
+      `Los días ${incompletos.map(d => d.dia).join(", ")} tienen menos de ${MINIMO_EJERCICIOS_POR_DIA} ejercicios ` +
+      `(sin contar calentamiento ni movilidad articular, que se agregan aparte). ` +
+      `Agregá al menos ${MINIMO_EJERCICIOS_POR_DIA} ejercicios principales por día antes de guardar.`
+    );
+    return;
+  }
+
   if (vacios.length > 0) {
     const continuar = confirm(`Los días ${vacios.map(d => d.dia).join(", ")} no tienen ejercicios. ¿Guardar igual?`);
     if (!continuar) return;

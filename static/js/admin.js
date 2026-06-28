@@ -184,4 +184,167 @@ auth.onAuthStateChanged(async (user) => {
 
   document.getElementById("zonaAdmin").classList.remove("d-none");
   await cargarUsuarios();
+  await cargarEjercicios();
+});
+
+// ================= GESTIÓN DE EJERCICIOS (Firestore directo) =================
+// A diferencia de los usuarios, esto NO pasa por el backend: el propio
+// usuario admin escribe directamente en Firestore. Las reglas de seguridad
+// (ver README) permiten escritura en "ejercicios" solo a este correo.
+
+let ejerciciosCache = [];
+const modalEjercicio = () => new bootstrap.Modal(document.getElementById("modalEjercicio"));
+
+async function cargarEjercicios() {
+  try {
+    ejerciciosCache = await obtenerCatalogoEjercicios();
+    renderTablaEjercicios(ejerciciosCache);
+  } catch (err) {
+    mostrarMsg("Error al cargar ejercicios: " + err.message, "danger");
+  }
+}
+
+function renderTablaEjercicios(lista) {
+  const tbody = document.getElementById("tablaEjercicios");
+  tbody.innerHTML = "";
+
+  lista.forEach(ej => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${ej.nombre}</td>
+      <td>${ej.grupo_muscular}</td>
+      <td>${ej.series_recomendadas || "-"} x ${ej.repeticiones_recomendadas || "-"}</td>
+      <td class="d-flex gap-1">
+        <button class="btn btn-sm btn-outline-light btnEditarEj">✏️</button>
+        <button class="btn btn-sm btn-outline-light btnEliminarEj">🗑️</button>
+      </td>
+    `;
+    tr.querySelector(".btnEditarEj").addEventListener("click", () => abrirEdicionEjercicio(ej));
+    tr.querySelector(".btnEliminarEj").addEventListener("click", () => eliminarEjercicio(ej));
+    tbody.appendChild(tr);
+  });
+}
+
+document.getElementById("buscadorEjercicios").addEventListener("input", (e) => {
+  const q = e.target.value.toLowerCase();
+  const filtrados = ejerciciosCache.filter(ej =>
+    ej.nombre.toLowerCase().includes(q) || ej.grupo_muscular.toLowerCase().includes(q)
+  );
+  renderTablaEjercicios(filtrados);
+});
+
+function limpiarFormularioEjercicio() {
+  ["ejEditId","ejNombre","ejDescripcion","ejSeries","ejReps","ejPostura","ejErrores",
+   "ejSeguridad","ejTips","ejPesoPrincipiante","ejPesoIntermedio","ejPesoAvanzado",
+   "ejVideoUrl","ejTiktokUrl","ejImagenUrl"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("ejGrupo").value = "Pecho";
+}
+
+function abrirEdicionEjercicio(ej) {
+  limpiarFormularioEjercicio();
+  document.getElementById("tituloModalEjercicio").textContent = "Editar ejercicio";
+  document.getElementById("ejEditId").value = ej.id;
+  document.getElementById("ejNombre").value = ej.nombre || "";
+  document.getElementById("ejGrupo").value = ej.grupo_muscular || "Pecho";
+  document.getElementById("ejDescripcion").value = ej.descripcion || "";
+  document.getElementById("ejSeries").value = ej.series_recomendadas || "";
+  document.getElementById("ejReps").value = ej.repeticiones_recomendadas || "";
+  const tec = ej.tecnica || {};
+  document.getElementById("ejPostura").value = tec.postura || "";
+  document.getElementById("ejErrores").value = tec.errores_comunes || "";
+  document.getElementById("ejSeguridad").value = tec.seguridad || "";
+  document.getElementById("ejTips").value = (ej.tips || []).join("\n");
+  const peso = ej.peso_recomendado || {};
+  document.getElementById("ejPesoPrincipiante").value = peso.principiante || "";
+  document.getElementById("ejPesoIntermedio").value = peso.intermedio || "";
+  document.getElementById("ejPesoAvanzado").value = peso.avanzado || "";
+  document.getElementById("ejVideoUrl").value = ej.video_url || "";
+  document.getElementById("ejTiktokUrl").value = ej.tiktok_url || "";
+  document.getElementById("ejImagenUrl").value = ej.imagen_url || "";
+  modalEjercicio().show();
+}
+
+document.getElementById("btnNuevoEjercicio").addEventListener("click", () => {
+  limpiarFormularioEjercicio();
+  document.getElementById("tituloModalEjercicio").textContent = "Nuevo ejercicio";
+  modalEjercicio().show();
+});
+
+document.getElementById("btnGuardarEjercicio").addEventListener("click", async () => {
+  const idExistente = document.getElementById("ejEditId").value;
+  const nombre = document.getElementById("ejNombre").value.trim();
+
+  if (!nombre) {
+    mostrarMsg("El nombre es obligatorio.", "danger");
+    return;
+  }
+
+  const id = idExistente || ("custom_" + nombre.toLowerCase().replace(/[^a-z0-9]+/g, "_") + "_" + Date.now());
+
+  const datos = {
+    nombre,
+    grupo_muscular: document.getElementById("ejGrupo").value,
+    descripcion: document.getElementById("ejDescripcion").value,
+    series_recomendadas: parseInt(document.getElementById("ejSeries").value, 10) || null,
+    repeticiones_recomendadas: document.getElementById("ejReps").value,
+    tecnica: {
+      postura: document.getElementById("ejPostura").value,
+      errores_comunes: document.getElementById("ejErrores").value,
+      seguridad: document.getElementById("ejSeguridad").value
+    },
+    tips: document.getElementById("ejTips").value.split("\n").map(t => t.trim()).filter(Boolean),
+    peso_recomendado: {
+      principiante: document.getElementById("ejPesoPrincipiante").value,
+      intermedio: document.getElementById("ejPesoIntermedio").value,
+      avanzado: document.getElementById("ejPesoAvanzado").value
+    },
+    video_url: document.getElementById("ejVideoUrl").value,
+    tiktok_url: document.getElementById("ejTiktokUrl").value,
+    imagen_url: document.getElementById("ejImagenUrl").value
+  };
+
+  try {
+    await db.collection("ejercicios").doc(id).set(datos, { merge: true });
+    mostrarMsg("Ejercicio guardado ✅");
+    bootstrap.Modal.getInstance(document.getElementById("modalEjercicio")).hide();
+    await cargarEjercicios();
+  } catch (err) {
+    mostrarMsg("Error al guardar ejercicio: " + err.message, "danger");
+  }
+});
+
+async function eliminarEjercicio(ej) {
+  if (!confirm(`¿Eliminar "${ej.nombre}" del catálogo? Esto no afecta rutinas ya guardadas, solo el catálogo para futuras rutinas.`)) return;
+  try {
+    await db.collection("ejercicios").doc(ej.id).delete();
+    mostrarMsg("Ejercicio eliminado ✅");
+    await cargarEjercicios();
+  } catch (err) {
+    mostrarMsg("Error al eliminar: " + err.message, "danger");
+  }
+}
+
+// ---------- MIGRACIÓN: copiar el catálogo base local a Firestore ----------
+document.getElementById("btnMigrarEjercicios").addEventListener("click", async () => {
+  if (!confirm("Esto copia los 60 ejercicios base a Firestore (sin pisar los que ya existan ahí). ¿Continuar?")) return;
+
+  try {
+    const res = await fetch("/api/ejercicios");
+    const base = await res.json();
+    let agregados = 0;
+
+    for (const ej of base) {
+      const docRef = db.collection("ejercicios").doc(ej.id);
+      const existe = await docRef.get();
+      if (!existe.exists) {
+        await docRef.set(ej);
+        agregados++;
+      }
+    }
+
+    mostrarMsg(`Migración completa: ${agregados} ejercicios nuevos agregados a Firestore ✅`);
+    await cargarEjercicios();
+  } catch (err) {
+    mostrarMsg("Error en la migración: " + err.message, "danger");
+  }
 });

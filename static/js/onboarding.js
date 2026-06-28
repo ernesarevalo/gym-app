@@ -43,8 +43,7 @@ const SPLITS = {
 };
 
 async function obtenerEjercicios() {
-  const res = await fetch("/api/ejercicios");
-  return res.json();
+  return obtenerCatalogoEjercicios();
 }
 
 function elegirEjercicioPorGrupo(ejercicios, grupo, offset = 0) {
@@ -74,6 +73,7 @@ async function generarRutina(dias, enfoque, offset = 0) {
         peso_recomendado: ej.peso_recomendado || null,
         video_url: ej.video_url,
         tiktok_url: ej.tiktok_url || null,
+        imagen_url: ej.imagen_url || null,
         series: 4,
         repeticiones: reps,
         tipo_entrenamiento: enfoque,
