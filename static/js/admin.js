@@ -234,7 +234,7 @@ document.getElementById("buscadorEjercicios").addEventListener("input", (e) => {
 });
 
 function limpiarFormularioEjercicio() {
-  ["ejEditId","ejNombre","ejDescripcion","ejSeries","ejReps","ejPostura","ejErrores",
+  ["ejEditId","ejNombre","ejDescripcion","ejPatronMovimiento","ejSeries","ejReps","ejPostura","ejErrores",
    "ejSeguridad","ejTips","ejPesoPrincipiante","ejPesoIntermedio","ejPesoAvanzado",
    "ejVideoUrl","ejTiktokUrl","ejImagenUrl"].forEach(id => document.getElementById(id).value = "");
   document.getElementById("ejGrupo").value = "Pecho";
@@ -247,6 +247,7 @@ function abrirEdicionEjercicio(ej) {
   document.getElementById("ejNombre").value = ej.nombre || "";
   document.getElementById("ejGrupo").value = ej.grupo_muscular || "Pecho";
   document.getElementById("ejDescripcion").value = ej.descripcion || "";
+  document.getElementById("ejPatronMovimiento").value = ej.patron_movimiento || "";
   document.getElementById("ejSeries").value = ej.series_recomendadas || "";
   document.getElementById("ejReps").value = ej.repeticiones_recomendadas || "";
   const tec = ej.tecnica || {};
@@ -285,6 +286,7 @@ document.getElementById("btnGuardarEjercicio").addEventListener("click", async (
     nombre,
     grupo_muscular: document.getElementById("ejGrupo").value,
     descripcion: document.getElementById("ejDescripcion").value,
+    patron_movimiento: document.getElementById("ejPatronMovimiento").value,
     series_recomendadas: parseInt(document.getElementById("ejSeries").value, 10) || null,
     repeticiones_recomendadas: document.getElementById("ejReps").value,
     tecnica: {

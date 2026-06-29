@@ -180,12 +180,41 @@ function renderTecnica(ej, idGen) {
   `;
 }
 
+function calcularEdad(fechaNacimiento) {
+  if (!fechaNacimiento) return null;
+  const hoy = new Date();
+  const nac = new Date(fechaNacimiento);
+  let edad = hoy.getFullYear() - nac.getFullYear();
+  const aunNoCumplio = (hoy.getMonth() < nac.getMonth()) ||
+    (hoy.getMonth() === nac.getMonth() && hoy.getDate() < nac.getDate());
+  if (aunNoCumplio) edad--;
+  return edad;
+}
+
+const IDS_LUMBAR_EXIGENTE = new Set(["piernas_1", "piernas_7"]); // Sentadilla con Barra, Peso Muerto Convencional
+
+function mostrarAvisoLumbarPorEdad(dia) {
+  const cont = document.getElementById("avisoLumbarEdad");
+  if (!cont) return;
+
+  const edad = datosUsuario ? calcularEdad(datosUsuario.fecha_nacimiento) : null;
+  const tieneLumbarExigente = dia.ejercicios.some(e => IDS_LUMBAR_EXIGENTE.has(e.ejercicio_id));
+
+  if (edad !== null && edad >= 39 && tieneLumbarExigente) {
+    cont.classList.remove("d-none");
+    cont.innerHTML = `⚠️ Este día incluye sentadilla o peso muerto pesado. A partir de los 39 años la zona lumbar tarda más en recuperarse: evitá programar estas variantes pesadas en días consecutivos y prestá especial atención a la técnica. Consultá con tu profesional si tenés dudas.`;
+  } else {
+    cont.classList.add("d-none");
+  }
+}
+
 function renderDia(idx) {
   diaSeleccionado = idx;
   renderTabsDias();
 
   const dia = rutinaActual[idx];
   renderCalentamientoYMovilidadDelDia(dia);
+  mostrarAvisoLumbarPorEdad(dia);
   contenidoDia.innerHTML = `<h5 class="mb-3">${dia.titulo}</h5>`;
 
   dia.ejercicios.forEach((ej, ejIdx) => {
@@ -196,7 +225,7 @@ function renderDia(idx) {
       <div class="d-flex justify-content-between align-items-start flex-wrap">
         <div>
           <h5>${ICONOS_GRUPO[ej.grupo_muscular] || "🏋️"} ${ej.nombre}</h5>
-          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps ${ej.tipo_entrenamiento ? "(" + ej.tipo_entrenamiento + ")" : ""}</p>
+          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps ${ej.tipo_entrenamiento ? "(" + ej.tipo_entrenamiento + ")" : ""}${ej.patron_movimiento ? " · 🧩 " + ej.patron_movimiento : ""}</p>
           <p class="mb-1">${ej.descripcion || ""}</p>
           ${ej.tips && ej.tips.length ? `<p class="mb-1 small">💡 ${ej.tips[0]}</p>` : ""}
           ${ej.peso_recomendado ? `<p class="mb-1 small text-secondary">🏋️ Peso orientativo — Principiante: ${ej.peso_recomendado.principiante} · Intermedio: ${ej.peso_recomendado.intermedio} · Avanzado: ${ej.peso_recomendado.avanzado}</p>` : ""}
@@ -263,6 +292,7 @@ async function reemplazarEjercicio(nuevoEjercicio) {
     video_url: nuevoEjercicio.video_url,
     tiktok_url: nuevoEjercicio.tiktok_url || null,
     imagen_url: nuevoEjercicio.imagen_url || null,
+    patron_movimiento: nuevoEjercicio.patron_movimiento || null,
     grupo_muscular: nuevoEjercicio.grupo_muscular,
     peso_actual: null
   };

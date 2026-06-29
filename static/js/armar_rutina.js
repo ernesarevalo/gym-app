@@ -150,7 +150,7 @@ function renderEjerciciosDelDia() {
       <div class="d-flex justify-content-between align-items-start flex-wrap">
         <div>
           <h5 class="mb-1">${ICONOS_GRUPO[ej.grupo_muscular] || "🏋️"} ${ej.nombre}</h5>
-          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps (${ej.tipo_entrenamiento || ""})</p>
+          <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps (${ej.tipo_entrenamiento || ""})${ej.patron_movimiento ? " · 🧩 " + ej.patron_movimiento : ""}</p>
           ${ej.tips && ej.tips.length ? `<p class="mb-1 small">💡 ${ej.tips[0]}</p>` : ""}
           <div class="d-flex gap-2 small">
             ${ej.video_url ? `<a href="${ej.video_url}" target="_blank">▶ YouTube</a>` : ""}
@@ -233,6 +233,10 @@ function mostrarInfoGrupo(ejercicio) {
   info.classList.remove("d-none");
 
   let html = `💡 <strong>${ejercicio.nombre}</strong> entrena principalmente: <strong>${ejercicio.grupo_muscular}</strong>. Este va a ser el ejercicio principal del día.`;
+
+  if (ejercicio.patron_movimiento) {
+    html += `<br>🧩 Patrón de movimiento: <strong>${ejercicio.patron_movimiento}</strong>.`;
+  }
 
   if (ejercicio.series_recomendadas) {
     html += `<br>📊 Sugerido por defecto: <strong>${ejercicio.series_recomendadas} series x ${ejercicio.repeticiones_recomendadas} reps</strong>.`;
@@ -474,6 +478,7 @@ function agregarAlDia(ejercicio) {
     video_url: ejercicio.video_url,
     tiktok_url: ejercicio.tiktok_url || null,
     imagen_url: ejercicio.imagen_url || null,
+    patron_movimiento: ejercicio.patron_movimiento || null,
     series: valores.series,
     repeticiones: valores.reps,
     tipo_entrenamiento: valores.tipo,
@@ -537,6 +542,28 @@ function evaluarSobrecarga() {
     mensajes.push(`Llevás ${seriesTotales} series totales en este día, lo cual es un volumen alto. Asegurate de tener tiempo y energía suficiente para completarlo con buena técnica.`);
   }
 
+  // Solapamiento lumbar: Sentadilla/Peso Muerto + Remo con Barra el mismo día
+  const idsEnDia = new Set(dia.ejercicios.map(e => e.ejercicio_id));
+  const tieneLumbarExigente = idsEnDia.has("piernas_1") || idsEnDia.has("piernas_7");
+  const tieneRemoBarra = idsEnDia.has("espalda_2");
+  if (tieneLumbarExigente && tieneRemoBarra) {
+    mensajes.push(`Tenés Sentadilla con Barra o Peso Muerto Convencional junto con Remo con Barra el mismo día. Ambos exigen mucho a la zona lumbar; te sugerimos cambiar el Remo con Barra por una variante con apoyo (Remo Sentado en Polea Baja o Remo con Mancuerna a Una Mano).`);
+  }
+
+  // Redundancia de patrón: dos ejercicios del mismo grupo con el mismo patrón de movimiento exacto
+  const porGrupoPatron = {};
+  dia.ejercicios.forEach(e => {
+    if (!e.patron_movimiento) return;
+    const clave = e.grupo_muscular + "|" + e.patron_movimiento;
+    porGrupoPatron[clave] = (porGrupoPatron[clave] || 0) + 1;
+  });
+  Object.entries(porGrupoPatron).forEach(([clave, cant]) => {
+    if (cant >= 2) {
+      const [grupo, patron] = clave.split("|");
+      mensajes.push(`Tenés ${cant} ejercicios de ${grupo} con el mismo patrón de movimiento (${patron}). Para un estímulo más completo, conviene variar el ángulo o el tipo de movimiento entre ejercicios del mismo grupo.`);
+    }
+  });
+
   if (mensajes.length > 0) {
     aviso.classList.remove("d-none");
     aviso.innerHTML = "⚠️ " + mensajes.join("<br>⚠️ ");
@@ -546,6 +573,14 @@ function evaluarSobrecarga() {
 }
 
 // ---------- GUARDAR RUTINA ----------
+function esPatronCompuesto(patron) {
+  if (!patron) return false;
+  const p = patron.toLowerCase();
+  return !p.startsWith("aislamiento") && !p.startsWith("estabilización") &&
+         !p.startsWith("flexión de tronco") && !p.startsWith("rotación") &&
+         !p.startsWith("flexión de cadera");
+}
+
 document.getElementById("btnGuardarRutinaPersonalizada").addEventListener("click", async () => {
   const incompletos = rutinaBuilder.filter(d => d.ejercicios.length > 0 && d.ejercicios.length < MINIMO_EJERCICIOS_POR_DIA);
   const vacios = rutinaBuilder.filter(d => d.ejercicios.length === 0);
@@ -563,6 +598,13 @@ document.getElementById("btnGuardarRutinaPersonalizada").addEventListener("click
     const continuar = confirm(`Los días ${vacios.map(d => d.dia).join(", ")} no tienen ejercicios. ¿Guardar igual?`);
     if (!continuar) return;
   }
+
+  // Jerarquía de fatiga: ordenamos cada día con los ejercicios compuestos
+  // primero (mayor exigencia neuromuscular) y el aislamiento/core al final,
+  // sin importar el orden en que los fuiste tildando.
+  rutinaBuilder.forEach(d => {
+    d.ejercicios.sort((a, b) => (esPatronCompuesto(a.patron_movimiento) ? 0 : 1) - (esPatronCompuesto(b.patron_movimiento) ? 0 : 1));
+  });
 
   rutinaBuilder.forEach((d, i) => {
     d.titulo = `Día ${d.dia}: ` + (d.ejercicios.length > 0
