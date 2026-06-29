@@ -191,15 +191,23 @@ function onCambioGrupo(e) {
     return;
   }
 
-  const opciones = ejerciciosCatalogo.filter(e => e.grupo_muscular === grupo);
+  // Mostramos solo los 3 ejercicios "principales" (los más importantes/
+  // clásicos) de ese grupo muscular, según el orden del catálogo.
+  const opciones = ejerciciosCatalogo.filter(e => e.grupo_muscular === grupo).slice(0, 3);
   selectEj.disabled = false;
-  selectEj.innerHTML = `<option value="">Selecciona un ejercicio...</option>` +
+  selectEj.innerHTML = `<option value="">Selecciona el ejercicio principal de este día...</option>` +
     opciones.map(o => `<option value="${o.id}">${o.nombre}</option>`).join("");
 }
+
+// ---------- ESTADO DE SELECCIÓN EN CURSO (no se guarda hasta presionar Agregar) ----------
+let staged = []; // ejercicios sugeridos tildados, pendientes de agregar junto al principal
+const MAX_SUGERENCIAS_TILDABLES = 4;
 
 function onCambioEjercicio(e) {
   const id = e.target.value;
   const btnAgregar = document.getElementById("btnAgregarEjercicio");
+
+  staged = [];
 
   if (!id) {
     limpiarInfoYSugerencias();
@@ -210,19 +218,21 @@ function onCambioEjercicio(e) {
   const ejercicio = ejerciciosCatalogo.find(e => e.id === id);
   mostrarInfoGrupo(ejercicio);
   mostrarSugerencias(ejercicio);
+  actualizarTextoBoton();
   btnAgregar.disabled = false;
 }
 
 function limpiarInfoYSugerencias() {
   document.getElementById("infoEjercicioElegido").classList.add("d-none");
   document.getElementById("sugerenciasEjercicio").innerHTML = "";
+  staged = [];
 }
 
 function mostrarInfoGrupo(ejercicio) {
   const info = document.getElementById("infoEjercicioElegido");
   info.classList.remove("d-none");
 
-  let html = `💡 <strong>${ejercicio.nombre}</strong> entrena principalmente: <strong>${ejercicio.grupo_muscular}</strong>.`;
+  let html = `💡 <strong>${ejercicio.nombre}</strong> entrena principalmente: <strong>${ejercicio.grupo_muscular}</strong>. Este va a ser el ejercicio principal del día.`;
 
   if (ejercicio.series_recomendadas) {
     html += `<br>📊 Sugerido por defecto: <strong>${ejercicio.series_recomendadas} series x ${ejercicio.repeticiones_recomendadas} reps</strong>.`;
@@ -242,51 +252,104 @@ function mostrarInfoGrupo(ejercicio) {
   info.innerHTML = html;
 }
 
-function mostrarSugerencias(ejercicio) {
-  const cont = document.getElementById("sugerenciasEjercicio");
+// Construye hasta 4 sugerencias para acompañar al ejercicio principal,
+// garantizando siempre al menos 3 si el catálogo lo permite. Prioriza:
+//  1) grupos en sinergia con el principal, todavía no usados ese día
+//  2) cualquier otro grupo todavía no trabajado ese día (variedad)
+//  3) otro ejercicio del mismo grupo que el principal (refuerzo)
+function calcularSugerencias(ejercicioPrincipal) {
   const dia = rutinaBuilder[diaSeleccionado];
-  const idsYaEnDia = new Set(dia.ejercicios.map(e => e.ejercicio_id));
-  const gruposYaEnDia = new Set(dia.ejercicios.map(e => e.grupo_muscular));
-  gruposYaEnDia.add(ejercicio.grupo_muscular);
+  const idsExcluir = new Set([ejercicioPrincipal.id, ...dia.ejercicios.map(e => e.ejercicio_id)]);
+  const gruposEnDia = new Set(dia.ejercicios.map(e => e.grupo_muscular));
+  gruposEnDia.add(ejercicioPrincipal.grupo_muscular);
 
-  const sinergias = SINERGIA[ejercicio.grupo_muscular] || [];
-  const sugerenciasFiltradas = sinergias.filter(s => !gruposYaEnDia.has(s.grupo));
+  const resultado = [];
 
-  if (sugerenciasFiltradas.length === 0 && idsYaEnDia.size === 0) {
-    cont.innerHTML = "";
+  // Tier 1: sinergia
+  const sinergias = SINERGIA[ejercicioPrincipal.grupo_muscular] || [];
+  for (const s of sinergias) {
+    if (gruposEnDia.has(s.grupo)) continue;
+    const candidato = ejerciciosCatalogo.find(e => e.grupo_muscular === s.grupo && !idsExcluir.has(e.id));
+    if (candidato) {
+      resultado.push({ ejercicio: candidato, motivo: s.motivo, grupo: s.grupo });
+      idsExcluir.add(candidato.id);
+    }
+    if (resultado.length >= MAX_SUGERENCIAS_TILDABLES) break;
+  }
+
+  // Tier 2: cualquier otro grupo todavía no trabajado ese día, para variedad
+  if (resultado.length < 3) {
+    const todosLosGrupos = ["Pecho", "Espalda", "Piernas", "Hombros", "Brazos", "Core"];
+    for (const grupo of todosLosGrupos) {
+      if (gruposEnDia.has(grupo)) continue;
+      const candidato = ejerciciosCatalogo.find(e => e.grupo_muscular === grupo && !idsExcluir.has(e.id));
+      if (candidato) {
+        resultado.push({ ejercicio: candidato, motivo: `Suma variedad trabajando otro grupo muscular (${grupo}) este día.`, grupo });
+        idsExcluir.add(candidato.id);
+      }
+      if (resultado.length >= MAX_SUGERENCIAS_TILDABLES) break;
+    }
+  }
+
+  // Tier 3: otro ejercicio del mismo grupo que el principal, como refuerzo
+  if (resultado.length < 3) {
+    const mismosGrupo = ejerciciosCatalogo.filter(e => e.grupo_muscular === ejercicioPrincipal.grupo_muscular && !idsExcluir.has(e.id));
+    for (const candidato of mismosGrupo) {
+      resultado.push({ ejercicio: candidato, motivo: `Otro ejercicio de ${ejercicioPrincipal.grupo_muscular} para sumar volumen a este grupo.`, grupo: candidato.grupo_muscular });
+      idsExcluir.add(candidato.id);
+      if (resultado.length >= MAX_SUGERENCIAS_TILDABLES) break;
+    }
+  }
+
+  return resultado.slice(0, MAX_SUGERENCIAS_TILDABLES);
+}
+
+function mostrarSugerencias(ejercicioPrincipal) {
+  const cont = document.getElementById("sugerenciasEjercicio");
+  const sugerencias = calcularSugerencias(ejercicioPrincipal);
+
+  if (sugerencias.length === 0) {
+    cont.innerHTML = `<p class="small text-secondary">No hay más ejercicios disponibles para sugerir en este día.</p>`;
     return;
   }
 
-  cont.innerHTML = `<p class="small text-secondary mb-2">✅ Tildá los que quieras agregar (se suman al instante y las recomendaciones se actualizan):</p>`;
+  cont.innerHTML = `<p class="small text-secondary mb-2">✅ Tildá hasta ${MAX_SUGERENCIAS_TILDABLES} para acompañar al ejercicio principal (se agregan junto con él al presionar el botón):</p>`;
 
-  sugerenciasFiltradas.forEach(s => {
-    const ejemplos = ejerciciosCatalogo.filter(e => e.grupo_muscular === s.grupo && !idsYaEnDia.has(e.id)).slice(0, 3);
-    ejemplos.forEach(ej => {
-      const card = document.createElement("label");
-      card.className = "ejercicio-card py-2 px-3 mb-2 d-flex align-items-start gap-2 w-100";
-      card.style.cursor = "pointer";
-      card.innerHTML = `
-        <input type="checkbox" class="form-check-input mt-1 chkSugerencia" data-id="${ej.id}">
-        <div>
-          <strong>${ICONOS_GRUPO[s.grupo] || ""} ${ej.nombre}</strong> <span class="text-secondary small">(${s.grupo})</span>
-          <p class="small mb-0 text-secondary">📎 ${s.motivo}</p>
-        </div>
-      `;
-      card.querySelector(".chkSugerencia").addEventListener("change", (e) => {
-        if (e.target.checked) {
-          agregarAlDia(ej);
-        } else {
-          const idx = dia.ejercicios.findIndex(x => x.ejercicio_id === ej.id);
-          if (idx >= 0) dia.ejercicios.splice(idx, 1);
+  sugerencias.forEach(({ ejercicio: ej, motivo, grupo }) => {
+    const card = document.createElement("label");
+    card.className = "ejercicio-card py-2 px-3 mb-2 d-flex align-items-start gap-2 w-100";
+    card.style.cursor = "pointer";
+    card.innerHTML = `
+      <input type="checkbox" class="form-check-input mt-1 chkSugerencia" data-id="${ej.id}">
+      <div>
+        <strong>${ICONOS_GRUPO[grupo] || ""} ${ej.nombre}</strong> <span class="text-secondary small">(${grupo})</span>
+        <p class="small mb-0 text-secondary">📎 ${motivo}</p>
+      </div>
+    `;
+    const checkbox = card.querySelector(".chkSugerencia");
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        if (staged.length >= MAX_SUGERENCIAS_TILDABLES) {
+          checkbox.checked = false;
+          alert(`Como máximo podés tildar ${MAX_SUGERENCIAS_TILDABLES} ejercicios recomendados por vez.`);
+          return;
         }
-        renderTabsDias();
-        renderEjerciciosDelDia();
-        // Recalcula recomendaciones en vivo con el estado actualizado del día
-        mostrarSugerencias(ejercicio);
-      });
-      cont.appendChild(card);
+        staged.push(ej);
+      } else {
+        staged = staged.filter(s => s.id !== ej.id);
+      }
+      actualizarTextoBoton();
     });
+    cont.appendChild(card);
   });
+}
+
+function actualizarTextoBoton() {
+  const btn = document.getElementById("btnAgregarEjercicio");
+  const total = 1 + staged.length; // principal + tildados
+  btn.textContent = total > 1
+    ? `Agregar estos ${total} ejercicios al día`
+    : `Agregar este ejercicio al día`;
 }
 
 // ---------- PRESETS DE SERIES/REPS ----------
@@ -424,15 +487,17 @@ document.getElementById("btnAgregarEjercicio").addEventListener("click", () => {
   const ejercicio = ejerciciosCatalogo.find(e => e.id === ejercicioId);
   if (!ejercicio) return;
 
-  const agregado = agregarAlDia(ejercicio);
-  if (!agregado) return;
+  // Agrega el principal + todos los tildados (staged) en un solo paso
+  const aAgregar = [ejercicio, ...staged];
+  let agregadosOk = 0;
+  for (const ej of aAgregar) {
+    if (agregarAlDia(ej)) agregadosOk++;
+  }
 
-  // Mantenemos el grupo y el ejercicio elegidos, así las sugerencias y
-  // recomendaciones siguen visibles y actualizadas para seguir agregando.
-  document.getElementById("btnAgregarEjercicio").disabled = true;
-  mostrarInfoGrupo(ejercicio);
-  mostrarSugerencias(ejercicio);
+  if (agregadosOk === 0) return;
 
+  // Limpiamos todo el panel para empezar de cero con el próximo ejercicio principal
+  limpiarPanelAgregar();
   renderTabsDias();
   renderEjerciciosDelDia();
 });
@@ -442,6 +507,8 @@ function limpiarPanelAgregar() {
   document.getElementById("selectEjercicio").innerHTML = `<option value="">Primero elegí un grupo muscular...</option>`;
   document.getElementById("selectEjercicio").disabled = true;
   document.getElementById("btnAgregarEjercicio").disabled = true;
+  document.getElementById("btnAgregarEjercicio").textContent = "Agregar este ejercicio al día";
+  staged = [];
   limpiarInfoYSugerencias();
 }
 
