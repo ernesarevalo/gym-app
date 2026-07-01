@@ -21,6 +21,38 @@
   </div>
 </nav>
 
+<!-- Banner: Triage de Molestias (se muestra ANTES de cargar la rutina del día) -->
+<div id="triageModal" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color: var(--card-bg); color: var(--text);">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">🩺 ¿Cómo llegás hoy?</h5>
+      </div>
+      <div class="modal-body">
+        <p class="small text-secondary">Si tenés alguna molestia, la app ajusta tu rutina automáticamente reemplazando los ejercicios de riesgo.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-outline-light btnZonaDolor" data-zona="ninguno">✅ Sin molestias</button>
+          <button class="btn btn-outline-warning btnZonaDolor" data-zona="lumbar">⚠️ Lumbar</button>
+          <button class="btn btn-outline-warning btnZonaDolor" data-zona="rodilla">⚠️ Rodilla</button>
+          <button class="btn btn-outline-warning btnZonaDolor" data-zona="hombro">⚠️ Hombro</button>
+          <button class="btn btn-outline-warning btnZonaDolor" data-zona="codo">⚠️ Codo</button>
+        </div>
+        <div id="triageResultado" class="alert alert-warning mt-3 d-none small"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Banner: Descarga propuesta -->
+<div id="bannnerDescarga" class="alert alert-info d-none mx-3 mt-3">
+  🔵 <strong>Semana de Descarga recomendada.</strong>
+  <span id="mensajeDescarga"></span>
+  <div class="mt-2 d-flex gap-2">
+    <button id="btnAceptarDescarga" class="btn btn-sm btn-primary">Sí, aplicar descarga</button>
+    <button id="btnRechazarDescarga" class="btn btn-sm btn-outline-light">No por ahora</button>
+  </div>
+</div>
+
 <div class="container py-4">
 
   <div id="seccionCalentamiento" class="card p-4 mb-4"></div>
@@ -30,14 +62,34 @@
   <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
     <h4 class="mb-0">Mi rutina semanal</h4>
     <div class="d-flex gap-2 flex-wrap">
+      <button id="btnExpress" class="btn btn-warning btn-sm">⚡ Modo Express (30 min)</button>
       <a href="/armar-rutina" class="btn btn-outline-light btn-sm">🛠️ Armar mi propia rutina</a>
       <button id="btnMejorarRutina" class="btn btn-outline-light btn-sm">📈 Mejorar mi rutina</button>
       <button id="btnVolverAnterior" class="btn btn-outline-light btn-sm d-none">⬅ Volver a la rutina anterior</button>
     </div>
   </div>
-  <div id="tabsDias" class="d-flex gap-2 mb-4 flex-wrap"></div>
 
+  <!-- Mapa de calor muscular -->
+  <div id="mapaCalor" class="card p-3 mb-3 d-none">
+    <h6 class="mb-2">🌡️ Estado muscular hoy</h6>
+    <div id="mapaCalorContent" class="d-flex gap-2 flex-wrap"></div>
+  </div>
+
+  <!-- Tonelaje semanal -->
+  <div id="tonelajeCard" class="card p-3 mb-3 d-none">
+    <h6 class="mb-0">⚡ Tonelaje semanal: <span id="tonelajeTotal" class="text-primary">...</span> kg</h6>
+  </div>
+
+  <div id="tabsDias" class="d-flex gap-2 mb-4 flex-wrap"></div>
   <div id="contenidoDia"></div>
+
+  <!-- Botón: marcar sesión como completada -->
+  <div class="mt-4 mb-2">
+    <button id="btnSesionCompletada" class="btn btn-success w-100">
+      ✅ Sesión completada — guardar y actualizar racha
+    </button>
+    <div id="rachaInfo" class="text-center mt-2 small text-secondary d-none"></div>
+  </div>
 
   <hr class="my-5">
   <h4 class="mb-3">📈 Progreso de pesos</h4>
@@ -81,6 +133,8 @@
 <script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/exercises-catalog.js') }}"></script>
+<script src="{{ url_for('static', filename='js/engine.js') }}"></script>
+<script src="{{ url_for('static', filename='js/session-tracker.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>

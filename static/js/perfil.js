@@ -38,6 +38,8 @@ async function cargarPerfil() {
   const perfil = data.perfil || {};
   document.getElementById("pNivel").value = perfil.nivel || "Principiante";
   document.getElementById("pDias").value = perfil.dias || 3;
+  document.getElementById("pTiempoSesion").value = perfil.tiempoSesion || 60;
+  document.getElementById("pEquipamiento").value = perfil.equipamiento || "gimnasio";
   document.getElementById("pEnfoque").value = perfil.enfoque || "Hipertrofia";
 
   usernameYaCambiado = !!data.username_cambiado;
@@ -77,13 +79,15 @@ document.getElementById("btnGuardarDatos").addEventListener("click", async () =>
 });
 
 document.getElementById("btnGuardarPreferencias").addEventListener("click", async () => {
-  const nivel = document.getElementById("pNivel").value;
-  const dias = parseInt(document.getElementById("pDias").value, 10);
-  const enfoque = document.getElementById("pEnfoque").value;
+  const nivel        = document.getElementById("pNivel").value;
+  const dias         = parseInt(document.getElementById("pDias").value, 10);
+  const tiempoSesion = parseInt(document.getElementById("pTiempoSesion").value, 10);
+  const equipamiento = document.getElementById("pEquipamiento").value;
+  const enfoque      = document.getElementById("pEnfoque").value;
 
   try {
     await db.collection("usuarios").doc(usuarioActual.uid).set(
-      { perfil: { nivel, dias, enfoque } },
+      { perfil: { nivel, dias, tiempoSesion, equipamiento, enfoque } },
       { merge: true }
     );
     mostrarOk("Preferencias guardadas ✅");

@@ -28,7 +28,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20de%20Banca%20con%20Barra%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20de%20Banca%20con%20Barra%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20de%20Banca%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Horizontal"
+    "patron_movimiento": "Empuje Horizontal",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_2",
@@ -59,7 +63,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20Inclinado%20con%20Mancuernas%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20Inclinado%20con%20Mancuernas%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20Inclinado%20con%20Mancuernas%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Inclinado"
+    "patron_movimiento": "Empuje Inclinado",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_3",
@@ -89,7 +97,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Aperturas%20con%20Mancuernas%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Aperturas%20con%20Mancuernas%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Aperturas%20con%20Mancuernas%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Aducción Horizontal)"
+    "patron_movimiento": "Aislamiento (Aducción Horizontal)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_4",
@@ -120,7 +132,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Fondos%20en%20Paralelas%20%28Dips%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Fondos%20en%20Paralelas%20%28Dips%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Fondos%20en%20Paralelas%20%28Dips%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Vertical (Hacia abajo)"
+    "patron_movimiento": "Empuje Vertical (Hacia abajo)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "basico",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_5",
@@ -151,7 +167,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20en%20M%C3%A1quina%20%28Chest%20Press%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20en%20M%C3%A1quina%20%28Chest%20Press%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20en%20M%C3%A1quina%20%28Chest%20Press%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Horizontal"
+    "patron_movimiento": "Empuje Horizontal",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_6",
@@ -181,7 +201,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20Declinado%20con%20Barra%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20Declinado%20con%20Barra%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20Declinado%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Declinado"
+    "patron_movimiento": "Empuje Declinado",
+    "nivel_minimo": "Avanzado",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_7",
@@ -211,7 +235,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Cruces%20en%20Polea%20%28Cable%20Crossover%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Cruces%20en%20Polea%20%28Cable%20Crossover%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Cruces%20en%20Polea%20%28Cable%20Crossover%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Aducción Horizontal)"
+    "patron_movimiento": "Aislamiento (Aducción Horizontal)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_8",
@@ -241,7 +269,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Pec%20Deck%20%28M%C3%A1quina%20de%20Aperturas%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Pec%20Deck%20%28M%C3%A1quina%20de%20Aperturas%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Pec%20Deck%20%28M%C3%A1quina%20de%20Aperturas%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Aducción Horizontal)"
+    "patron_movimiento": "Aislamiento (Aducción Horizontal)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_9",
@@ -272,7 +304,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Flexiones%20de%20Pecho%20%28Push-up%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Flexiones%20de%20Pecho%20%28Push-up%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Flexiones%20de%20Pecho%20%28Push-up%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Horizontal"
+    "patron_movimiento": "Empuje Horizontal",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "pecho_10",
@@ -302,7 +338,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Pullover%20con%20Mancuerna%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Pullover%20con%20Mancuerna%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Pullover%20con%20Mancuerna%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Vertical / Extensión de hombro"
+    "patron_movimiento": "Tirón Vertical / Extensión de hombro",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_1",
@@ -333,7 +373,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Dominadas%20%28Pull-up%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Dominadas%20%28Pull-up%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Dominadas%20%28Pull-up%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Vertical"
+    "patron_movimiento": "Tirón Vertical",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_2",
@@ -364,7 +408,13 @@
     "video_url": "https://www.youtube.com/results?search_query=Remo%20con%20Barra%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Remo%20con%20Barra%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Remo%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Horizontal"
+    "patron_movimiento": "Tirón Horizontal",
+    "nivel_minimo": "Avanzado",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": true,
+    "zona_lesion": "lumbar",
+    "alternativa_segura": "espalda_4"
   },
   {
     "id": "espalda_3",
@@ -394,7 +444,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Jal%C3%B3n%20al%20Pecho%20en%20Polea%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Jal%C3%B3n%20al%20Pecho%20en%20Polea%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Jal%C3%B3n%20al%20Pecho%20en%20Polea%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Vertical"
+    "patron_movimiento": "Tirón Vertical",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_4",
@@ -424,7 +478,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Remo%20Sentado%20en%20Polea%20Baja%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Remo%20Sentado%20en%20Polea%20Baja%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Remo%20Sentado%20en%20Polea%20Baja%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Horizontal"
+    "patron_movimiento": "Tirón Horizontal",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_5",
@@ -455,7 +513,13 @@
     "video_url": "https://www.youtube.com/results?search_query=Peso%20Muerto%20Rumano%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Peso%20Muerto%20Rumano%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Peso%20Muerto%20Rumano%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Bisagra de Cadera"
+    "patron_movimiento": "Bisagra de Cadera",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": true,
+    "zona_lesion": "lumbar",
+    "alternativa_segura": "espalda_4"
   },
   {
     "id": "espalda_6",
@@ -485,7 +549,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Remo%20en%20T%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Remo%20en%20T%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Remo%20en%20T%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Horizontal"
+    "patron_movimiento": "Tirón Horizontal",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_7",
@@ -516,7 +584,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Pull-over%20en%20Polea%20Alta%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Pull-over%20en%20Polea%20Alta%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Pull-over%20en%20Polea%20Alta%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Extensión de hombro)"
+    "patron_movimiento": "Aislamiento (Extensión de hombro)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_8",
@@ -546,7 +618,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Remo%20con%20Mancuerna%20a%20Una%20Mano%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Remo%20con%20Mancuerna%20a%20Una%20Mano%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Remo%20con%20Mancuerna%20a%20Una%20Mano%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Horizontal"
+    "patron_movimiento": "Tirón Horizontal",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "espalda_9",
@@ -576,7 +652,13 @@
     "video_url": "https://www.youtube.com/results?search_query=Hiperextensiones%20%28Banco%20Romano%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Hiperextensiones%20%28Banco%20Romano%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Hiperextensiones%20%28Banco%20Romano%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento Lumbar / Bisagra"
+    "patron_movimiento": "Aislamiento Lumbar / Bisagra",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": true,
+    "zona_lesion": "lumbar",
+    "alternativa_segura": "espalda_8"
   },
   {
     "id": "espalda_10",
@@ -606,7 +688,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Jal%C3%B3n%20con%20Agarre%20Cerrado%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Jal%C3%B3n%20con%20Agarre%20Cerrado%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Jal%C3%B3n%20con%20Agarre%20Cerrado%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Vertical"
+    "patron_movimiento": "Tirón Vertical",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_1",
@@ -636,7 +722,13 @@
     "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20con%20Barra%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Sentadilla%20con%20Barra%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Sentadilla%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Rodilla (Bilateral)"
+    "patron_movimiento": "Dominante de Rodilla (Bilateral)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": true,
+    "zona_lesion": "lumbar",
+    "alternativa_segura": "piernas_3"
   },
   {
     "id": "piernas_2",
@@ -666,7 +758,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Zancadas%20%28Lunges%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Zancadas%20%28Lunges%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Zancadas%20%28Lunges%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Rodilla (Unilateral)"
+    "patron_movimiento": "Dominante de Rodilla (Unilateral)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_3",
@@ -696,7 +792,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Prensa%20de%20Piernas%20%28Leg%20Press%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Prensa%20de%20Piernas%20%28Leg%20Press%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Prensa%20de%20Piernas%20%28Leg%20Press%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Rodilla (Bilateral)"
+    "patron_movimiento": "Dominante de Rodilla (Bilateral)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_4",
@@ -724,7 +824,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Curl%20Femoral%20en%20M%C3%A1quina%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Curl%20Femoral%20en%20M%C3%A1quina%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Curl%20Femoral%20en%20M%C3%A1quina%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de Rodilla)"
+    "patron_movimiento": "Aislamiento (Flexión de Rodilla)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_5",
@@ -752,7 +856,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20de%20Talones%20%28Gemelos%20de%20Pie%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20de%20Talones%20%28Gemelos%20de%20Pie%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20de%20Talones%20%28Gemelos%20de%20Pie%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión Plantar)"
+    "patron_movimiento": "Aislamiento (Flexión Plantar)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_6",
@@ -782,7 +890,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20B%C3%BAlgara%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Sentadilla%20B%C3%BAlgara%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Sentadilla%20B%C3%BAlgara%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Rodilla (Unilateral)"
+    "patron_movimiento": "Dominante de Rodilla (Unilateral)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_7",
@@ -813,7 +925,13 @@
     "video_url": "https://www.youtube.com/results?search_query=Peso%20Muerto%20Convencional%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Peso%20Muerto%20Convencional%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Peso%20Muerto%20Convencional%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Cadera / Híbrido"
+    "patron_movimiento": "Dominante de Cadera / Híbrido",
+    "nivel_minimo": "Avanzado",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": true,
+    "zona_lesion": "lumbar",
+    "alternativa_segura": "piernas_3"
   },
   {
     "id": "piernas_8",
@@ -841,7 +959,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Extensi%C3%B3n%20de%20Cu%C3%A1driceps%20en%20M%C3%A1quina%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Extensi%C3%B3n%20de%20Cu%C3%A1driceps%20en%20M%C3%A1quina%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Extensi%C3%B3n%20de%20Cu%C3%A1driceps%20en%20M%C3%A1quina%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Extensión de Rodilla)"
+    "patron_movimiento": "Aislamiento (Extensión de Rodilla)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_9",
@@ -869,7 +991,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Hip%20Thrust%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Hip%20Thrust%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Hip%20Thrust%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Cadera"
+    "patron_movimiento": "Dominante de Cadera",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "piernas_10",
@@ -899,7 +1025,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Sentadilla%20Goblet%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Sentadilla%20Goblet%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Sentadilla%20Goblet%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Dominante de Rodilla (Bilateral)"
+    "patron_movimiento": "Dominante de Rodilla (Bilateral)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_1",
@@ -930,7 +1060,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20Militar%20con%20Mancuernas%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20Militar%20con%20Mancuernas%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20Militar%20con%20Mancuernas%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Vertical"
+    "patron_movimiento": "Empuje Vertical",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_2",
@@ -961,7 +1095,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Elevaciones%20Laterales%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Elevaciones%20Laterales%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Elevaciones%20Laterales%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Abducción)"
+    "patron_movimiento": "Aislamiento (Abducción)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_3",
@@ -991,7 +1129,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Elevaciones%20Posteriores%20%28P%C3%A1jaros%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Elevaciones%20Posteriores%20%28P%C3%A1jaros%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Elevaciones%20Posteriores%20%28P%C3%A1jaros%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Abducción Horizontal)"
+    "patron_movimiento": "Aislamiento (Abducción Horizontal)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_4",
@@ -1021,7 +1163,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20Arnold%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20Arnold%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20Arnold%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Vertical"
+    "patron_movimiento": "Empuje Vertical",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_5",
@@ -1051,7 +1197,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Face%20Pull%20en%20Polea%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Face%20Pull%20en%20Polea%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Face%20Pull%20en%20Polea%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Horizontal / Rótula Externa"
+    "patron_movimiento": "Tirón Horizontal / Rótula Externa",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_6",
@@ -1082,7 +1232,13 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20Militar%20con%20Barra%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20Militar%20con%20Barra%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20Militar%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Vertical"
+    "patron_movimiento": "Empuje Vertical",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": true,
+    "zona_lesion": "lumbar",
+    "alternativa_segura": "hombros_1"
   },
   {
     "id": "hombros_7",
@@ -1112,7 +1268,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20Frontal%20con%20Mancuernas%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20Frontal%20con%20Mancuernas%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20Frontal%20con%20Mancuernas%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de hombro)"
+    "patron_movimiento": "Aislamiento (Flexión de hombro)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_8",
@@ -1142,7 +1302,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Remo%20al%20Cuello%20%28Upright%20Row%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Remo%20al%20Cuello%20%28Upright%20Row%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Remo%20al%20Cuello%20%28Upright%20Row%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Tirón Vertical"
+    "patron_movimiento": "Tirón Vertical",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_9",
@@ -1173,7 +1337,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20en%20M%C3%A1quina%20de%20Hombro%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20en%20M%C3%A1quina%20de%20Hombro%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20en%20M%C3%A1quina%20de%20Hombro%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Vertical"
+    "patron_movimiento": "Empuje Vertical",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "hombros_10",
@@ -1203,7 +1371,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Encogimientos%20de%20Hombros%20%28Shrugs%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Encogimientos%20de%20Hombros%20%28Shrugs%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Encogimientos%20de%20Hombros%20%28Shrugs%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Elevación Escapular)"
+    "patron_movimiento": "Aislamiento (Elevación Escapular)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_1",
@@ -1233,7 +1405,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Curl%20de%20B%C3%ADceps%20con%20Barra%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Curl%20de%20B%C3%ADceps%20con%20Barra%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Curl%20de%20B%C3%ADceps%20con%20Barra%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de Codo)"
+    "patron_movimiento": "Aislamiento (Flexión de Codo)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_2",
@@ -1263,7 +1439,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Press%20Franc%C3%A9s%20%28Extensi%C3%B3n%20de%20Tr%C3%ADceps%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Press%20Franc%C3%A9s%20%28Extensi%C3%B3n%20de%20Tr%C3%ADceps%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Press%20Franc%C3%A9s%20%28Extensi%C3%B3n%20de%20Tr%C3%ADceps%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Extensión de Codo)"
+    "patron_movimiento": "Aislamiento (Extensión de Codo)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_3",
@@ -1293,7 +1473,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Curl%20Martillo%20con%20Mancuernas%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Curl%20Martillo%20con%20Mancuernas%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Curl%20Martillo%20con%20Mancuernas%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de Codo neutra)"
+    "patron_movimiento": "Aislamiento (Flexión de Codo neutra)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_4",
@@ -1323,7 +1507,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Fondos%20de%20Tr%C3%ADceps%20en%20Banco%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Fondos%20de%20Tr%C3%ADceps%20en%20Banco%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Fondos%20de%20Tr%C3%ADceps%20en%20Banco%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Empuje Vertical / Aislamiento"
+    "patron_movimiento": "Empuje Vertical / Aislamiento",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_5",
@@ -1353,7 +1541,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20en%20Polea%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20en%20Polea%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20en%20Polea%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Extensión de Codo)"
+    "patron_movimiento": "Aislamiento (Extensión de Codo)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_6",
@@ -1381,7 +1573,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Curl%20en%20Banco%20Scott%20%28Predicador%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Curl%20en%20Banco%20Scott%20%28Predicador%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Curl%20en%20Banco%20Scott%20%28Predicador%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de Codo)"
+    "patron_movimiento": "Aislamiento (Flexión de Codo)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_7",
@@ -1409,7 +1605,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Curl%20Concentrado%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Curl%20Concentrado%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Curl%20Concentrado%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de Codo)"
+    "patron_movimiento": "Aislamiento (Flexión de Codo)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_8",
@@ -1439,7 +1639,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Patada%20de%20Tr%C3%ADceps%20%28Kickback%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Patada%20de%20Tr%C3%ADceps%20%28Kickback%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Patada%20de%20Tr%C3%ADceps%20%28Kickback%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Extensión de Codo)"
+    "patron_movimiento": "Aislamiento (Extensión de Codo)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_9",
@@ -1469,7 +1673,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Curl%20en%20Polea%20Baja%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Curl%20en%20Polea%20Baja%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Curl%20en%20Polea%20Baja%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Flexión de Codo)"
+    "patron_movimiento": "Aislamiento (Flexión de Codo)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "brazos_10",
@@ -1499,7 +1707,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20sobre%20la%20Cabeza%20con%20Mancuerna%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20sobre%20la%20Cabeza%20con%20Mancuerna%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Extensi%C3%B3n%20de%20Tr%C3%ADceps%20sobre%20la%20Cabeza%20con%20Mancuerna%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Aislamiento (Extensión de Codo)"
+    "patron_movimiento": "Aislamiento (Extensión de Codo)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "basico",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "core_1",
@@ -1527,7 +1739,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Plancha%20Abdominal%20%28Plank%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Plancha%20Abdominal%20%28Plank%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Plancha%20Abdominal%20%28Plank%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Estabilización (Anti-extensión)"
+    "patron_movimiento": "Estabilización (Anti-extensión)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_2",
@@ -1555,7 +1771,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Crunch%20Abdominal%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Crunch%20Abdominal%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Crunch%20Abdominal%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Flexión de Tronco"
+    "patron_movimiento": "Flexión de Tronco",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_3",
@@ -1583,7 +1803,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20de%20Piernas%20Colgado%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20de%20Piernas%20Colgado%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20de%20Piernas%20Colgado%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Flexión de Cadera / Tronco"
+    "patron_movimiento": "Flexión de Cadera / Tronco",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "basico",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_4",
@@ -1611,7 +1835,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Russian%20Twist%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Russian%20Twist%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Russian%20Twist%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Rotación"
+    "patron_movimiento": "Rotación",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_5",
@@ -1639,7 +1867,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Dead%20Bug%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Dead%20Bug%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Dead%20Bug%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Estabilización (Anti-extensión)"
+    "patron_movimiento": "Estabilización (Anti-extensión)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_6",
@@ -1667,7 +1899,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Plancha%20Lateral%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Plancha%20Lateral%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Plancha%20Lateral%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Estabilización (Anti-flexión lateral)"
+    "patron_movimiento": "Estabilización (Anti-flexión lateral)",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_7",
@@ -1695,7 +1931,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Rueda%20Abdominal%20%28Ab%20Wheel%29%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Rueda%20Abdominal%20%28Ab%20Wheel%29%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Rueda%20Abdominal%20%28Ab%20Wheel%29%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Estabilización (Anti-extensión)"
+    "patron_movimiento": "Estabilización (Anti-extensión)",
+    "nivel_minimo": "Intermedio",
+    "equipamiento": "basico",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_8",
@@ -1723,7 +1963,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Mountain%20Climbers%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Mountain%20Climbers%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Mountain%20Climbers%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Flexión de Cadera / Estabilización"
+    "patron_movimiento": "Flexión de Cadera / Estabilización",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   },
   {
     "id": "core_9",
@@ -1751,7 +1995,11 @@
     "video_url": "https://www.youtube.com/results?search_query=Crunch%20en%20Polea%20Alta%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Crunch%20en%20Polea%20Alta%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Crunch%20en%20Polea%20Alta%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Flexión de Tronco"
+    "patron_movimiento": "Flexión de Tronco",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "gimnasio",
+    "bodyweight": false,
+    "alto_estres_axial": false
   },
   {
     "id": "core_10",
@@ -1779,6 +2027,10 @@
     "video_url": "https://www.youtube.com/results?search_query=Elevaci%C3%B3n%20de%20Piernas%20Acostado%20tecnica%20ejercicio",
     "tiktok_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20de%20Piernas%20Acostado%20ejercicio%20site%3Atiktok.com",
     "imagen_url": "https://www.google.com/search?q=Elevaci%C3%B3n%20de%20Piernas%20Acostado%20ejercicio%20gif%20tecnica&tbm=isch",
-    "patron_movimiento": "Flexión de Cadera / Tronco"
+    "patron_movimiento": "Flexión de Cadera / Tronco",
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "bodyweight": true,
+    "alto_estres_axial": false
   }
 ]

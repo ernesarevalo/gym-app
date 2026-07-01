@@ -30,7 +30,6 @@ auth.onAuthStateChanged(async (user) => {
     return;
   }
   usuarioActual = user;
-
   catalogoCompleto = await obtenerCatalogoEjercicios();
 
   if (user.email === ADMIN_EMAIL) {
@@ -51,29 +50,159 @@ async function cargarRutina() {
   const docSnap = await db.collection("usuarios").doc(usuarioActual.uid).get();
   const data = docSnap.data();
 
-  if (!data || !data.disclaimers_aceptados) {
-    window.location.href = "/disclaimers";
-    return;
-  }
-
+  if (!data || !data.disclaimers_aceptados) { window.location.href = "/disclaimers"; return; }
   datosUsuario = data;
 
   const navNombre = document.getElementById("navNombreUsuario");
   if (navNombre) navNombre.textContent = data.username || data.nombre || "Mi perfil";
 
-  if (!data.rutina) {
-    window.location.href = "/onboarding";
-    return;
-  }
+  if (!data.rutina) { window.location.href = "/onboarding"; return; }
 
   rutinaActual = data.rutina;
   renderTabsDias();
   renderDia(0);
   poblarSelectorProgreso();
   verificarCumpleanos(data);
-
   document.getElementById("btnVolverAnterior").classList.toggle("d-none", !data.rutina_anterior);
+
+  // --- Racha info ---
+  if (data.racha_dias) {
+    const rachaEl = document.getElementById("rachaInfo");
+    if (rachaEl) {
+      rachaEl.textContent = `🔥 Racha: ${data.racha_dias} días consecutivos`;
+      rachaEl.classList.remove("d-none");
+    }
+  }
+
+  // --- Mapa de calor muscular ---
+  inicializarMapaCalor();
+
+  // --- Tonelaje semanal ---
+  inicializarTonelaje();
+
+  // --- Verificar descarga propuesta ---
+  const descarga = await GymEngine.verificarDescarga(usuarioActual.uid);
+  if (descarga.proponer) {
+    document.getElementById("mensajeDescarga").textContent = " " + descarga.mensaje;
+    document.getElementById("bannnerDescarga").classList.remove("d-none");
+  }
+
+  // --- Triage de molestias (modal al abrir, solo si no se preguntó hoy) ---
+  const hoy = new Date().toDateString();
+  const triageHoy = sessionStorage.getItem("triage_" + hoy);
+  if (!triageHoy) {
+    new bootstrap.Modal(document.getElementById("triageModal")).show();
+  }
 }
+
+// ---------- TRIAGE DE MOLESTIAS ----------
+
+document.querySelectorAll(".btnZonaDolor").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const zona = btn.dataset.zona;
+    const hoy = new Date().toDateString();
+    sessionStorage.setItem("triage_" + hoy, zona);
+
+    bootstrap.Modal.getInstance(document.getElementById("triageModal"))?.hide();
+
+    if (zona !== "ninguno") {
+      const { ejercicios: ajustados, reemplazos } =
+        await GymEngine.aplicarTriage(rutinaActual[diaSeleccionado].ejercicios, zona, catalogoCompleto);
+
+      rutinaActual[diaSeleccionado].ejercicios = ajustados;
+      renderDia(diaSeleccionado);
+
+      if (reemplazos.length) {
+        const res = document.getElementById("triageResultado");
+        res.innerHTML = reemplazos.map(r =>
+          `⚠️ <strong>${r.original}</strong> → reemplazado por <strong>${r.reemplazo}</strong>. ${r.motivo}`
+        ).join("<br>");
+        res.classList.remove("d-none");
+        setTimeout(() => document.getElementById("triageModal").classList.add("show"), 100);
+      }
+    }
+  });
+});
+
+// ---------- DESCARGA ----------
+
+document.getElementById("btnAceptarDescarga")?.addEventListener("click", async () => {
+  rutinaActual[diaSeleccionado].ejercicios =
+    GymEngine.aplicarDescarga(rutinaActual[diaSeleccionado].ejercicios);
+  await db.collection("usuarios").doc(usuarioActual.uid)
+    .set({ descarga_activa: true }, { merge: true });
+  document.getElementById("bannnerDescarga").classList.add("d-none");
+  renderDia(diaSeleccionado);
+});
+
+document.getElementById("btnRechazarDescarga")?.addEventListener("click", () => {
+  document.getElementById("bannnerDescarga").classList.add("d-none");
+});
+
+// ---------- MODO EXPRESS ----------
+
+document.getElementById("btnExpress")?.addEventListener("click", () => {
+  const dia = rutinaActual[diaSeleccionado];
+  const express = GymEngine.modoExpress(dia.ejercicios);
+  rutinaActual[diaSeleccionado].ejercicios = express;
+  renderDia(diaSeleccionado);
+  alert(`⚡ Modo Express activado: ${express.length} ejercicios seleccionados para una sesión de 30 min.`);
+});
+
+// ---------- MAPA DE CALOR ----------
+
+async function inicializarMapaCalor() {
+  try {
+    const mapa = await GymEngine.calcularMapaCalor(usuarioActual.uid);
+    if (!Object.keys(mapa).length) return;
+
+    const card = document.getElementById("mapaCalor");
+    const cont = document.getElementById("mapaCalorContent");
+    card.classList.remove("d-none");
+
+    const grupos = ["Pecho","Espalda","Piernas","Hombros","Brazos","Core"];
+    cont.innerHTML = grupos.map(g => {
+      const nivel = mapa[g] || 0;
+      const { color, label } = GymEngine.colorCalor(nivel);
+      return `<span class="badge p-2" style="background:${color}22; color:${color}; border:1px solid ${color};"
+                    title="${label}">${ICONOS_GRUPO[g]} ${g}</span>`;
+    }).join("");
+  } catch(e) { console.warn("Mapa de calor:", e); }
+}
+
+// ---------- TONELAJE ----------
+
+async function inicializarTonelaje() {
+  try {
+    const { total_kg } = await GymEngine.calcularTonelajeSemanal(usuarioActual.uid);
+    if (total_kg > 0) {
+      document.getElementById("tonelajeCard").classList.remove("d-none");
+      document.getElementById("tonelajeTotal").textContent = total_kg.toLocaleString();
+    }
+  } catch(e) { console.warn("Tonelaje:", e); }
+}
+
+// ---------- SESIÓN COMPLETADA ----------
+
+document.getElementById("btnSesionCompletada")?.addEventListener("click", async () => {
+  const dia = rutinaActual[diaSeleccionado];
+  const resultado = await GymEngine.guardarSesionCompletada(usuarioActual.uid, dia);
+
+  const rachaEl = document.getElementById("rachaInfo");
+  if (rachaEl && resultado) {
+    rachaEl.textContent = `🔥 Racha: ${resultado.racha} días consecutivos`;
+    rachaEl.classList.remove("d-none");
+  }
+
+  if (resultado?.bestiaDesbloqueada) {
+    alert("🔥 ¡21 días consecutivos! ¡MODO BESTIA DESBLOQUEADO! El tema cambió automáticamente.");
+    window.location.reload();
+  }
+
+  inicializarTonelaje();
+  document.getElementById("btnSesionCompletada").textContent = "✅ ¡Sesión guardada!";
+  document.getElementById("btnSesionCompletada").disabled = true;
+});
 
 // ---------- CALENTAMIENTO Y MOVILIDAD ESPECÍFICOS POR DÍA ----------
 // En vez de un bloque genérico, se calcula según los grupos musculares
@@ -221,37 +350,42 @@ function renderDia(idx) {
     const idGen = `tecnica_${idx}_${ejIdx}`;
     const card = document.createElement("div");
     card.className = "ejercicio-card";
+
+    // Nota de triage o express si fue ajustado
+    const notaExtra = [ej.nota_triage, ej.nota_express, ej.nota_descarga]
+      .filter(Boolean).map(n => `<p class="small alert alert-warning py-1 mb-1">${n}</p>`).join("");
+
     card.innerHTML = `
       <div class="d-flex justify-content-between align-items-start flex-wrap">
-        <div>
-          <h5>${ICONOS_GRUPO[ej.grupo_muscular] || "🏋️"} ${ej.nombre}</h5>
+        <div style="flex:1;">
+          <h5>${ICONOS_GRUPO[ej.grupo_muscular] || "🏋️"} ${ej.nombre}
+            ${ej.bodyweight ? '<span class="badge bg-secondary ms-1">Peso corporal</span>' : ""}
+            ${ej.modo_circuito ? '<span class="badge bg-warning text-dark ms-1">Circuito</span>' : ""}
+          </h5>
+          ${notaExtra}
           <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps ${ej.tipo_entrenamiento ? "(" + ej.tipo_entrenamiento + ")" : ""}${ej.patron_movimiento ? " · 🧩 " + ej.patron_movimiento : ""}</p>
           <p class="mb-1">${ej.descripcion || ""}</p>
           ${ej.tips && ej.tips.length ? `<p class="mb-1 small">💡 ${ej.tips[0]}</p>` : ""}
-          ${ej.peso_recomendado ? `<p class="mb-1 small text-secondary">🏋️ Peso orientativo — Principiante: ${ej.peso_recomendado.principiante} · Intermedio: ${ej.peso_recomendado.intermedio} · Avanzado: ${ej.peso_recomendado.avanzado}</p>` : ""}
-          <div class="d-flex gap-3 small">
+          ${ej.peso_recomendado ? `<p class="mb-1 small text-secondary">🏋️ Principiante: ${ej.peso_recomendado.principiante} · Intermedio: ${ej.peso_recomendado.intermedio} · Avanzado: ${ej.peso_recomendado.avanzado}</p>` : ""}
+          <div class="d-flex gap-3 small mb-2">
             <a href="${ej.video_url}" target="_blank">▶ YouTube</a>
             ${ej.tiktok_url ? `<a href="${ej.tiktok_url}" target="_blank">🎵 TikTok</a>` : ""}
-            ${ej.imagen_url ? `<a href="${ej.imagen_url}" target="_blank">🖼️ Ver GIF/Imagen</a>` : ""}
+            ${ej.imagen_url ? `<a href="${ej.imagen_url}" target="_blank">🖼️ GIF</a>` : ""}
           </div>
           ${renderTecnica(ej, idGen)}
+          <!-- Tracker por serie se monta aquí -->
+          <div class="tracker-contenedor mt-3" id="tracker_${idx}_${ejIdx}"></div>
         </div>
-        <button class="btn btn-sm btn-outline-light btnCambiar" data-idx="${ejIdx}">Cambiar ejercicio</button>
-      </div>
-      <div class="d-flex align-items-center gap-2 mt-3" style="max-width:300px;">
-        <input type="number" step="0.5" class="form-control form-control-sm inputPeso"
-               placeholder="Peso (kg)" value="${ej.peso_actual ?? ''}">
-        <button class="btn btn-sm btn-primary btnGuardarPeso">Guardar</button>
+        <button class="btn btn-sm btn-outline-light btnCambiar ms-2" data-idx="${ejIdx}">Cambiar</button>
       </div>
     `;
 
     card.querySelector(".btnCambiar").addEventListener("click", () => abrirModalCambio(idx, ejIdx));
-    card.querySelector(".btnGuardarPeso").addEventListener("click", () => {
-      const peso = card.querySelector(".inputPeso").value;
-      guardarPeso(idx, ejIdx, peso);
-    });
-
     contenidoDia.appendChild(card);
+
+    // Montar el tracker por serie async
+    const trackerCont = card.querySelector(`#tracker_${idx}_${ejIdx}`);
+    renderTrackerSeries(usuarioActual.uid, ej, trackerCont);
   });
 }
 

@@ -222,6 +222,54 @@ a {
   box-shadow: var(--glow);
 }
 
+/* ---------- TRACKER POR SERIE ---------- */
+.tracker-bloque {
+  background-color: var(--card-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--card-border-radius);
+  padding: 12px;
+}
+
+.set-row { border-bottom: 1px solid var(--input-border); padding-bottom: 8px; }
+.set-row:last-child { border-bottom: none; }
+.set-label { font-size: 0.82rem; font-weight: 600; }
+
+.btn-xs {
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+}
+
+.pr-badge {
+  font-size: 0.8rem;
+  animation: prPulse 0.6s ease-in-out 3;
+}
+
+@keyframes prPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* ---------- MAPA DE CALOR ---------- */
+#mapaCalorContent .badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  cursor: default;
+}
+
+/* ---------- TONELAJE ---------- */
+#tonelajeCard { border-left: 4px solid var(--primary); }
+#tonelajeTotal { font-size: 1.15rem; font-weight: 700; }
+
+/* ---------- MODO EXPRESS ---------- */
+#btnExpress {
+  animation: pulseExpress 2s ease-in-out infinite;
+}
+@keyframes pulseExpress {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251,191,36,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(251,191,36,0); }
+}
+
 #progresoChart {
   background-color: var(--card-bg);
   border-radius: var(--card-border-radius);
