@@ -221,6 +221,14 @@ async function renderTrackerSeries(uid, ej, contenedor) {
       btn.classList.add("btn-success");
       btn.classList.remove("btn-primary", "btn-outline-light");
 
+      // +1 GymCoin por serie + energía del mini-avatar
+      if (typeof Gamification !== "undefined") {
+        Gamification.registrarSerieCoin(uid).catch(() => {});
+        Gamification.subirEnergia(1);
+        // Acumular en la sesión para el resumen
+        window.coinsGanadosEnSesion = (window.coinsGanadosEnSesion || 0) + 1;
+      }
+
       // PR check
       if (!esBW && prHistorico && pesoKg > prHistorico) {
         prBadge.classList.remove("d-none");

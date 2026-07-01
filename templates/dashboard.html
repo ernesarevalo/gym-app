@@ -14,6 +14,11 @@
   <div class="d-flex gap-2 align-items-center">
     <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
     <a id="navAdminLink" href="/admin" class="btn btn-outline-light btn-sm d-none" style="text-decoration:none;">👑 Admin</a>
+    <div class="d-flex gap-1 nav-gamif-links">
+      <a href="/trofeos" class="btn btn-outline-light btn-sm" title="Mis Trofeos">🏆</a>
+      <a href="/tienda" class="btn btn-outline-light btn-sm" title="Tienda">🏪</a>
+      <a href="/avatar" class="btn btn-outline-light btn-sm" title="Mi Avatar">🐶</a>
+    </div>
     <a id="navPerfil" href="/perfil" class="btn btn-outline-light btn-sm" style="text-decoration:none;">
       👤 <span id="navNombreUsuario">Mi perfil</span>
     </a>
@@ -123,9 +128,32 @@
   </div>
 </div>
 
+<!-- Mini avatar flotante (modo entrenamiento) -->
+<div id="miniAvatarContainer" style="position:fixed;bottom:80px;right:16px;z-index:800;"></div>
+
+<!-- Modal: Resumen de sesión -->
+<div class="modal fade" id="modalResumen" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4" style="background-color:var(--card-bg);color:var(--text);">
+      <div id="resumenSprite" style="font-size:4rem;" class="mb-2">🐶</div>
+      <h3>¡Sesión completada! 💪</h3>
+      <div class="d-flex justify-content-center gap-4 my-3 flex-wrap">
+        <div><div style="font-size:1.5rem;">🪙</div><strong id="resumenCoins">0</strong><div class="small text-secondary">GymCoins</div></div>
+        <div><div style="font-size:1.5rem;">⚡</div><strong id="resumenTonelaje">0</strong><div class="small text-secondary">kg tonelaje</div></div>
+        <div><div style="font-size:1.5rem;">🔥</div><strong id="resumenRacha">0</strong><div class="small text-secondary">días de racha</div></div>
+      </div>
+      <div id="resumenTrofeos" class="mb-3 d-flex flex-wrap gap-2 justify-content-center"></div>
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <button class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+        <a href="/trofeos" class="btn btn-outline-light">Ver mis trofeos</a>
+        <a href="/tienda" class="btn btn-outline-light">Ir a la tienda</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
@@ -133,6 +161,8 @@
 <script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/exercises-catalog.js') }}"></script>
+<script src="{{ url_for('static', filename='js/gamification.js') }}"></script>
+<script src="{{ url_for('static', filename='js/shop.js') }}"></script>
 <script src="{{ url_for('static', filename='js/engine.js') }}"></script>
 <script src="{{ url_for('static', filename='js/session-tracker.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>

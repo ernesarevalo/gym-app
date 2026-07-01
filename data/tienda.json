@@ -1,0 +1,82 @@
+[
+  {
+    "id": "banda_sudor_basica",
+    "nombre": "Banda de Sudor",
+    "tipo": "accesorio",
+    "descripcion": "Un clásico del gym. Básica pero efectiva.",
+    "precio_coins": 50,
+    "icono": "🩺",
+    "rareza": "comun",
+    "requisito": null
+  },
+  {
+    "id": "medalla_bronce",
+    "nombre": "Medalla Bronce",
+    "tipo": "accesorio",
+    "descripcion": "Tu primera medalla. Lucila en tu perfil.",
+    "precio_coins": 80,
+    "icono": "🥉",
+    "rareza": "bronce",
+    "requisito": null
+  },
+  {
+    "id": "medalla_plata",
+    "nombre": "Medalla Plata",
+    "tipo": "accesorio",
+    "descripcion": "Para los que van en serio.",
+    "precio_coins": 200,
+    "icono": "🥈",
+    "rareza": "plata",
+    "requisito": {"tipo": "racha_dias", "valor": 14}
+  },
+  {
+    "id": "medalla_oro",
+    "nombre": "Medalla Oro",
+    "tipo": "accesorio",
+    "descripcion": "Élite pura.",
+    "precio_coins": 500,
+    "icono": "🥇",
+    "rareza": "oro",
+    "requisito": {"tipo": "racha_dias", "valor": 30}
+  },
+  {
+    "id": "corona_diamante",
+    "nombre": "Corona Diamante",
+    "tipo": "accesorio",
+    "descripcion": "Para los leyendas del gym.",
+    "precio_coins": 1500,
+    "icono": "👑",
+    "rareza": "diamante",
+    "requisito": {"tipo": "racha_dias", "valor": 60}
+  },
+  {
+    "id": "mascota_husky",
+    "nombre": "Husky Polar",
+    "tipo": "mascota_premium",
+    "descripcion": "Bestia fría. Desbloqueable con 50 días de racha.",
+    "precio_coins": 800,
+    "icono": "🐺",
+    "rareza": "oro",
+    "requisito": {"tipo": "racha_dias", "valor": 50}
+  },
+  {
+    "id": "mascota_shiba",
+    "nombre": "Shiba Inu",
+    "tipo": "mascota_premium",
+    "descripcion": "Wow. Much gains. Desbloqueable con 30 días de racha.",
+    "precio_coins": 600,
+    "icono": "🦊",
+    "rareza": "plata",
+    "requisito": {"tipo": "racha_dias", "valor": 30}
+  },
+  {
+    "id": "tema_neon",
+    "nombre": "Tema Neón",
+    "tipo": "tema",
+    "descripcion": "Hace el modo oscuro todavía más oscuro.",
+    "precio_coins": 300,
+    "icono": "💜",
+    "rareza": "plata",
+    "requisito": null
+  }
+]

@@ -323,3 +323,152 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* =====================================================================
+   GAMIFICACIÓN — GymCoins, Trofeos, Avatar, Tienda
+   ===================================================================== */
+
+/* -- GymCoins display -- */
+.gymcoins-display {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1a1200;
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* -- Mini avatar flotante -- */
+.mini-avatar {
+  background: var(--card-bg);
+  border: 2px solid var(--input-border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  min-width: 80px;
+}
+.avatar-sprite { font-size: 2.2rem; line-height: 1; }
+.energy-bar-wrap {
+  height: 6px;
+  background: var(--input-border);
+  border-radius: 3px;
+  margin: 6px 0 4px;
+  overflow: hidden;
+}
+.energy-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+.gymcoins-badge { font-size: 0.72rem; color: var(--text-secondary); }
+
+/* Beast mode: mini avatar con animación agresiva */
+.mini-avatar.beast-anim {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary);
+  animation: beastPulseAvatar 1.2s ease-in-out infinite;
+}
+@keyframes beastPulseAvatar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* -- Toast de trofeo -- */
+.trofeo-toast {
+  position: fixed;
+  bottom: 90px;
+  right: 16px;
+  z-index: 9000;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  opacity: 0;
+  transform: translateX(120%);
+  transition: all 0.4s cubic-bezier(.36,.07,.19,.97);
+  max-width: 300px;
+}
+.trofeo-toast.visible { opacity: 1; transform: translateX(0); }
+.trofeo-icono { font-size: 2rem; }
+.trofeo-nombre { font-weight: 700; font-size: 0.95rem; }
+.trofeo-desc { color: var(--text-secondary); font-size: 0.8rem; }
+.trofeo-coins { color: #fbbf24; font-size: 0.8rem; font-weight: 600; }
+
+/* Borde de rareza en toast */
+.trofeo-toast.rareza-bronce { border-left: 4px solid #cd7f32; }
+.trofeo-toast.rareza-plata  { border-left: 4px solid #9e9e9e; }
+.trofeo-toast.rareza-oro    { border-left: 4px solid #fbbf24; }
+.trofeo-toast.rareza-diamante { border-left: 4px solid #60a5fa; }
+
+/* -- Grid de trofeos -- */
+.trofeos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+.trofeo-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--card-border-radius);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.trofeo-card:hover { transform: translateY(-3px); }
+.trofeo-card.bloqueado { opacity: 0.5; }
+.trofeo-emoji { font-size: 2.5rem; }
+.trofeo-nombre { font-weight: 700; font-size: 0.9rem; margin: 6px 0 4px; }
+.trofeo-desc { color: var(--text-secondary); font-size: 0.78rem; }
+.trofeo-coins { color: #fbbf24; font-size: 0.78rem; }
+
+/* -- Grid de tienda -- */
+.tienda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+}
+.tienda-card {
+  background: var(--card-bg);
+  border: 2px solid var(--input-border);
+  border-radius: var(--card-border-radius);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+  position: relative;
+}
+.tienda-card:hover:not(.bloqueado) { transform: translateY(-3px); }
+.tienda-card.comprado { border-color: #22c55e; }
+.tienda-card.bloqueado { opacity: 0.5; }
+.tienda-icono { font-size: 2.5rem; }
+.tienda-nombre { font-weight: 700; font-size: 0.9rem; margin: 6px 0 4px; }
+.tienda-precio { color: #fbbf24; font-weight: 700; }
+.tienda-req { font-size: 0.75rem; }
+
+/* Bordes de rareza en tienda */
+.rareza-border-bronce   { border-color: #cd7f32 !important; }
+.rareza-border-plata    { border-color: #9e9e9e !important; }
+.rareza-border-oro      { border-color: #fbbf24 !important; }
+.rareza-border-diamante { border-color: #60a5fa !important; }
+
+/* Badges de rareza */
+.rareza-bronce   { background: #cd7f3222; color: #cd7f32; border: 1px solid #cd7f32; }
+.rareza-plata    { background: #9e9e9e22; color: #9e9e9e; border: 1px solid #9e9e9e; }
+.rareza-oro      { background: #fbbf2422; color: #fbbf24; border: 1px solid #fbbf24; }
+.rareza-diamante { background: #60a5fa22; color: #60a5fa; border: 1px solid #60a5fa; }
+
+/* -- Avatar compuesto (perfil) -- */
+.avatar-compuesto { position: relative; display: inline-block; }
+.avatar-base { font-size: 3.5rem; }
+.avatar-accesorio { position: absolute; top: -8px; right: -8px; font-size: 1.4rem; }
+
+/* -- Confeti -- */
+@keyframes confetiFall {
+  to { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+}
+
+/* Navbar links adicionales (tienda, trofeos, avatar) */
+.nav-gamif-links a { font-size: 0.8rem; }
