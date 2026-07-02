@@ -1,0 +1,210 @@
+{
+  "poses": [
+    "neutral", "flexionando", "entrenando", "motivando", "sudando",
+    "feliz", "pensativo", "durmiendo", "analizando", "evolucionado",
+    "on_fire", "en_descanso", "sedentario", "sedentario_extremo"
+  ],
+  "mascotas": [
+    {
+      "id": "shiba_swole",
+      "nombre": "Shiba-Swole",
+      "descripcion": "El clásico. Disciplinado y leal, no falta un día.",
+      "emoji_base": "🦊",
+      "rareza": "comun",
+      "precio_coins": 0,
+      "desbloqueado_por_defecto": true,
+      "paleta": { "primario": "#e67e22", "secundario": "#f39c12", "glow": "#ff6b35" }
+    },
+    {
+      "id": "capy_strong",
+      "nombre": "Capy-Strong",
+      "descripcion": "Calmo y poderoso. La fuerza tranquila del gym.",
+      "emoji_base": "🦫",
+      "rareza": "comun",
+      "precio_coins": 100,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#8b6914", "secundario": "#c49a3c", "glow": "#d4a017" }
+    },
+    {
+      "id": "dino_gains",
+      "nombre": "Dino-Gains",
+      "descripcion": "Prehistóricamente fuerte. Los PR son su hábitat natural.",
+      "emoji_base": "🦕",
+      "rareza": "raro",
+      "precio_coins": 250,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#27ae60", "secundario": "#2ecc71", "glow": "#00ff88" }
+    },
+    {
+      "id": "panda_iron",
+      "nombre": "Panda-Iron",
+      "descripcion": "Blanco y negro, como el contraste entre descanso y esfuerzo.",
+      "emoji_base": "🐼",
+      "rareza": "comun",
+      "precio_coins": 150,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#2c3e50", "secundario": "#95a5a6", "glow": "#bdc3c7" }
+    },
+    {
+      "id": "tiger_tempo",
+      "nombre": "Tiger-Tempo",
+      "descripcion": "Velocidad, potencia, ritmo. Nunca pierde el tempo.",
+      "emoji_base": "🐯",
+      "rareza": "raro",
+      "precio_coins": 300,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#e74c3c", "secundario": "#f39c12", "glow": "#ff4444" }
+    },
+    {
+      "id": "axolotl_regen",
+      "nombre": "Axolotl-Regen",
+      "descripcion": "Maestro de la recuperación. Nunca subestimes el descanso.",
+      "emoji_base": "🦎",
+      "rareza": "epico",
+      "precio_coins": 500,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#e056c0", "secundario": "#f368e0", "glow": "#ff79c6" }
+    },
+    {
+      "id": "bear_beast",
+      "nombre": "Bear-Beast",
+      "descripcion": "El rey del gym. Cuando entra, todos lo miran.",
+      "emoji_base": "🐻",
+      "rareza": "raro",
+      "precio_coins": 350,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#795548", "secundario": "#a1887f", "glow": "#d4a373" }
+    },
+    {
+      "id": "penguin_plank",
+      "nombre": "Penguin-Plank",
+      "descripcion": "Le encanta el core. Vive en plancha.",
+      "emoji_base": "🐧",
+      "rareza": "comun",
+      "precio_coins": 120,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#2980b9", "secundario": "#3498db", "glow": "#74b9ff" }
+    },
+    {
+      "id": "wolf_wilpower",
+      "nombre": "Wolf-Willpower",
+      "descripcion": "La racha es su manada. Nunca entrena solo.",
+      "emoji_base": "🐺",
+      "rareza": "epico",
+      "precio_coins": 600,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#6c5ce7", "secundario": "#a29bfe", "glow": "#b388ff" }
+    },
+    {
+      "id": "frog_flex",
+      "nombre": "Frog-Flex",
+      "descripcion": "Explosivo. Su sentadilla es legendaria.",
+      "emoji_base": "🐸",
+      "rareza": "comun",
+      "precio_coins": 80,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#00b894", "secundario": "#55efc4", "glow": "#00ffcc" }
+    },
+    {
+      "id": "cat_cardio",
+      "nombre": "Cat-Cardio",
+      "descripcion": "Ágil, veloz, flexible. La definición personificada.",
+      "emoji_base": "😸",
+      "rareza": "comun",
+      "precio_coins": 90,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#fd79a8", "secundario": "#fdcb6e", "glow": "#ffb7c5" }
+    },
+    {
+      "id": "crab_core",
+      "nombre": "Crab-Core",
+      "descripcion": "Diez puntos de apoyo, todo core. El rey del océano.",
+      "emoji_base": "🦀",
+      "rareza": "raro",
+      "precio_coins": 280,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#d63031", "secundario": "#e17055", "glow": "#ff7675" }
+    },
+    {
+      "id": "dragon_deadlift",
+      "nombre": "Dragon-Deadlift",
+      "descripcion": "Legendario. Solo aparece cuando el usuario rompe un PR.",
+      "emoji_base": "🐉",
+      "rareza": "legendario",
+      "precio_coins": 1500,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#6c3483", "secundario": "#a569bd", "glow": "#e056c0" }
+    },
+    {
+      "id": "hamster_hustle",
+      "nombre": "Hamster-Hustle",
+      "descripcion": "Pequeño pero nunca para. La rueda del progreso nunca frena.",
+      "emoji_base": "🐹",
+      "rareza": "comun",
+      "precio_coins": 60,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#e67e22", "secundario": "#f5cba7", "glow": "#ffd32a" }
+    },
+    {
+      "id": "sloth_slow_burn",
+      "nombre": "Sloth-SlowBurn",
+      "descripcion": "El maestro del descanso activo. Constante como el agua.",
+      "emoji_base": "🦥",
+      "rareza": "raro",
+      "precio_coins": 200,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#6d4c41", "secundario": "#bcaaa4", "glow": "#d7ccc8" }
+    },
+    {
+      "id": "gorilla_gains",
+      "nombre": "Gorilla-Gains",
+      "descripcion": "Volumen puro. Nació para el press de banca.",
+      "emoji_base": "🦍",
+      "rareza": "epico",
+      "precio_coins": 700,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#1a1a2e", "secundario": "#16213e", "glow": "#533483" }
+    },
+    {
+      "id": "shark_shred",
+      "nombre": "Shark-Shred",
+      "descripcion": "Corte fino. Nunca descansa, nunca para.",
+      "emoji_base": "🦈",
+      "rareza": "epico",
+      "precio_coins": 650,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#0984e3", "secundario": "#74b9ff", "glow": "#00cec9" }
+    },
+    {
+      "id": "bunny_burst",
+      "nombre": "Bunny-Burst",
+      "descripcion": "Velocidad explosiva. Sus superseries son de otro nivel.",
+      "emoji_base": "🐇",
+      "rareza": "raro",
+      "precio_coins": 320,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#ff9ff3", "secundario": "#ffeaa7", "glow": "#ffccdd" }
+    },
+    {
+      "id": "elephant_endurance",
+      "nombre": "Elephant-Endurance",
+      "descripcion": "Nunca olvida un entrenamiento. Resistencia infinita.",
+      "emoji_base": "🐘",
+      "rareza": "legendario",
+      "precio_coins": 1200,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#636e72", "secundario": "#b2bec3", "glow": "#dfe6e9" }
+    },
+    {
+      "id": "phoenix_pr",
+      "nombre": "Phoenix-PR",
+      "descripcion": "Renace con cada PR. Exclusivo para los de racha de 50 días.",
+      "emoji_base": "🦅",
+      "rareza": "legendario",
+      "precio_coins": 2000,
+      "desbloqueado_por_defecto": false,
+      "paleta": { "primario": "#e17055", "secundario": "#fdcb6e", "glow": "#ff7043" },
+      "requisito_especial": {"tipo": "racha_dias", "valor": 50}
+    }
+  ]
+}

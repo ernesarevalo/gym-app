@@ -171,7 +171,24 @@ def trofeos_page():
     return render_template("trofeos.html")
 
 
-@app.route("/api/ejercicios", methods=["GET"])
+MASCOTAS_PATH = os.path.join(os.path.dirname(__file__), "data", "mascotas.json")
+
+
+def cargar_mascotas():
+    with open(MASCOTAS_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        return data["mascotas"]
+
+
+@app.route("/api/mascotas", methods=["GET"])
+def get_mascotas():
+    return jsonify(cargar_mascotas())
+
+
+@app.route("/api/mascotas/poses", methods=["GET"])
+def get_poses():
+    with open(MASCOTAS_PATH, "r", encoding="utf-8") as f:
+        return jsonify(json.load(f)["poses"])
 def get_ejercicios():
     try:
         return jsonify(cargar_ejercicios())

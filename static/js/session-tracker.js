@@ -225,8 +225,14 @@ async function renderTrackerSeries(uid, ej, contenedor) {
       if (typeof Gamification !== "undefined") {
         Gamification.registrarSerieCoin(uid).catch(() => {});
         Gamification.subirEnergia(1);
-        // Acumular en la sesión para el resumen
         window.coinsGanadosEnSesion = (window.coinsGanadosEnSesion || 0) + 1;
+      }
+
+      // Companion reacciona a la serie completada
+      const esPR = !esBW && prHistorico !== null && pesoKg > prHistorico;
+      if (typeof Companion !== "undefined") {
+        Companion.onSerie(pesoKg, esPR, ej.nombre);
+        Companion.resetIdle();
       }
 
       // PR check

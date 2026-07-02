@@ -80,10 +80,24 @@ async function cargarRutina() {
   // --- Tonelaje semanal ---
   inicializarTonelaje();
 
-  // --- Gamificación: cargar catálogos y mini-avatar ---
+  // --- Gamificación: cargar catálogos ---
   await Gamification.cargarCatalogos();
-  const avatarData = datosUsuario.avatar || { especie: "perro" };
-  Gamification.renderMiniAvatar({ ...avatarData, gymcoins: datosUsuario.gymcoins || 0 });
+
+  // --- Companion Virtual: inicializar con estado calculado ---
+  const companionResult = await Companion.inicializar(usuarioActual.uid);
+  if (companionResult?.mascota) {
+    const nombreEl = document.querySelector(".companion-nombre");
+    if (nombreEl) nombreEl.textContent = companionResult.mascota.nombre;
+  }
+
+  // Clic en el widget abre diálogo contextual
+  document.getElementById("companionWidget")?.addEventListener("click", () => {
+    const { estado, mascota } = Companion.obtenerEstado();
+    const data = datosUsuario || {};
+    if (estado === "on_fire") Companion.dialogoContextual("on_fire", { racha: data.racha_dias || 0 });
+    else if (estado === "sedentario") Companion.dialogoContextual("sedentario", { dias: Math.floor((new Date() - new Date(data.ultima_sesion_fecha)) / 86400000) || 0 });
+    else Companion.dialogoContextual("neutral", {});
+  });
 
   // --- Verificar descarga propuesta ---
   const descarga = await GymEngine.verificarDescarga(usuarioActual.uid);
@@ -116,6 +130,9 @@ document.querySelectorAll(".btnZonaDolor").forEach(btn => {
 
       rutinaActual[diaSeleccionado].ejercicios = ajustados;
       renderDia(diaSeleccionado);
+
+      // Companion reacciona al triage
+      Companion.onTriage(zona);
 
       if (reemplazos.length) {
         const res = document.getElementById("triageResultado");
@@ -268,6 +285,10 @@ document.getElementById("btnSesionCompletada")?.addEventListener("click", async 
     coinsGanadosEnSesion,
     trofeosNuevos
   );
+
+  // 11. Companion: celebración post-sesión
+  Companion.onSesionCompletada(resultadoRacha?.racha || 0);
+  if (resultadoRacha?.racha) Companion.onRacha(resultadoRacha.racha);
 
   btn.textContent = "✅ ¡Sesión guardada!";
   coinsGanadosEnSesion = 0;

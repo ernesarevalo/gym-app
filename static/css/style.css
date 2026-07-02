@@ -472,3 +472,239 @@ a {
 
 /* Navbar links adicionales (tienda, trofeos, avatar) */
 .nav-gamif-links a { font-size: 0.8rem; }
+
+/* =====================================================================
+   COMPANION VIRTUAL — Widget, Estados, Poses, Diálogos
+   ===================================================================== */
+
+#companionWidget {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+  --mascota-primario: #e67e22;
+  --mascota-secundario: #f39c12;
+  --mascota-glow: #ff6b35;
+}
+
+#companionWidget:hover { transform: scale(1.08) translateY(-4px); }
+
+.companion-sprite-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2.5px solid var(--mascota-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.4s, box-shadow 0.4s, filter 0.4s;
+}
+
+.companion-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.companion-emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+  transition: filter 0.4s ease;
+}
+
+.companion-nombre {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- ESTADO: ON FIRE ---- */
+.companion-on-fire .companion-sprite-wrap {
+  border-color: var(--mascota-glow);
+  box-shadow:
+    0 0 12px var(--mascota-glow),
+    0 0 28px color-mix(in srgb, var(--mascota-glow) 60%, transparent),
+    0 0 50px color-mix(in srgb, var(--mascota-glow) 30%, transparent);
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+.companion-on-fire .companion-emoji {
+  animation: bounceOnFire 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 12px var(--mascota-glow), 0 0 28px color-mix(in srgb, var(--mascota-glow) 50%, transparent); }
+  50%       { box-shadow: 0 0 22px var(--mascota-glow), 0 0 50px color-mix(in srgb, var(--mascota-glow) 70%, transparent); }
+}
+@keyframes bounceOnFire {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-6px) scale(1.05); }
+}
+
+/* ---- ESTADO: SEDENTARIO ---- */
+.companion-sedentario .companion-sprite-wrap {
+  filter: grayscale(70%) brightness(0.8);
+  border-color: #6b7280;
+  box-shadow: none;
+  animation: sedentarioSway 4s ease-in-out infinite;
+}
+@keyframes sedentarioSway {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+
+/* ---- ESTADO: SEDENTARIO EXTREMO ---- */
+.companion-sedentario-extremo .companion-sprite-wrap {
+  filter: grayscale(100%) brightness(0.6) blur(0.5px);
+  border-color: #374151;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+  animation: sedExtremoPulse 3s ease-in-out infinite;
+}
+@keyframes sedExtremoPulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 0.9; }
+}
+
+/* ---- ESTADO: EN DESCANSO ---- */
+.companion-descanso .companion-sprite-wrap {
+  border-color: #a29bfe;
+  background: linear-gradient(135deg, #a29bfe22, #fd79a822);
+  box-shadow: 0 0 16px #a29bfe55;
+  animation: descansoFloat 3s ease-in-out infinite;
+}
+@keyframes descansoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.companion-descanso .companion-emoji {
+  filter: hue-rotate(200deg) saturate(0.7);
+}
+
+/* ---- ESTADO: EVOLUCIONADO ---- */
+.companion-evolucionado .companion-sprite-wrap {
+  border-color: #fbbf24;
+  background: radial-gradient(circle, #fbbf2422, transparent 70%);
+  box-shadow: 0 0 20px #fbbf24, 0 0 60px #fbbf2455;
+  animation: evolucionadoSpin 0.6s ease-out 1, glowPulseGold 1.5s ease-in-out infinite 0.6s;
+}
+@keyframes evolucionadoSpin {
+  from { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.2); }
+  to   { transform: rotate(360deg) scale(1); }
+}
+@keyframes glowPulseGold {
+  0%, 100% { box-shadow: 0 0 20px #fbbf24; }
+  50%      { box-shadow: 0 0 40px #fbbf24, 0 0 80px #fbbf2477; }
+}
+
+/* ---- ESTADO: NEUTRAL ---- */
+.companion-neutral .companion-sprite-wrap {
+  border-color: var(--mascota-primario);
+  animation: neutralBreath 4s ease-in-out infinite;
+}
+@keyframes neutralBreath {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+/* ---- IDLE PULSE ---- */
+.idle-pulse .companion-sprite-wrap {
+  animation: idlePulse 0.5s ease-in-out 6 !important;
+}
+@keyframes idlePulse {
+  0%, 100% { transform: scale(1); border-color: var(--mascota-primario); }
+  50%      { transform: scale(1.15); border-color: #f59e0b; box-shadow: 0 0 20px #f59e0b; }
+}
+
+/* =====================================================================
+   DIÁLOGOS — Speech Bubbles
+   ===================================================================== */
+
+#companionDialogo {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1.5px solid var(--mascota-primario);
+  border-radius: 14px 14px 4px 14px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  max-width: 240px;
+  min-width: 140px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  transform-origin: bottom right;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: normal;
+  line-height: 1.4;
+  z-index: 10;
+}
+
+#companionDialogo::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 24px;
+  width: 0; height: 0;
+  border-left: 8px solid transparent;
+  border-right: 0;
+  border-top: 8px solid var(--mascota-primario);
+}
+
+#companionDialogo.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#companionDialogo.saliendo {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.95);
+}
+
+/* =====================================================================
+   MODO BESTIA — Companion agresivo
+   ===================================================================== */
+[data-theme="beast-light"] #companionWidget .companion-sprite-wrap,
+[data-theme="beast-dark"] #companionWidget .companion-sprite-wrap {
+  border-color: var(--primary);
+  box-shadow: 0 0 16px var(--primary), 0 0 40px color-mix(in srgb, var(--primary) 40%, transparent);
+  animation: beastCompanion 0.9s ease-in-out infinite !important;
+}
+[data-theme="beast-light"] .companion-emoji,
+[data-theme="beast-dark"] .companion-emoji {
+  font-family: var(--font-display);
+  filter: drop-shadow(0 0 4px var(--primary));
+}
+@keyframes beastCompanion {
+  0%, 100% { transform: scale(1) rotate(-1deg); }
+  50%      { transform: scale(1.08) rotate(1deg); }
+}
+
+/* =====================================================================
+   RESUMEN DE SESIÓN — Avatar centrado
+   ===================================================================== */
+#modalResumen .companion-central {
+  font-size: 5rem;
+  animation: celebracionCentral 1s ease-out;
+}
+@keyframes celebracionCentral {
+  0%   { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
