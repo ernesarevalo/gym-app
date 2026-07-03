@@ -4,16 +4,35 @@
 // =====================================================================
 
 // =====================================================================
-// MÓDULO 1 — STATE MACHINE + ASSET MANAGER
+// MÓDULO 1 — STATE MACHINE + SPRITESHEET MANAGER
 // =====================================================================
+// Spritesheet: 1 archivo PNG por mascota, grilla 6 columnas × 3 filas.
+// Cada celda mide 120×120px. Total sheet: 720×360px.
+// Las coordenadas (col, fila) determinan el background-position CSS.
 
-// Estructura de asset paths:
-// Los emojis se usan como sprites por defecto (sin archivos externos).
-// Cuando haya PNG/SVG reales, el sistema carga:
-//   /static/img/mascotas/{mascota_id}/{pose}.png
-// Si no existe, cae al emoji. Esto evita saturar memoria: se carga
-// 1 imagen a la vez y se libera la anterior (src swap, no preload masivo).
+const SPRITE_CELDA = 120; // px por celda
+const SPRITE_COLS  = 6;
 
+// Mapa de pose → posición (col, fila) en la grilla — mismo orden en todas las mascotas
+const POSE_COORDS = {
+  neutral:            { col: 0, fila: 0 },
+  flexionando:        { col: 1, fila: 0 },
+  entrenando:         { col: 2, fila: 0 },
+  motivando:          { col: 3, fila: 0 },
+  sudando:            { col: 4, fila: 0 },
+  feliz:              { col: 5, fila: 0 },
+  pensativo:          { col: 0, fila: 1 },
+  durmiendo:          { col: 1, fila: 1 },
+  en_descanso_tablet: { col: 2, fila: 1 },
+  analizando:         { col: 3, fila: 1 },
+  evolucionado:       { col: 5, fila: 1 },
+  on_fire:            { col: 0, fila: 2 },
+  en_descanso:        { col: 1, fila: 2 },
+  sedentario:         { col: 2, fila: 2 },
+  sedentario_extremo: { col: 3, fila: 2 },
+};
+
+// Metadata de poses para UI
 const COMPANION_POSES = {
   neutral:            { label: "Neutral",           prioridad: 0 },
   flexionando:        { label: "Flexionando",        prioridad: 6 },
@@ -31,52 +50,63 @@ const COMPANION_POSES = {
   sedentario_extremo: { label: "Sedentario Extremo", prioridad: -2 }
 };
 
-// Emojis de pose por mascota (fallback sin assets externos)
+// Emojis fallback (se usan si la spritesheet no existe todavía)
 const POSE_EMOJIS = {
-  neutral:            (base) => base,
-  flexionando:        (base) => base + "💪",
-  entrenando:         (base) => base + "🏋️",
-  motivando:          (base) => "⚡" + base + "⚡",
-  sudando:            (base) => base + "💦",
-  feliz:              (base) => base + "🎉",
-  pensativo:          (base) => base + "🤔",
-  durmiendo:          (base) => base + "💤",
-  analizando:         (base) => "🔍" + base,
-  evolucionado:       (base) => "✨" + base + "✨",
-  on_fire:            (base) => base + "🔥",
-  en_descanso:        (base) => base + "🛌",
-  sedentario:         (base) => base + "😴",
-  sedentario_extremo: (base) => "😵" + base
+  neutral:            (b) => b,
+  flexionando:        (b) => b + "💪",
+  entrenando:         (b) => b + "🏋️",
+  motivando:          (b) => "⚡" + b + "⚡",
+  sudando:            (b) => b + "💦",
+  feliz:              (b) => b + "🎉",
+  pensativo:          (b) => b + "🤔",
+  durmiendo:          (b) => b + "💤",
+  en_descanso_tablet: (b) => b + "📱",
+  analizando:         (b) => "🔍" + b,
+  evolucionado:       (b) => "✨" + b + "✨",
+  on_fire:            (b) => b + "🔥",
+  en_descanso:        (b) => b + "🧘",
+  sedentario:         (b) => b + "😴",
+  sedentario_extremo: (b) => "😵" + b
 };
 
-// Carga lazy del asset: primero intenta PNG, si falla usa emoji.
-function obtenerAsset(mascota, pose) {
-  return {
-    src: `/static/img/mascotas/${mascota.id}/${pose}.png`,
-    emoji: POSE_EMOJIS[pose]?.(mascota.emoji_base) || mascota.emoji_base,
-    alt: `${mascota.nombre} — ${COMPANION_POSES[pose]?.label || pose}`
-  };
-}
-
+// ---- RENDER via SPRITESHEET ----
+// Aplica background-position CSS según la posición en la grilla.
+// Si la imagen falla (sheet no subida aún), muestra el emoji.
 function renderSprite(mascota, pose, contenedor) {
-  const asset = obtenerAsset(mascota, pose);
-  const img = contenedor.querySelector(".companion-img");
-  const emojiEl = contenedor.querySelector(".companion-emoji");
+  const coords = POSE_COORDS[pose] || POSE_COORDS["neutral"];
+  const posX   = -(coords.col * SPRITE_CELDA);
+  const posY   = -(coords.fila * SPRITE_CELDA);
+  const sheetUrl = `/static/img/mascotas/${mascota.id}/spritesheet.png`;
 
-  if (img) {
-    img.src = asset.src;
-    img.alt = asset.alt;
-    img.onerror = () => {
-      img.style.display = "none";
-      if (emojiEl) emojiEl.textContent = asset.emoji;
-    };
-    img.onload = () => {
-      img.style.display = "block";
-      if (emojiEl) emojiEl.textContent = "";
-    };
-  } else if (emojiEl) {
-    emojiEl.textContent = asset.emoji;
-  }
+  const spriteEl  = contenedor.querySelector(".companion-sprite");
+  const emojiEl   = contenedor.querySelector(".companion-emoji");
+
+  if (!spriteEl) return;
+
+  // Intenta cargar la sheet via Image() para detectar si existe
+  const tester = new Image();
+  tester.onload = () => {
+    // Sheet existe: usamos CSS background-position
+    spriteEl.style.backgroundImage  = `url('${sheetUrl}')`;
+    spriteEl.style.backgroundPosition = `${posX}px ${posY}px`;
+    spriteEl.style.backgroundRepeat   = "no-repeat";
+    spriteEl.style.backgroundSize     = `${SPRITE_CELDA * SPRITE_COLS}px auto`;
+    spriteEl.style.display = "block";
+    if (emojiEl) emojiEl.style.display = "none";
+  };
+  tester.onerror = () => {
+    // Sheet no existe todavía: fallback al emoji
+    spriteEl.style.display = "none";
+    if (emojiEl) {
+      emojiEl.style.display = "block";
+      const emojiGen = POSE_EMOJIS[pose] || POSE_EMOJIS["neutral"];
+      emojiEl.textContent = emojiGen(mascota.emoji_base || "🦊");
+    }
+  };
+  tester.src = sheetUrl;
+
+  // Actualiza data-pose para animaciones CSS
+  contenedor.dataset.pose = pose;
 }
 
 // =====================================================================
