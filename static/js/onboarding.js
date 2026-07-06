@@ -150,10 +150,10 @@ async function generarRutina(dias, tiempoSesion, enfoque, nivel, equipamiento, o
       }
     });
 
-    // Jerarquía de fatiga: compuestos primero, aislamiento/core al final
+    // Cascada de energía: ordena por prioridad_orden (1→4)
+    // 1=Compuesto barra, 2=Compuesto mancuerna/máquina, 3=Aislamiento, 4=Core
     ejerciciosDelDia.sort((a, b) =>
-      (esPatronCompuesto(a.patron_movimiento) ? 0 : 1) -
-      (esPatronCompuesto(b.patron_movimiento) ? 0 : 1)
+      (a.prioridad_orden || 3) - (b.prioridad_orden || 3)
     );
 
     idsDiaAnterior.clear();
@@ -164,8 +164,8 @@ async function generarRutina(dias, tiempoSesion, enfoque, nivel, equipamiento, o
     return {
       dia: indexDia + 1,
       titulo: `Día ${indexDia + 1}: ${grupos.join(" + ")}`,
-      ejercicios: ejerciciosDelDia.map((ej, idx) => {
-        const esPrincipal = idx === 0 && esPatronCompuesto(ej.patron_movimiento);
+      ejercicios: ejerciciosDelDia.map((ej) => {
+        const prioridad = ej.prioridad_orden || 3;
         return {
           ejercicio_id: ej.id,
           nombre: ej.nombre,
@@ -178,10 +178,11 @@ async function generarRutina(dias, tiempoSesion, enfoque, nivel, equipamiento, o
           tiktok_url: ej.tiktok_url || null,
           imagen_url: ej.imagen_url || null,
           patron_movimiento: ej.patron_movimiento || null,
-          // Ejercicio principal del día: rango bajo (fuerza)
-          // Resto: reps recomendadas de la BD (6-10 compuesto, 10-15 aislamiento)
-          series: esPrincipal ? 4 : (ej.series_recomendadas || 3),
-          repeticiones: esPrincipal ? repsPrincipal : (ej.repeticiones_recomendadas || "10-15"),
+          prioridad_orden: prioridad,
+          prioridad_descripcion: ej.prioridad_descripcion || "",
+          // Series y reps según cascada de prioridad 1→4
+          series: ej.series_recomendadas || (prioridad <= 2 ? 4 : 3),
+          repeticiones: ej.repeticiones_recomendadas || (prioridad === 1 ? repsPrincipal : prioridad === 2 ? "6-10" : prioridad === 4 ? "12-20" : "10-15"),
           tipo_entrenamiento: enfoque,
           peso_actual: null
         };

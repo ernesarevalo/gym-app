@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rompiendo_hielo",
+    "nombre": "Rompiendo el Hielo",
+    "descripcion": "Completaste tu primera rutina. ¡El viaje empieza ahora!",
+    "categoria": "constancia",
+    "rareza": "bronce",
+    "recompensa_puntos": 20,
+    "icono": "🧊",
+    "condicion": {"tipo": "rutinas_completadas", "valor": 1}
+  },
+  {
+    "id": "guerrero_semana",
+    "nombre": "Guerrero de la Semana",
+    "descripcion": "Entrenaste 4 días en una misma semana.",
+    "categoria": "constancia",
+    "rareza": "plata",
+    "recompensa_puntos": 50,
+    "icono": "⚔️",
+    "condicion": {"tipo": "dias_semana", "valor": 4}
+  },
+  {
+    "id": "listo_picadito",
+    "nombre": "Listo para el Picadito",
+    "descripcion": "Entrenaste piernas el lunes o martes — llegás fresco al partido.",
+    "categoria": "constancia",
+    "rareza": "plata",
+    "recompensa_puntos": 30,
+    "icono": "⚽",
+    "condicion": {"tipo": "piernas_inicio_semana", "valor": true}
+  },
+  {
+    "id": "amante_compuestos",
+    "nombre": "Amante de los Compuestos",
+    "descripcion": "Registraste peso en Press, Sentadilla o Peso Muerto por primera vez.",
+    "categoria": "fuerza",
+    "rareza": "bronce",
+    "recompensa_puntos": 20,
+    "icono": "🏋️",
+    "condicion": {"tipo": "primer_compuesto", "valor": true}
+  },
+  {
+    "id": "club_100",
+    "nombre": "El Club de los 100",
+    "descripcion": "Superaste los 100 kg en algún ejercicio. Bienvenido al club.",
+    "categoria": "fuerza",
+    "rareza": "oro",
+    "recompensa_puntos": 100,
+    "icono": "💯",
+    "condicion": {"tipo": "max_peso_kg", "valor": 100}
+  },
+  {
+    "id": "maquina_tonelaje",
+    "nombre": "Máquina de Tonelaje",
+    "descripcion": "Acumulaste 10.000 kg de volumen total en una semana.",
+    "categoria": "fuerza",
+    "rareza": "diamante",
+    "recompensa_puntos": 200,
+    "icono": "⚡",
+    "condicion": {"tipo": "tonelaje_semanal_kg", "valor": 10000}
+  },
+  {
+    "id": "el_arquitecto",
+    "nombre": "El Arquitecto",
+    "descripcion": "Guardaste una rutina 100% armada por vos desde cero.",
+    "categoria": "exploracion",
+    "rareza": "plata",
+    "recompensa_puntos": 40,
+    "icono": "📐",
+    "condicion": {"tipo": "rutina_manual", "valor": true}
+  },
+  {
+    "id": "adaptacion_tactica",
+    "nombre": "Adaptación Táctica",
+    "descripcion": "Usaste el reemplazo en vivo de ejercicio durante una sesión.",
+    "categoria": "exploracion",
+    "rareza": "bronce",
+    "recompensa_puntos": 15,
+    "icono": "🔄",
+    "condicion": {"tipo": "live_swap", "valor": true}
+  },
+  {
+    "id": "cazador_secretos",
+    "nombre": "Cazador de Secretos",
+    "descripcion": "Descubriste el Modo Bestia. 5 clics en el logo = portón abierto.",
+    "categoria": "exploracion",
+    "rareza": "oro",
+    "recompensa_puntos": 75,
+    "icono": "🔥",
+    "condicion": {"tipo": "modo_bestia_activado", "valor": true}
+  },
+  {
+    "id": "racha_7",
+    "nombre": "Una Semana Sin Fallar",
+    "descripcion": "7 días de racha consecutiva de entrenamiento.",
+    "categoria": "constancia",
+    "rareza": "plata",
+    "recompensa_puntos": 50,
+    "icono": "🗓️",
+    "condicion": {"tipo": "racha_dias", "valor": 7}
+  },
+  {
+    "id": "racha_21",
+    "nombre": "El Hábito Formado",
+    "descripcion": "21 días consecutivos. La ciencia dice que ya es un hábito.",
+    "categoria": "constancia",
+    "rareza": "diamante",
+    "recompensa_puntos": 300,
+    "icono": "💎",
+    "condicion": {"tipo": "racha_dias", "valor": 21}
+  },
+  {
+    "id": "modo_express_usado",
+    "nombre": "Siempre Hay Tiempo",
+    "descripcion": "Completaste una sesión con el Modo Express activado.",
+    "categoria": "exploracion",
+    "rareza": "bronce",
+    "recompensa_puntos": 15,
+    "icono": "⚡",
+    "condicion": {"tipo": "modo_express_usado", "valor": true}
+  }
+]

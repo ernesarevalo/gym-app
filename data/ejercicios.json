@@ -11,7 +11,7 @@
       "seguridad": "Usá un ayudante o jaula de seguridad con cargas altas. Bajá la barra sin rebotar."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "Apretá los omóplatos antes de cada repetición.",
       "Exhalá con fuerza al empujar hacia arriba."
@@ -32,7 +32,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "pecho_2",
@@ -67,7 +69,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "pecho_3",
@@ -101,7 +105,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "pecho_4",
@@ -136,7 +142,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "basico",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "pecho_5",
@@ -171,7 +179,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "pecho_6",
@@ -185,7 +195,7 @@
       "seguridad": "Asegurate de que el banco esté bien sujeto al piso o anclado; usá ayudante con cargas altas."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "Enfatiza la porción inferior del pecho.",
       "Mantené los pies bien sujetos al soporte del banco."
@@ -205,7 +215,9 @@
     "nivel_minimo": "Avanzado",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "pecho_7",
@@ -239,7 +251,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "pecho_8",
@@ -273,7 +287,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "pecho_9",
@@ -308,7 +324,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "pecho_10",
@@ -342,7 +360,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "espalda_1",
@@ -356,7 +376,7 @@
       "seguridad": "Si no podés hacer dominadas completas, usá bandas de asistencia o la máquina de tracción asistida en vez de hacer trampa con impulso."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "Activá los omóplatos ('escápulas abajo') antes de tirar.",
       "Bajá controlado, no te dejes caer de golpe."
@@ -377,7 +397,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "espalda_2",
@@ -391,7 +413,7 @@
       "seguridad": "Si tenés antecedentes de lumbalgia, preferí variantes apoyadas en banco (remo en T con soporte de pecho)."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "Mirá hacia adelante, no hacia abajo.",
       "Apretá los omóplatos en la parte alta del movimiento."
@@ -414,7 +436,9 @@
     "bodyweight": false,
     "alto_estres_axial": true,
     "zona_lesion": "lumbar",
-    "alternativa_segura": "espalda_4"
+    "alternativa_segura": "espalda_4",
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "espalda_3",
@@ -448,7 +472,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "espalda_4",
@@ -482,7 +508,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "espalda_5",
@@ -496,7 +524,7 @@
       "seguridad": "Empezá con poco peso hasta dominar la técnica de bisagra de cadera; es uno de los ejercicios con mayor riesgo si se ejecuta mal."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "La barra debe 'rozar' las piernas todo el recorrido.",
       "Sentí el estiramiento en isquiotibiales, no en la espalda baja."
@@ -519,7 +547,9 @@
     "bodyweight": false,
     "alto_estres_axial": true,
     "zona_lesion": "lumbar",
-    "alternativa_segura": "espalda_4"
+    "alternativa_segura": "espalda_4",
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "espalda_6",
@@ -553,7 +583,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "espalda_7",
@@ -588,7 +620,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "espalda_8",
@@ -622,7 +656,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "espalda_9",
@@ -658,7 +694,9 @@
     "bodyweight": false,
     "alto_estres_axial": true,
     "zona_lesion": "lumbar",
-    "alternativa_segura": "espalda_8"
+    "alternativa_segura": "espalda_8",
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "espalda_10",
@@ -692,7 +730,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "piernas_1",
@@ -706,7 +746,7 @@
       "seguridad": "Usá una jaula con seguros (rack) con cargas altas, para poder soltar la barra si fallás en el fondo."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "Empujá las rodillas hacia afuera al bajar.",
       "Mirá al frente, no hacia abajo."
@@ -728,7 +768,9 @@
     "bodyweight": false,
     "alto_estres_axial": true,
     "zona_lesion": "lumbar",
-    "alternativa_segura": "piernas_3"
+    "alternativa_segura": "piernas_3",
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "piernas_2",
@@ -762,7 +804,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "piernas_3",
@@ -796,7 +840,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "piernas_4",
@@ -828,7 +874,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "piernas_5",
@@ -860,7 +908,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "piernas_6",
@@ -894,7 +944,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "piernas_7",
@@ -908,7 +960,7 @@
       "seguridad": "Es uno de los ejercicios más técnicos: dominá primero el peso muerto rumano y la bisagra de cadera antes de cargar peso alto."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "La barra debe subir pegada a las piernas.",
       "Empujá el suelo con los pies, no 'tires' solo con la espalda."
@@ -931,7 +983,9 @@
     "bodyweight": false,
     "alto_estres_axial": true,
     "zona_lesion": "lumbar",
-    "alternativa_segura": "piernas_3"
+    "alternativa_segura": "piernas_3",
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "piernas_8",
@@ -963,7 +1017,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "piernas_9",
@@ -995,7 +1051,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "piernas_10",
@@ -1029,7 +1087,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "hombros_1",
@@ -1064,7 +1124,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "hombros_2",
@@ -1099,7 +1161,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "hombros_3",
@@ -1133,7 +1197,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "hombros_4",
@@ -1167,7 +1233,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "hombros_5",
@@ -1181,7 +1249,7 @@
       "seguridad": "Es preventivo: priorizá poco peso y mucha técnica; equilibra el trabajo de empuje de pecho/hombro."
     },
     "series_recomendadas": 3,
-    "repeticiones_recomendadas": "10-15",
+    "repeticiones_recomendadas": "12-20 o tiempo",
     "tips": [
       "Apuntá los pulgares hacia atrás al final del movimiento.",
       "Ideal para hacer antes del entrenamiento de pecho/hombro."
@@ -1201,7 +1269,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "hombros_6",
@@ -1215,7 +1285,7 @@
       "seguridad": "Apretá glúteos y abdomen para estabilizar la zona lumbar durante el empuje."
     },
     "series_recomendadas": 4,
-    "repeticiones_recomendadas": "6-10",
+    "repeticiones_recomendadas": "4-8",
     "tips": [
       "La barra debe pasar cerca de la cara en su trayectoria.",
       "Terminá con la cabeza levemente adelantada bajo la barra arriba."
@@ -1238,7 +1308,9 @@
     "bodyweight": false,
     "alto_estres_axial": true,
     "zona_lesion": "lumbar",
-    "alternativa_segura": "hombros_1"
+    "alternativa_segura": "hombros_1",
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC"
   },
   {
     "id": "hombros_7",
@@ -1272,7 +1344,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "hombros_8",
@@ -1306,7 +1380,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "hombros_9",
@@ -1341,7 +1417,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto"
   },
   {
     "id": "hombros_10",
@@ -1375,7 +1453,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_1",
@@ -1409,7 +1489,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_2",
@@ -1443,7 +1525,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_3",
@@ -1477,7 +1561,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_4",
@@ -1511,7 +1597,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_5",
@@ -1545,7 +1633,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_6",
@@ -1577,7 +1667,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_7",
@@ -1609,7 +1701,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_8",
@@ -1643,7 +1737,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_9",
@@ -1677,7 +1773,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "brazos_10",
@@ -1711,7 +1809,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "basico",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico"
   },
   {
     "id": "core_1",
@@ -1743,7 +1843,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_2",
@@ -1775,7 +1877,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_3",
@@ -1807,7 +1911,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "basico",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_4",
@@ -1839,7 +1945,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_5",
@@ -1871,7 +1979,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_6",
@@ -1903,7 +2013,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_7",
@@ -1935,7 +2047,9 @@
     "nivel_minimo": "Intermedio",
     "equipamiento": "basico",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_8",
@@ -1967,7 +2081,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_9",
@@ -1999,7 +2115,9 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "gimnasio",
     "bodyweight": false,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   },
   {
     "id": "core_10",
@@ -2031,6 +2149,8 @@
     "nivel_minimo": "Principiante",
     "equipamiento": "casa",
     "bodyweight": true,
-    "alto_estres_axial": false
+    "alto_estres_axial": false,
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular"
   }
 ]

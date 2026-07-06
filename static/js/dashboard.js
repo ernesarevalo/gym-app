@@ -2,6 +2,13 @@
 
 const ADMIN_EMAIL = "ernestoarevalo@gmail.com";
 
+const PRIORIDAD_BADGE = {
+  1: { label: "P1 · Fuerza/SNC",         color: "#ef4444" },
+  2: { label: "P2 · Hipertrofia",         color: "#f59e0b" },
+  3: { label: "P3 · Estrés metabólico",   color: "#3b82f6" },
+  4: { label: "P4 · Core/Articular",      color: "#22c55e" },
+};
+
 const ICONOS_GRUPO = {
   "Pecho": "🎯", "Espalda": "🦴", "Piernas": "🦵",
   "Hombros": "🤷", "Brazos": "💪", "Core": "🔥"
@@ -80,6 +87,25 @@ async function cargarRutina() {
   // --- Tonelaje semanal ---
   inicializarTonelaje();
 
+  // --- Gamificación: cargar catálogos ---
+  await Gamification.cargarCatalogos();
+
+  // --- Companion Virtual: inicializar con estado calculado ---
+  const companionResult = await Companion.inicializar(usuarioActual.uid);
+  if (companionResult?.mascota) {
+    const nombreEl = document.querySelector(".companion-nombre");
+    if (nombreEl) nombreEl.textContent = companionResult.mascota.nombre;
+  }
+
+  // Clic en el widget abre diálogo contextual
+  document.getElementById("companionWidget")?.addEventListener("click", () => {
+    const { estado, mascota } = Companion.obtenerEstado();
+    const data = datosUsuario || {};
+    if (estado === "on_fire") Companion.dialogoContextual("on_fire", { racha: data.racha_dias || 0 });
+    else if (estado === "sedentario") Companion.dialogoContextual("sedentario", { dias: Math.floor((new Date() - new Date(data.ultima_sesion_fecha)) / 86400000) || 0 });
+    else Companion.dialogoContextual("neutral", {});
+  });
+
   // --- Verificar descarga propuesta ---
   const descarga = await GymEngine.verificarDescarga(usuarioActual.uid);
   if (descarga.proponer) {
@@ -111,6 +137,9 @@ document.querySelectorAll(".btnZonaDolor").forEach(btn => {
 
       rutinaActual[diaSeleccionado].ejercicios = ajustados;
       renderDia(diaSeleccionado);
+
+      // Companion reacciona al triage
+      Companion.onTriage(zona);
 
       if (reemplazos.length) {
         const res = document.getElementById("triageResultado");
@@ -146,7 +175,12 @@ document.getElementById("btnExpress")?.addEventListener("click", () => {
   const express = GymEngine.modoExpress(dia.ejercicios);
   rutinaActual[diaSeleccionado].ejercicios = express;
   renderDia(diaSeleccionado);
-  alert(`⚡ Modo Express activado: ${express.length} ejercicios seleccionados para una sesión de 30 min.`);
+  alert(`⚡ Modo Express activado: ${express.length} ejercicios para una sesión de 30 min.`);
+
+  // Trigger trofeo "Siempre Hay Tiempo"
+  Gamification.evaluarYOtorgarTrofeos(usuarioActual.uid, { modo_express_usado: true })
+    .then(nuevos => { if (nuevos.length) Gamification.notificarTrofeos(nuevos); })
+    .catch(() => {});
 });
 
 // ---------- MAPA DE CALOR ----------
@@ -182,26 +216,89 @@ async function inicializarTonelaje() {
   } catch(e) { console.warn("Tonelaje:", e); }
 }
 
-// ---------- SESIÓN COMPLETADA ----------
+// ---------- SESIÓN COMPLETADA + GAMIFICACIÓN ----------
+
+let coinsGanadosEnSesion = 0;
 
 document.getElementById("btnSesionCompletada")?.addEventListener("click", async () => {
   const dia = rutinaActual[diaSeleccionado];
-  const resultado = await GymEngine.guardarSesionCompletada(usuarioActual.uid, dia);
+  const btn = document.getElementById("btnSesionCompletada");
+  btn.disabled = true;
+  btn.textContent = "Guardando...";
 
+  // 1. Guardar sesión en historial (mapa de calor + racha)
+  const resultadoRacha = await GymEngine.guardarSesionCompletada(usuarioActual.uid, dia);
+
+  // 2. Coins por rutina completada
+  await Gamification.registrarRutinaCoin(usuarioActual.uid);
+  coinsGanadosEnSesion += 5;
+
+  // 3. Calcular tonelaje del día para el resumen
+  const { total_kg: tonelajeHoy } = await GymEngine.calcularTonelajeSemanal(usuarioActual.uid);
+
+  // 4. Construir stats para evaluar trofeos
+  const snap = await db.collection("usuarios").doc(usuarioActual.uid).get();
+  const userData = snap.data() || {};
+  const statsActuales = userData.stats_gamificacion || {};
+
+  // Detectar "piernas inicio de semana" (lunes=1, martes=2 en JS)
+  const diaSemana = new Date().getDay();
+  const grupHoy = new Set(dia.ejercicios.map(e => e.grupo_muscular));
+  const piernasPrimerossDias = grupHoy.has("Piernas") && (diaSemana === 1 || diaSemana === 2);
+
+  const statsNuevas = {
+    ...statsActuales,
+    rutinas_completadas: (statsActuales.rutinas_completadas || 0) + 1,
+    dias_semana_actual: (statsActuales.dias_semana_actual || 0) + 1,
+    tonelaje_semanal: tonelajeHoy,
+    piernas_lunes_martes: piernasPrimerossDias || statsActuales.piernas_lunes_martes || false
+  };
+
+  // 5. Evaluar y otorgar trofeos
+  const trofeosNuevos = await Gamification.evaluarYOtorgarTrofeos(usuarioActual.uid, statsNuevas);
+  if (trofeosNuevos.length) {
+    coinsGanadosEnSesion += trofeosNuevos.reduce((acc, t) => acc + Gamification.coinsRecompensaTrofeo(t), 0);
+    Gamification.notificarTrofeos(trofeosNuevos);
+  }
+
+  // 6. Actualizar avatar (morfología + ánimo)
+  const { morfologia, animo } = await Gamification.actualizarAvatar(usuarioActual.uid);
+
+  // 7. Racha info
   const rachaEl = document.getElementById("rachaInfo");
-  if (rachaEl && resultado) {
-    rachaEl.textContent = `🔥 Racha: ${resultado.racha} días consecutivos`;
+  if (rachaEl && resultadoRacha) {
+    rachaEl.textContent = `🔥 Racha: ${resultadoRacha.racha} días consecutivos`;
     rachaEl.classList.remove("d-none");
   }
 
-  if (resultado?.bestiaDesbloqueada) {
-    alert("🔥 ¡21 días consecutivos! ¡MODO BESTIA DESBLOQUEADO! El tema cambió automáticamente.");
-    window.location.reload();
+  // 8. Modo Bestia desbloqueado por racha
+  if (resultadoRacha?.bestiaDesbloqueada) {
+    // También se evalúa el trofeo correspondiente
+    await Gamification.evaluarYOtorgarTrofeos(usuarioActual.uid, {
+      ...statsNuevas, modo_bestia_activado: true
+    });
+    setTimeout(() => {
+      alert("🔥 ¡21 días consecutivos! ¡MODO BESTIA DESBLOQUEADO!");
+      window.location.reload();
+    }, 2000);
   }
 
+  // 9. Actualizar tonelaje en pantalla
   inicializarTonelaje();
-  document.getElementById("btnSesionCompletada").textContent = "✅ ¡Sesión guardada!";
-  document.getElementById("btnSesionCompletada").disabled = true;
+
+  // 10. Mostrar modal de resumen
+  await Gamification.mostrarResumenSesion(
+    usuarioActual.uid,
+    coinsGanadosEnSesion,
+    trofeosNuevos
+  );
+
+  // 11. Companion: celebración post-sesión
+  Companion.onSesionCompletada(resultadoRacha?.racha || 0);
+  if (resultadoRacha?.racha) Companion.onRacha(resultadoRacha.racha);
+
+  btn.textContent = "✅ ¡Sesión guardada!";
+  coinsGanadosEnSesion = 0;
 });
 
 // ---------- CALENTAMIENTO Y MOVILIDAD ESPECÍFICOS POR DÍA ----------
@@ -364,13 +461,13 @@ function renderDia(idx) {
           </h5>
           ${notaExtra}
           <p class="mb-1 small text-secondary">${ej.grupo_muscular} · ${ej.series} series x ${ej.repeticiones} reps ${ej.tipo_entrenamiento ? "(" + ej.tipo_entrenamiento + ")" : ""}${ej.patron_movimiento ? " · 🧩 " + ej.patron_movimiento : ""}</p>
+          ${ej.prioridad_orden ? (() => { const b = PRIORIDAD_BADGE[ej.prioridad_orden]; return b ? `<span class="badge mb-1" style="background:${b.color}22;color:${b.color};border:1px solid ${b.color};font-size:0.72rem;">${b.label}</span>` : ""; })() : ""}
           <p class="mb-1">${ej.descripcion || ""}</p>
           ${ej.tips && ej.tips.length ? `<p class="mb-1 small">💡 ${ej.tips[0]}</p>` : ""}
           ${ej.peso_recomendado ? `<p class="mb-1 small text-secondary">🏋️ Principiante: ${ej.peso_recomendado.principiante} · Intermedio: ${ej.peso_recomendado.intermedio} · Avanzado: ${ej.peso_recomendado.avanzado}</p>` : ""}
           <div class="d-flex gap-3 small mb-2">
             <a href="${ej.video_url}" target="_blank">▶ YouTube</a>
             ${ej.tiktok_url ? `<a href="${ej.tiktok_url}" target="_blank">🎵 TikTok</a>` : ""}
-            ${ej.imagen_url ? `<a href="${ej.imagen_url}" target="_blank">🖼️ GIF</a>` : ""}
           </div>
           ${renderTecnica(ej, idGen)}
           <!-- Tracker por serie se monta aquí -->
@@ -434,6 +531,11 @@ async function reemplazarEjercicio(nuevoEjercicio) {
   await db.collection("usuarios").doc(usuarioActual.uid).update({
     rutina: rutinaActual
   });
+
+  // Trigger trofeo "Adaptación Táctica"
+  Gamification.evaluarYOtorgarTrofeos(usuarioActual.uid, { live_swap_usado: true })
+    .then(nuevos => { if (nuevos.length) Gamification.notificarTrofeos(nuevos); })
+    .catch(() => {});
 
   modalCambiar.hide();
   renderDia(diaIdx);

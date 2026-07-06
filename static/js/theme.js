@@ -36,13 +36,13 @@ function actualizarIconoToggle(theme) {
   const btn = document.getElementById("themeToggleBtn");
   if (!btn) return;
   if (theme === "beast-dark") {
-    btn.textContent = "☀️ Bestia Claro";
+    btn.textContent = "☀️";
   } else if (theme === "beast-light") {
-    btn.textContent = "🌙 Bestia Oscuro";
+    btn.textContent = "🌙";
   } else if (theme === "dark") {
-    btn.textContent = "☀️ Modo Claro";
+    btn.textContent = "☀️";
   } else {
-    btn.textContent = "🌙 Modo Oscuro";
+    btn.textContent = "🌙";
   }
 }
 

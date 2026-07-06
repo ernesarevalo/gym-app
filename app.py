@@ -132,6 +132,65 @@ def admin_panel():
 
 # ---------- API DE EJERCICIOS ----------
 
+TROFEOS_PATH = os.path.join(os.path.dirname(__file__), "data", "trofeos.json")
+TIENDA_PATH  = os.path.join(os.path.dirname(__file__), "data", "tienda.json")
+
+
+def cargar_trofeos():
+    with open(TROFEOS_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def cargar_tienda():
+    with open(TIENDA_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+@app.route("/api/trofeos", methods=["GET"])
+def get_trofeos():
+    return jsonify(cargar_trofeos())
+
+
+@app.route("/api/tienda", methods=["GET"])
+def get_tienda():
+    return jsonify(cargar_tienda())
+
+
+@app.route("/tienda")
+def tienda():
+    return render_template("tienda.html")
+
+
+@app.route("/avatar")
+def avatar_page():
+    return render_template("avatar.html")
+
+
+@app.route("/trofeos")
+def trofeos_page():
+    return render_template("trofeos.html")
+
+
+MASCOTAS_PATH = os.path.join(os.path.dirname(__file__), "data", "mascotas.json")
+
+
+def cargar_mascotas():
+    with open(MASCOTAS_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        return data["mascotas"]
+
+
+@app.route("/api/mascotas", methods=["GET"])
+def get_mascotas():
+    return jsonify(cargar_mascotas())
+
+
+@app.route("/api/mascotas/poses", methods=["GET"])
+def get_poses():
+    with open(MASCOTAS_PATH, "r", encoding="utf-8") as f:
+        return jsonify(json.load(f)["poses"])
+
+
 @app.route("/api/ejercicios", methods=["GET"])
 def get_ejercicios():
     try:

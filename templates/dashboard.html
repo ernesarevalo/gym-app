@@ -12,12 +12,10 @@
 <nav class="navbar px-3" style="background-color: var(--navbar-bg);">
   <span id="appLogo" class="navbar-brand app-logo mb-0 h1">💪 GymApp</span>
   <div class="d-flex gap-2 align-items-center">
-    <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Modo Oscuro</button>
-    <a id="navAdminLink" href="/admin" class="btn btn-outline-light btn-sm d-none" style="text-decoration:none;">👑 Admin</a>
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙</button>
     <a id="navPerfil" href="/perfil" class="btn btn-outline-light btn-sm" style="text-decoration:none;">
       👤 <span id="navNombreUsuario">Mi perfil</span>
     </a>
-    <button id="btnLogout" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
   </div>
 </nav>
 
@@ -55,9 +53,7 @@
 
 <div class="container py-4">
 
-  <div id="seccionCalentamiento" class="card p-4 mb-4"></div>
-  <div id="seccionMovilidad" class="card p-4 mb-4"></div>
-  <div id="avisoLumbarEdad" class="alert alert-warning d-none"></div>
+  <div id="avisoLumbarEdad" class="alert alert-warning d-none mb-3"></div>
 
   <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
     <h4 class="mb-0">Mi rutina semanal</h4>
@@ -80,7 +76,20 @@
     <h6 class="mb-0">⚡ Tonelaje semanal: <span id="tonelajeTotal" class="text-primary">...</span> kg</h6>
   </div>
 
-  <div id="tabsDias" class="d-flex gap-2 mb-4 flex-wrap"></div>
+  <div id="tabsDias" class="d-flex gap-2 mb-2 flex-wrap"></div>
+
+  <!-- Spoiler: Calentamiento y Movilidad — parte de cada día -->
+  <div class="mb-3">
+    <button class="btn btn-outline-light btn-sm w-100 text-start py-2" type="button"
+            data-bs-toggle="collapse" data-bs-target="#spoilerCalentamiento" aria-expanded="false">
+      🔥 Calentamiento y movilidad articular de este día &nbsp;<span class="text-secondary small">(tocá para ver)</span>
+    </button>
+    <div class="collapse" id="spoilerCalentamiento">
+      <div id="seccionCalentamiento" class="card p-3 mt-1 border-top-0" style="border-radius:0 0 8px 8px;"></div>
+      <div id="seccionMovilidad" class="card p-3 mt-1 border-top-0" style="border-radius:0 0 8px 8px;"></div>
+    </div>
+  </div>
+
   <div id="contenidoDia"></div>
 
   <!-- Botón: marcar sesión como completada -->
@@ -123,9 +132,39 @@
   </div>
 </div>
 
+<!-- Companion Widget (Módulos 1-4 integrados) -->
+<div id="companionWidget" title="Tu compañero virtual — clic para interactuar">
+  <div id="companionDialogo"></div>
+  <div class="companion-sprite-wrap">
+    <div class="companion-sprite"></div>
+    <span class="companion-emoji">🦊</span>
+  </div>
+  <div class="companion-nombre">Shiba-Swole</div>
+</div>
+
+<!-- Modal: Resumen de sesión -->
+<div class="modal fade" id="modalResumen" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4" style="background-color:var(--card-bg);color:var(--text);">
+      <div id="resumenSprite" style="font-size:4rem;" class="mb-2">🐶</div>
+      <h3>¡Sesión completada! 💪</h3>
+      <div class="d-flex justify-content-center gap-4 my-3 flex-wrap">
+        <div><div style="font-size:1.5rem;">🪙</div><strong id="resumenCoins">0</strong><div class="small text-secondary">GymCoins</div></div>
+        <div><div style="font-size:1.5rem;">⚡</div><strong id="resumenTonelaje">0</strong><div class="small text-secondary">kg tonelaje</div></div>
+        <div><div style="font-size:1.5rem;">🔥</div><strong id="resumenRacha">0</strong><div class="small text-secondary">días de racha</div></div>
+      </div>
+      <div id="resumenTrofeos" class="mb-3 d-flex flex-wrap gap-2 justify-content-center"></div>
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <button class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+        <a href="/trofeos" class="btn btn-outline-light">Ver mis trofeos</a>
+        <a href="/tienda" class="btn btn-outline-light">Ir a la tienda</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
@@ -133,8 +172,12 @@
 <script src="{{ url_for('static', filename='js/beast-mascot.js') }}"></script>
 <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
 <script src="{{ url_for('static', filename='js/exercises-catalog.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script src="{{ url_for('static', filename='js/gamification.js') }}"></script>
+<script src="{{ url_for('static', filename='js/shop.js') }}"></script>
 <script src="{{ url_for('static', filename='js/engine.js') }}"></script>
 <script src="{{ url_for('static', filename='js/session-tracker.js') }}"></script>
+<script src="{{ url_for('static', filename='js/companion.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>

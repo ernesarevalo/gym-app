@@ -164,6 +164,9 @@ auth.onAuthStateChanged(async (user) => {
   if (user.email === "ernestoarevalo@gmail.com" && typeof RUTINA_GYMROUTINE !== "undefined") {
     document.getElementById("zonaImportarGymroutine").classList.remove("d-none");
   }
+  if (user.email === "ernestoarevalo@gmail.com") {
+    document.getElementById("zonaAdmin").classList.remove("d-none");
+  }
 });
 
 document.getElementById("btnImportarGymroutine")?.addEventListener("click", async () => {

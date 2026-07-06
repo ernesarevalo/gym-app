@@ -221,6 +221,20 @@ async function renderTrackerSeries(uid, ej, contenedor) {
       btn.classList.add("btn-success");
       btn.classList.remove("btn-primary", "btn-outline-light");
 
+      // +1 GymCoin por serie + energía del mini-avatar
+      if (typeof Gamification !== "undefined") {
+        Gamification.registrarSerieCoin(uid).catch(() => {});
+        Gamification.subirEnergia(1);
+        window.coinsGanadosEnSesion = (window.coinsGanadosEnSesion || 0) + 1;
+      }
+
+      // Companion reacciona a la serie completada
+      const esPR = !esBW && prHistorico !== null && pesoKg > prHistorico;
+      if (typeof Companion !== "undefined") {
+        Companion.onSerie(pesoKg, esPR, ej.nombre);
+        Companion.resetIdle();
+      }
+
       // PR check
       if (!esBW && prHistorico && pesoKg > prHistorico) {
         prBadge.classList.remove("d-none");
