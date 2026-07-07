@@ -38,17 +38,7 @@ auth.onAuthStateChanged(async (user) => {
   }
   usuarioActual = user;
   catalogoCompleto = await obtenerCatalogoEjercicios();
-
-  if (user.email === ADMIN_EMAIL) {
-    document.getElementById("navAdminLink").classList.remove("d-none");
-  }
-
   await cargarRutina();
-});
-
-document.getElementById("btnLogout").addEventListener("click", async () => {
-  await auth.signOut();
-  window.location.href = "/";
 });
 
 // ---------- CARGAR RUTINA ----------
@@ -70,7 +60,7 @@ async function cargarRutina() {
   renderDia(0);
   poblarSelectorProgreso();
   verificarCumpleanos(data);
-  document.getElementById("btnVolverAnterior").classList.toggle("d-none", !data.rutina_anterior);
+  document.getElementById("btnVolverAnterior")?.classList.toggle("d-none", !data.rutina_anterior);
 
   // --- Racha info ---
   if (data.racha_dias) {
@@ -648,7 +638,7 @@ async function cargarGraficoProgreso(ejercicioId) {
 // disponible del mismo grupo muscular (variedad), y sube 1 serie extra
 // como progresión, hasta un máximo de 5 series.
 
-document.getElementById("btnMejorarRutina").addEventListener("click", async () => {
+document.getElementById("btnMejorarRutina")?.addEventListener("click", async () => {
   if (!confirm("Vamos a generar una versión mejorada de tu rutina (más variedad de ejercicios y progresión de series). Vas a poder volver a la actual si no te convence. ¿Continuar?")) {
     return;
   }
@@ -682,14 +672,14 @@ document.getElementById("btnMejorarRutina").addEventListener("click", async () =
   });
 
   rutinaActual = rutinaMejorada;
-  document.getElementById("btnVolverAnterior").classList.remove("d-none");
+  document.getElementById("btnVolverAnterior")?.classList.remove("d-none");
   renderTabsDias();
   renderDia(0);
   poblarSelectorProgreso();
   alert("¡Tu rutina fue actualizada con más variedad y progresión! 💪");
 });
 
-document.getElementById("btnVolverAnterior").addEventListener("click", async () => {
+document.getElementById("btnVolverAnterior")?.addEventListener("click", async () => {
   if (!datosUsuario || !datosUsuario.rutina_anterior) return;
   if (!confirm("¿Volver a tu rutina anterior? Vas a perder la mejora que se generó.")) return;
 
@@ -702,7 +692,7 @@ document.getElementById("btnVolverAnterior").addEventListener("click", async () 
 
   rutinaActual = anterior;
   datosUsuario.rutina_anterior = null;
-  document.getElementById("btnVolverAnterior").classList.add("d-none");
+  document.getElementById("btnVolverAnterior")?.classList.add("d-none");
   renderTabsDias();
   renderDia(0);
   poblarSelectorProgreso();

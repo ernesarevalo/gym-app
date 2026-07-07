@@ -153,6 +153,71 @@ document.getElementById("btnLogout").addEventListener("click", async () => {
   window.location.href = "/";
 });
 
+// ---- Mejorar rutina desde el perfil ----
+document.getElementById("btnMejorarRutinaDesdePerf")?.addEventListener("click", async () => {
+  if (!confirm("¿Generar una versión mejorada de tu rutina? Vas a poder volver a la actual si no te convence.")) return;
+  try {
+    const snap = await db.collection("usuarios").doc(usuarioActual.uid).get();
+    const data = snap.data() || {};
+    const catalogo = await fetch("/api/ejercicios").then(r => r.json());
+    const rutinaActual = data.rutina || [];
+
+    const rutinaMejorada = rutinaActual.map(dia => ({
+      ...dia,
+      ejercicios: dia.ejercicios.map(ej => {
+        const opciones = catalogo.filter(e => e.grupo_muscular === ej.grupo_muscular);
+        if (opciones.length <= 1) return { ...ej, series: Math.min((ej.series || 3) + 1, 5) };
+        const idxActual = opciones.findIndex(o => o.id === ej.ejercicio_id);
+        const siguiente = opciones[(idxActual + 1) % opciones.length];
+        return {
+          ...ej,
+          ejercicio_id: siguiente.id,
+          nombre: siguiente.nombre,
+          descripcion: siguiente.descripcion,
+          tecnica: siguiente.tecnica || null,
+          tips: siguiente.tips || [],
+          peso_recomendado: siguiente.peso_recomendado || null,
+          video_url: siguiente.video_url,
+          tiktok_url: siguiente.tiktok_url || null,
+          patron_movimiento: siguiente.patron_movimiento || null,
+          prioridad_orden: siguiente.prioridad_orden || ej.prioridad_orden,
+          series: Math.min((ej.series || 3) + 1, 5),
+          peso_actual: null
+        };
+      })
+    }));
+
+    await db.collection("usuarios").doc(usuarioActual.uid).update({
+      rutina: rutinaMejorada,
+      rutina_anterior: rutinaActual
+    });
+
+    document.getElementById("btnVolverAnteriorDesdePerf")?.classList.remove("d-none");
+    mostrarOk("¡Rutina mejorada! ✅ Podés verla en el dashboard.");
+  } catch (err) {
+    mostrarError("Error: " + err.message);
+  }
+});
+
+document.getElementById("btnVolverAnteriorDesdePerf")?.addEventListener("click", async () => {
+  if (!confirm("¿Volver a la rutina anterior?")) return;
+  try {
+    const snap = await db.collection("usuarios").doc(usuarioActual.uid).get();
+    const anterior = (snap.data() || {}).rutina_anterior;
+    if (!anterior) { mostrarError("No hay rutina anterior guardada."); return; }
+
+    await db.collection("usuarios").doc(usuarioActual.uid).update({
+      rutina: anterior,
+      rutina_anterior: firebase.firestore.FieldValue.delete()
+    });
+
+    document.getElementById("btnVolverAnteriorDesdePerf")?.classList.add("d-none");
+    mostrarOk("Rutina anterior restaurada ✅");
+  } catch (err) {
+    mostrarError("Error: " + err.message);
+  }
+});
+
 auth.onAuthStateChanged(async (user) => {
   if (!user) {
     window.location.href = "/";

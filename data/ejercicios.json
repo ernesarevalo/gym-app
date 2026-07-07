@@ -2152,5 +2152,473 @@
     "alto_estres_axial": false,
     "prioridad_orden": 4,
     "prioridad_descripcion": "Core / Salud articular"
+  },
+  {
+    "id": "pecho_11",
+    "nombre": "Flexión Diamante (Tricep Push-up)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Flexión con manos juntas formando un diamante bajo el pecho, énfasis en pecho interno y tríceps.",
+    "explicacion": "Manos juntas bajo el esternón formando un rombo con índices y pulgares. Bajá controlado y empujá hasta extender los brazos.",
+    "tecnica": {
+      "postura": "Manos bajo el esternón, codos cercanos al cuerpo durante todo el recorrido, cuerpo en línea recta.",
+      "errores_comunes": "Abrir los codos hacia los lados, dejar caer las caderas, no completar el rango.",
+      "seguridad": "Si molestan las muñecas, hacé el apoyo con los puños cerrados en vez de palma abierta."
+    },
+    "tips": [
+      "Mantén el core apretado como en una plancha.",
+      "Bajá en 3 segundos para aumentar el estímulo."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "8-15",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": true,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Empuje Horizontal",
+    "peso_recomendado": {
+      "principiante": "Solo peso corporal",
+      "intermedio": "Solo peso corporal",
+      "avanzado": "Chaleco con peso"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=flexion%20diamante%20tricep%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=flexion%20diamante%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=flexion%20diamante%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "pecho_12",
+    "nombre": "Flexión Inclinada (manos elevadas)",
+    "grupo_muscular": "Pecho",
+    "descripcion": "Flexión con manos apoyadas en una silla o banco, énfasis en la parte inferior del pecho.",
+    "explicacion": "Manos apoyadas en una superficie elevada (silla, banco, escalón), cuerpo en línea recta desde cabeza a talones, descenso controlado.",
+    "tecnica": {
+      "postura": "Manos a la altura del pecho sobre superficie elevada, codos a ~45° del torso.",
+      "errores_comunes": "Dejar caer las caderas, no llegar a la extensión completa arriba.",
+      "seguridad": "Asegurate de que la superficie esté fija antes de empezar."
+    },
+    "tips": [
+      "Cuanto más alta la superficie, más fácil. Bajá la altura a medida que progresas.",
+      "Ideal para principiantes que aún no hacen flexiones completas."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": true,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Empuje Inclinado",
+    "peso_recomendado": {
+      "principiante": "Solo peso corporal",
+      "intermedio": "Solo peso corporal",
+      "avanzado": "Chaleco con peso"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=flexion%20inclinada%20manos%20elevadas%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=flexion%20inclinada%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=flexion%20inclinada%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "espalda_11",
+    "nombre": "Remo Invertido con Mesa (Bodyweight Row)",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Tracción horizontal con el peso corporal usando una mesa resistente o barra baja.",
+    "explicacion": "Acostado bajo una mesa, agarrás el borde con ambas manos y tirás el pecho hacia arriba manteniendo el cuerpo recto.",
+    "tecnica": {
+      "postura": "Cuerpo en línea recta de cabeza a talones, tirás el pecho hacia la superficie apretando los omóplatos.",
+      "errores_comunes": "Dejar caer las caderas, no completar el rango de movimiento, no apretar la espalda arriba.",
+      "seguridad": "Verificá que la mesa soporte tu peso antes de empezar."
+    },
+    "tips": [
+      "Cuanto más horizontal estés, más difícil.",
+      "Es el equivalente bodyweight al remo con barra."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "8-15",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": true,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Tirón Horizontal",
+    "peso_recomendado": {
+      "principiante": "Solo peso corporal (pies elevados = más fácil)",
+      "intermedio": "Solo peso corporal horizontal",
+      "avanzado": "Chaleco con peso"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=remo%20invertido%20mesa%20bodyweight%20row%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=remo%20invertido%20mesa%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=remo%20invertido%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "espalda_12",
+    "nombre": "Remo con Banda Elástica",
+    "grupo_muscular": "Espalda",
+    "descripcion": "Tracción horizontal con banda elástica anclada a una puerta o columna.",
+    "explicacion": "Anclar la banda a una superficie fija a la altura del abdomen. De pie o sentado, tirás la banda hacia el abdomen apretando los omóplatos.",
+    "tecnica": {
+      "postura": "Espalda recta, codos cerca del cuerpo durante la tracción, apretá los omóplatos al final.",
+      "errores_comunes": "Balancear el torso, usar el impulso en vez de la fuerza de la espalda.",
+      "seguridad": "Verificá que el anclaje de la banda esté bien asegurado antes de cada serie."
+    },
+    "tips": [
+      "Usá la resistencia de banda que te permita 10-15 reps con buena técnica.",
+      "Pausá 1 segundo al final de cada repetición apretando la espalda."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-15",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Tirón Horizontal",
+    "peso_recomendado": {
+      "principiante": "Banda liviana (resistencia baja)",
+      "intermedio": "Banda media",
+      "avanzado": "Banda fuerte o doble banda"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=remo%20con%20banda%20elastica%20espalda%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=remo%20banda%20elastica%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=remo%20banda%20elastica%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "piernas_11",
+    "nombre": "Sentadilla Búlgara con Peso Corporal",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Sentadilla unilateral con pie trasero elevado en una silla, sin peso adicional.",
+    "explicacion": "Pie trasero apoyado en una silla, pie delantero adelante. Descenso controlado hasta que la rodilla trasera casi toque el suelo.",
+    "tecnica": {
+      "postura": "Torso erguido, 80-90% del peso en la pierna delantera, rodilla delantera alineada con el pie.",
+      "errores_comunes": "Inclinarse hacia adelante, apoyar demasiado peso en la pierna trasera.",
+      "seguridad": "Empezá con el pie trasero bajo (escalón) antes de usar una silla más alta."
+    },
+    "tips": [
+      "Sin peso es suficientemente desafiante para principiantes.",
+      "Mantené el equilibrio mirando un punto fijo al frente."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "8-12",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": true,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Dominante de Rodilla (Unilateral)",
+    "peso_recomendado": {
+      "principiante": "Solo peso corporal",
+      "intermedio": "Mochila cargada o mancuernas",
+      "avanzado": "Mancuernas pesadas o barra"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=sentadilla%20bulgara%20peso%20corporal%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=sentadilla%20bulgara%20sin%20peso%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=sentadilla%20bulgara%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "piernas_12",
+    "nombre": "Sentadilla con Banda Elástica",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Sentadilla con banda bajo los pies y sobre los hombros para añadir resistencia.",
+    "explicacion": "Parado sobre la banda, agarrás los extremos a la altura de los hombros. Bajás en sentadilla con la resistencia adicional de la banda.",
+    "tecnica": {
+      "postura": "Pies al ancho de hombros, punteras levemente abiertas, espalda neutra durante todo el recorrido.",
+      "errores_comunes": "Rodillas que colapsan hacia adentro, talones que se levantan, redondear la espalda.",
+      "seguridad": "Empezá con una banda de resistencia liviana para acostumbrarte al patrón."
+    },
+    "tips": [
+      "La banda aumenta la resistencia en la fase concéntrica (subida), ideal para activar el glúteo.",
+      "También podés poner la banda sobre las rodillas para activar aductores."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "series_recomendadas": 4,
+    "repeticiones_recomendadas": "10-15",
+    "prioridad_orden": 1,
+    "prioridad_descripcion": "Fuerza / SNC",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Dominante de Rodilla (Bilateral)",
+    "peso_recomendado": {
+      "principiante": "Banda liviana",
+      "intermedio": "Banda media",
+      "avanzado": "Banda fuerte"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=sentadilla%20con%20banda%20elastica%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=sentadilla%20banda%20elastica%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=sentadilla%20banda%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "piernas_13",
+    "nombre": "Puente de Glúteo (Glute Bridge)",
+    "grupo_muscular": "Piernas",
+    "descripcion": "Ejercicio de cadera acostado que trabaja glúteo y femoral sin equipamiento.",
+    "explicacion": "Acostado boca arriba, rodillas flexionadas, elevar la cadera apretando el glúteo hasta formar una línea recta de hombros a rodillas.",
+    "tecnica": {
+      "postura": "Pies planos en el suelo, caderas a 90°, subir expirando y apretar el glúteo arriba.",
+      "errores_comunes": "Hiperextender la zona lumbar arriba, no completar el rango, no apretar el glúteo.",
+      "seguridad": "Es muy seguro para la zona lumbar; ideal si hay molestias con sentadilla o peso muerto."
+    },
+    "tips": [
+      "Pausá 2 segundos en la posición alta apretando el glúteo al máximo.",
+      "Versión unilateral (una pierna) para más intensidad."
+    ],
+    "grupos_complementarios": [
+      "Core"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "15-20",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": true,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Dominante de Cadera",
+    "peso_recomendado": {
+      "principiante": "Solo peso corporal",
+      "intermedio": "Mochila sobre el abdomen o mancuerna",
+      "avanzado": "Barra o chaleco"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=puente%20de%20gluteo%20glute%20bridge%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=puente%20gluteo%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=puente%20gluteo%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "hombros_11",
+    "nombre": "Press de Hombro con Banda Elástica",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Press vertical con banda anclada bajo los pies, alternativa al press militar sin barra.",
+    "explicacion": "Parado sobre la banda, agarrás los extremos a la altura de los hombros y empujás hacia arriba hasta extender los brazos.",
+    "tecnica": {
+      "postura": "Core activo, sin arquear la espalda baja, empuje recto hacia arriba.",
+      "errores_comunes": "Arquear excesivamente la zona lumbar, inclinar el torso hacia atrás.",
+      "seguridad": "Si la banda es muy resistente para el press, hacelo sentado para mayor estabilidad."
+    },
+    "tips": [
+      "La resistencia aumenta a medida que sube el brazo, al revés que con el peso libre.",
+      "Excelente para principiantes que aprenden el patrón de empuje vertical."
+    ],
+    "grupos_complementarios": [
+      "Brazos"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-15",
+    "prioridad_orden": 2,
+    "prioridad_descripcion": "Hipertrofia compuesto",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Empuje Vertical",
+    "peso_recomendado": {
+      "principiante": "Banda liviana",
+      "intermedio": "Banda media",
+      "avanzado": "Banda fuerte o doble"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=press%20hombro%20banda%20elastica%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=press%20hombro%20banda%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=press%20hombro%20banda%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "hombros_12",
+    "nombre": "Elevaciones Laterales con Banda",
+    "grupo_muscular": "Hombros",
+    "descripcion": "Elevaciones laterales para el deltoides medio usando banda elástica anclada bajo el pie.",
+    "explicacion": "Parado sobre la banda con un pie, subís el brazo lateralmente hasta la altura del hombro con la banda anclada bajo el pie opuesto.",
+    "tecnica": {
+      "postura": "Brazo con ligera flexión fija, subir hasta la altura del hombro sin subirlo más.",
+      "errores_comunes": "Usar impulso del torso, subir el hombro hacia la oreja.",
+      "seguridad": "Resistencia más baja que con mancuernas para proteger el hombro."
+    },
+    "tips": [
+      "La banda genera más tensión en la parte alta del movimiento, donde el músculo más lo necesita.",
+      "Hacelo lento: 2 segundos subiendo, 3 bajando."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "15-20",
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Aislamiento (Abducción)",
+    "peso_recomendado": {
+      "principiante": "Banda muy liviana",
+      "intermedio": "Banda liviana",
+      "avanzado": "Banda media"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=elevaciones%20laterales%20banda%20elastica%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=elevaciones%20laterales%20banda%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=elevaciones%20laterales%20banda%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "brazos_11",
+    "nombre": "Curl de Bíceps con Banda Elástica",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Curl de bíceps con banda anclada bajo los pies, ideal para entrenar en casa.",
+    "explicacion": "Parado sobre la banda, agarrás los extremos con agarre supino y flexionás los codos hacia los hombros manteniendo los codos pegados al torso.",
+    "tecnica": {
+      "postura": "Codos fijos al torso, flexión completa, bajada controlada.",
+      "errores_comunes": "Balancear el torso, mover los codos hacia adelante.",
+      "seguridad": "Resistencia fácil de ajustar: cambiá el largo de la banda para más o menos tensión."
+    },
+    "tips": [
+      "La banda ofrece más resistencia en la parte alta del movimiento.",
+      "Hacé la bajada lenta (3-4 seg) para mayor estímulo."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-15",
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Aislamiento (Flexión de Codo)",
+    "peso_recomendado": {
+      "principiante": "Banda liviana",
+      "intermedio": "Banda media",
+      "avanzado": "Banda fuerte"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=curl%20biceps%20banda%20elastica%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=curl%20biceps%20banda%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=curl%20biceps%20banda%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "brazos_12",
+    "nombre": "Extensión de Tríceps con Banda (sobre la cabeza)",
+    "grupo_muscular": "Brazos",
+    "descripcion": "Extensión de tríceps sobre la cabeza con banda anclada bajo el pie.",
+    "explicacion": "Parado sobre la banda, agarrás el extremo detrás de la cabeza y extendés los brazos hacia arriba, manteniendo los codos apuntando al techo.",
+    "tecnica": {
+      "postura": "Codos cerca de las orejas y fijos, solo se mueve el antebrazo.",
+      "errores_comunes": "Abrir los codos hacia los lados, arquear la espalda para ayudar.",
+      "seguridad": "Empezá con una banda corta para que haya tensión desde el inicio del movimiento."
+    },
+    "tips": [
+      "Esta posición estira la cabeza larga del tríceps, la más voluminosa.",
+      "Controlá la fase de bajada para mayor estímulo."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "12-15",
+    "prioridad_orden": 3,
+    "prioridad_descripcion": "Estrés metabólico",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Aislamiento (Extensión de Codo)",
+    "peso_recomendado": {
+      "principiante": "Banda liviana",
+      "intermedio": "Banda media",
+      "avanzado": "Banda fuerte"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=extension%20triceps%20banda%20sobre%20cabeza%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=triceps%20banda%20sobre%20cabeza%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=triceps%20banda%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "core_11",
+    "nombre": "Plancha con Toque de Hombro",
+    "grupo_muscular": "Core",
+    "descripcion": "Plancha alta con toque alternado de hombros para trabajar la estabilidad anti-rotación.",
+    "explicacion": "En posición de plancha alta (brazos extendidos), alterná tocar el hombro contrario con cada mano sin rotar el torso ni las caderas.",
+    "tecnica": {
+      "postura": "Pies separados al ancho de hombros para mayor estabilidad, caderas paralelas al suelo.",
+      "errores_comunes": "Rotar las caderas al levantar la mano, separar demasiado los pies.",
+      "seguridad": "Si hay molestia en muñecas, hacelo con los puños cerrados."
+    },
+    "tips": [
+      "El objetivo es que el torso no se mueva en absoluto cuando levantás la mano.",
+      "Hacelo lento para maximizar el trabajo anti-rotación."
+    ],
+    "grupos_complementarios": [
+      "Pecho"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-15 por lado",
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular",
+    "bodyweight": true,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Estabilización (Anti-extensión)",
+    "peso_recomendado": {
+      "principiante": "Solo peso corporal",
+      "intermedio": "Solo peso corporal",
+      "avanzado": "Chaleco con peso"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=plancha%20toque%20de%20hombro%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=plancha%20toque%20hombro%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=plancha%20toque%20hombro%20ejercicio%20gif%20tecnica&tbm=isch"
+  },
+  {
+    "id": "core_12",
+    "nombre": "Pallof Press con Banda Elástica",
+    "grupo_muscular": "Core",
+    "descripcion": "Ejercicio anti-rotación con banda anclada lateralmente, excelente para la salud lumbar.",
+    "explicacion": "Anclar la banda a la altura del pecho en una puerta o columna. De pie de costado al anclaje, extendés y recogés los brazos al frente sin rotar el torso.",
+    "tecnica": {
+      "postura": "De pie perpendicular al anclaje, brazos extendidos al frente, core braceado.",
+      "errores_comunes": "Rotar el torso hacia el anclaje, no mantener los brazos en línea con el pecho.",
+      "seguridad": "Ideal para personas con historial de dolor lumbar: trabaja el core sin cargar la columna."
+    },
+    "tips": [
+      "Cuanto más alejado del anclaje, mayor la resistencia.",
+      "Pausá 2 segundos con los brazos extendidos al frente."
+    ],
+    "grupos_complementarios": [
+      "Espalda"
+    ],
+    "series_recomendadas": 3,
+    "repeticiones_recomendadas": "10-12 por lado",
+    "prioridad_orden": 4,
+    "prioridad_descripcion": "Core / Salud articular",
+    "bodyweight": false,
+    "alto_estres_axial": false,
+    "nivel_minimo": "Principiante",
+    "equipamiento": "casa",
+    "patron_movimiento": "Estabilización (Anti-extensión)",
+    "peso_recomendado": {
+      "principiante": "Banda liviana",
+      "intermedio": "Banda media",
+      "avanzado": "Banda fuerte"
+    },
+    "video_url": "https://www.youtube.com/results?search_query=pallof%20press%20banda%20elastica%20core%20tecnica%20ejercicio",
+    "tiktok_url": "https://www.google.com/search?q=pallof%20press%20banda%20ejercicio%20site%3Atiktok.com",
+    "imagen_url": "https://www.google.com/search?q=pallof%20press%20ejercicio%20gif%20tecnica&tbm=isch"
   }
 ]
